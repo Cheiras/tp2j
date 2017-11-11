@@ -12,7 +12,6 @@ public class Dado {
 	
 	public int tirar(){
 		int valor = randomNum.nextInt(caras) + 1;
-		System.out.println(valor);
 		return valor;
 	}
 	
