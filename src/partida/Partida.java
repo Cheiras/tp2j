@@ -1,7 +1,8 @@
 package partida;
 
-import casilleros.barrios.Barrio;
 import movimiento.Dado;
+import propiedades.barrios.Barrio;
+import propiedades.barrios.BarrioNormal;
 
 public class Partida {
 	
@@ -18,7 +19,7 @@ public class Partida {
 		
 		
 		
-		Barrio BuenosAiresSur = new Barrio("Buenos Aires Sur", 20000, noJugador, 2000, 3000, 3500, 5000, 5000, 8000);
+		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, noJugador, 2000, 3000, 3500, 5000, 5000, 8000);
 
 	}
 	
