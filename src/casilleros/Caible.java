@@ -8,4 +8,8 @@ public abstract class Caible {
 	
 	public abstract void accionar(Jugador unJugador);
 	
+	public int getPosicion() {
+		return this.posicion;
+	}
+	
 }

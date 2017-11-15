@@ -1,4 +1,4 @@
-package propiedades.companias;
+package caible.propiedades.companias;
 
 public abstract class Compania {
 	

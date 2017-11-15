@@ -1,7 +1,7 @@
 package estadoDuenio;
 
+import caible.propiedades.Propiedad;
 import partida.Jugador;
-import propiedades.Propiedad;
 
 public class ConDuenio extends EstadoDuenio {
 	

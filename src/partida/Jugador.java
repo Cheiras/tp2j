@@ -1,16 +1,18 @@
 package partida;
 import java.util.LinkedList;
+
+import caible.propiedades.Propiedad;
+import casilleros.Caible;
+import listaDePremios.IteradorListaPremios;
 import listaDePremios.ListaDePremios;
 import movimiento.MeMuevo;
-import listaDePremios.IteradorListaPremios;
-import propiedades.Propiedad;
 public class Jugador {
 	
 	private MeMuevo movimiento;
 
 	private int posicion;
 
-	//private Casillero casilleroActual;
+	private Caible casilleroActual;
 
 	
 	int efectivoDisponible;
@@ -102,7 +104,7 @@ public class Jugador {
 		return;
 	}
 
-	public void nuevaPosicion(int nuevaPosicion) {
+	public void setPosicion(int nuevaPosicion) {
 		this.posicion = nuevaPosicion;
 	}
 

@@ -1,6 +1,7 @@
-package casilleros;
+package caible.especiales;
 
 import Excepciones.MontoInsuficiente;
+import casilleros.Caible;
 import movimiento.MeMuevo;
 import movimiento.MovimientoCarcel;
 import movimiento.MovimientoNormal;
@@ -13,13 +14,13 @@ public class Carcel extends Caible{
 	
 	public Carcel() {
 		this.precioFianza = 10000; 
-		this.posicion = 10;
+		this.posicion = 5;
 	}
 	
 	public void accionar(Jugador unJugador) {
 		MeMuevo movCarcel = new MovimientoCarcel();
 		unJugador.nuevoMovimiento(movCarcel);
-		unJugador.nuevaPosicion(this.posicion);
+		unJugador.setPosicion(this.posicion);
 	}
 	
 	

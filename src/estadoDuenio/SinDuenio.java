@@ -1,6 +1,6 @@
 package estadoDuenio;
+import caible.propiedades.Propiedad;
 import partida.Jugador;
-import propiedades.Propiedad;
 public class SinDuenio extends EstadoDuenio{
 	
 	public void jugadorCayo(Jugador jugadorQueCayo,Propiedad propiedadEnQueCayo) {
