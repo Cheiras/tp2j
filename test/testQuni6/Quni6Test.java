@@ -8,7 +8,7 @@ public class Quni6Test {
 		@Test
 		public void unJugadorCaeUnaVezEnElQuini6YAumentaSuEfectivoEnCincuentaMil() {
 			Quini6 quini=new Quini6();
-			Jugador unJugador=new Jugador(100000);
+			Jugador unJugador=new Jugador(100000, null);
 			
 			quini.jugadorCayo(unJugador);
 			
@@ -18,7 +18,7 @@ public class Quni6Test {
 		@Test
 		public void unJuadorQueCaeDosVecesEnElQuini6AumentaSuEfectivoEnTreintaMil() {
 			Quini6 quini=new Quini6();
-			Jugador unJugador=new Jugador(100000);
+			Jugador unJugador=new Jugador(100000, null);
 			
 			quini.jugadorCayo(unJugador);
 			quini.jugadorCayo(unJugador);
@@ -29,7 +29,7 @@ public class Quni6Test {
 		@Test
 		public void unJugadorQueCaeMasDeDosVecesEnElQuini6YaNoAumentaSuEfectivoPorqueNadieTieneTantaSuerteLOL() {
 			Quini6 quini=new Quini6();
-			Jugador unJugador=new Jugador(100000);
+			Jugador unJugador=new Jugador(100000, null);
 			
 			quini.jugadorCayo(unJugador);
 			quini.jugadorCayo(unJugador);

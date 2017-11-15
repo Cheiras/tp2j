@@ -1,15 +1,15 @@
 package testMovimiento;
 
+
+import org.junit.Assert;
 import org.junit.Test;
 
-import movimiento.MeMuevo;
-import movimiento.MovimientoCarcel;
-import partida.Jugador;
+import movimiento.Dado;
 
-class JugadorConMovimientoCarcelPuedeMoverseDespuesDe3TurnosTest {
+public class JugadorNoPuedeDesplazarsePor3TurnosTest {
 
 	@Test
-	void test() {
+	public void test() {
 		MeMuevo movCarcel = new MovimientoCarcel();
 		Jugador Pepe = new Jugador(10000, movCarcel);
 		
@@ -19,8 +19,7 @@ class JugadorConMovimientoCarcelPuedeMoverseDespuesDe3TurnosTest {
 	
 		boolean result = Pepe.esTuPosicion(1);
 		
-		assert.assertTrue(result);
-		
+		assert.assertTrue(result==true);
+			
+		}
 	}
-
-}

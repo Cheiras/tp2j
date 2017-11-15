@@ -10,13 +10,13 @@ public class JugadorTest {
 
 	@Test
 	public void elJugadorRecienCreadoIniciaConUnaCantidadDeDineroDeterminadaArbitrariamente() {
-		Jugador unJugador= new Jugador(100000);
+		Jugador unJugador= new Jugador(100000, null);
 		
 		Assert.assertEquals(100000, unJugador.getEfectivo(),0.1);
 	}
 	@Test
 	public void dineroBajaCuandoJugadorCaeEnUnaPropiedadYLaCompra() {
-		Jugador unJugador=new Jugador(100000);
+		Jugador unJugador=new Jugador(100000, null);
 		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2000, 3000, 3500, 5000, 5000, 8000);
 		
 		BuenosAiresSur.cayoJugador(unJugador);
@@ -26,7 +26,7 @@ public class JugadorTest {
 	
 	@Test
 	public void elJugadorAlComprarUnaPropiedadEstaEsAgregadaCorrectamenteAlJugador() {
-		Jugador unJugador=new Jugador(100000);
+		Jugador unJugador=new Jugador(100000, null);
 		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2000, 3000, 3500, 5000, 5000, 8000);
 		
 		BuenosAiresSur.cayoJugador(unJugador);
@@ -36,7 +36,7 @@ public class JugadorTest {
 	
 	@Test
 	public void elJugadorQueNoCompraLaPropiedadNoLaTieneAgregada() {
-		Jugador unJugador=new Jugador(100000);
+		Jugador unJugador=new Jugador(100000, null);
 		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2000, 3000, 3500, 5000, 5000, 8000);
 		
 		Assert.assertFalse(unJugador.contienePropiedad(BuenosAiresSur));

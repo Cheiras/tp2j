@@ -18,10 +18,15 @@ class JugadorConMovCarcelPagaLaFianzaEnEl2doTurnoTest {
 		Pedro.avanzarCasillero();//no avanza
 		Pedro.avanzarCasillero();//aca deberia poder pagar la fianza
 		Pedro.avanzarCasillero();//aca verificar que avanzo despues de haber pagado
+		
+		
 		boolean result = Pedro.esTuPosicion(1);
+
+		if(result) {
+			System.out.print(result);
+		}
 		
-		assert.assertTrue(result);
-		
+		assert.assertTrue(result == true);
 	}
 
 }

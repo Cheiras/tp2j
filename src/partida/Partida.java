@@ -12,10 +12,10 @@ public class Partida {
 		Dado dado1 = new Dado(6);
 		Dado dado2 = new Dado(6);
 		
-		Jugador jugador1 = new Jugador(100000);
-		Jugador jugador2 = new Jugador(100000);
-		Jugador jugador3 = new Jugador(100000);
-		Jugador noJugador = new Jugador(0);
+		Jugador jugador1 = new Jugador(100000, null);
+		Jugador jugador2 = new Jugador(100000, null);
+		Jugador jugador3 = new Jugador(100000, null);
+		Jugador noJugador = new Jugador(0, null);
 		
 		
 		
