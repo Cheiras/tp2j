@@ -101,4 +101,12 @@ public class Jugador {
 		//modifico el movimiento u otro modifica el movimiento
 		return;
 	}
+
+	public void nuevaPosicion(int nuevaPosicion) {
+		this.posicion = nuevaPosicion;
+	}
+
+	public boolean montoMenorA(int precioFianza) {
+		return (this.efectivoDisponible < precioFianza);
+	}
 }

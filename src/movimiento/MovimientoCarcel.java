@@ -11,12 +11,9 @@ public class MovimientoCarcel implements MeMuevo {
 		this.turnosEnCarcel = 0;
 			
 	}
-
+	
 	public void mover(Jugador Prisionero) {
 		
-		//if(turnosEnCarcel >= 1 && turnosEnCarcel <= 2) {
-		//	Jugador.OpcionPagarFianza();
-		//}
 		if(turnosEnCarcel == 3) {
 		
 			MeMuevo movimiento = new MovimientoNormal();

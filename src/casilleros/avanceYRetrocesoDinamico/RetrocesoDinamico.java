@@ -10,7 +10,7 @@ public class RetrocesoDinamico {
 		}
 	}
 
-	public void ejecutarDesdeJugador(Jugador unJugador) {
+	public void accionar(Jugador unJugador) {
 
 		int cantidadDeCasillerosQueDeberaRetroceder;
 
