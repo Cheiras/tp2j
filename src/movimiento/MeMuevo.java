@@ -1,5 +1,9 @@
 package movimiento;
+import partida.Jugador;
 
 public interface MeMuevo {
-	public void mover();
+	
+	public default void mover(Jugador jugador) {
+		
+	}
 }

@@ -1,15 +1,27 @@
 package partida;
 import java.util.LinkedList;
 import listaDePremios.ListaDePremios;
+import movimiento.MeMuevo;
 import listaDePremios.IteradorListaPremios;
 import propiedades.Propiedad;
 public class Jugador {
+	
+	private MeMuevo movimiento;
+
+	private int posicion;
+
+	//private Casillero casilleroActual;
+
+	
 	int efectivoDisponible;
 	LinkedList<Propiedad> listaDePropiedades;
 	ListaDePremios premiosQuini;
 	IteradorListaPremios premioQuiniAGanar;
 	
-	public Jugador(int efectivoInicial) {
+	public Jugador(int efectivoInicial, MeMuevo movimientoNormal) {
+		
+		this.posicion = 0;
+		this.movimiento = movimientoNormal;
 		this.efectivoDisponible=efectivoInicial;
 		this.listaDePropiedades=new LinkedList<Propiedad>();
 		this.premiosQuini=new ListaDePremios();
@@ -30,9 +42,19 @@ public class Jugador {
 		
 	}
 
-	public void avanzarCasillero() {
-		// TODO Auto-generated method stub
+	public void avanzar(int cantidad) {
+		for(int i = 0; i<cantidad;i++) {
+			this.movimiento.mover(this);
+		}
+	}
+	
+	public void nuevoMovimiento(MeMuevo  nuevoMovimiento) {
+		this.movimiento = nuevoMovimiento;
 		
+	}
+	
+	public void avanzarCasillero() {
+		this.posicion=+1;		
 	}
 
 	public int numeroTotalSacadoEnDados() {
@@ -63,9 +85,20 @@ public class Jugador {
 		return false;
 	}
 	
+	public boolean esTuPosicion(int indice) {
+		return (posicion == indice);
+	}
+	
 	public void cobrarPremioDelQuini() {
 		int premioACobrar=this.premioQuiniAGanar.obtenerPremio();
 		this.aumentarEfectivo(premioACobrar);
 		this.premioQuiniAGanar.avanzar();
+	}
+
+
+	public  void OpcionPagarFianza() {
+		//resto el efectivo
+		//modifico el movimiento u otro modifica el movimiento
+		return;
 	}
 }

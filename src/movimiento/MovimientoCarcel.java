@@ -1,9 +1,33 @@
 package movimiento;
 
-public class MovimientoCarcel implements MeMuevo {
+import partida.*;
 
-	public void mover() {
-				
+public class MovimientoCarcel implements MeMuevo {
+	
+	private int turnosEnCarcel;
+		
+	public MovimientoCarcel() {
+		
+		this.turnosEnCarcel = 0;
+			
+	}
+
+	public void mover(Jugador Prisionero) {
+		
+		//if(turnosEnCarcel >= 1 && turnosEnCarcel <= 2) {
+		//	Jugador.OpcionPagarFianza();
+		//}
+		if(turnosEnCarcel == 3) {
+		
+			MeMuevo movimiento = new MovimientoNormal();
+			
+			Prisionero.nuevoMovimiento(movimiento);
+			
+		}
+		
+		turnosEnCarcel += 1;
+		
+		
 	}
 
 }

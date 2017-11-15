@@ -1,10 +1,13 @@
 package movimiento;
 
-public class MovimientoNormal implements MeMuevo {
+import partida.*;
 
-	public void mover() {
+public class MovimientoNormal implements MeMuevo {
+	
+	public void mover(Jugador jugador) {
 		
-		
+			jugador.avanzarCasillero();	
+				
 	}
 
 }
