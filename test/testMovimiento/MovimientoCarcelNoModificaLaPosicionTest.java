@@ -1,22 +1,24 @@
 package testMovimiento;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import movimiento.MeMuevo;
 import movimiento.MovimientoCarcel;
 import partida.Jugador;
 
-class MovimientoCarcelNoModificaLaPosicionDelJugadorTest {
+public class MovimientoCarcelNoModificaLaPosicionTest {
 
 	@Test
-	void test() {
+	public void test() {
 		MeMuevo movCarcel = new MovimientoCarcel();
 		Jugador Pepe = new Jugador(1000, movCarcel);
+
 		
 		Pepe.avanzarCasillero();
-		boolean result = Pepe.esTuPosicion(0);
 		
-		assert.assertTrue(result);
+
+		Assert.assertTrue(Pepe.getPosicion() == 0);
 	}
 
 }

@@ -8,7 +8,7 @@ public class BarrioEspecial extends Barrio {
 	private int precioConstruirEdificioHistorico;
 	
 	public BarrioEspecial(String nombre, int precio, Jugador duenio, int posicion, int precioAlquiler, int precioAlquilerConEdificioHistorico, int precioConstruirEdificioHistorico){
-		super(nombre, precio, duenio, posicion,precioAlquiler);
+		super(nombre, precio, duenio, posicion, precioAlquiler);
 		this.precioAlquilerConEdificioHistorico = precioAlquilerConEdificioHistorico;
 		this.precioConstruirEdificioHistorico = precioConstruirEdificioHistorico;
 	}
@@ -36,6 +36,12 @@ public class BarrioEspecial extends Barrio {
 	}
 	
 	public void construirEdificioHistorico(){
+		
+	}
+
+	@Override
+	public void accionar(Jugador unJugador) {
+		// TODO Auto-generated method stub
 		
 	}
 }

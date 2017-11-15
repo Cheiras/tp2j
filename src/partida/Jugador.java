@@ -87,10 +87,6 @@ public class Jugador {
 		return false;
 	}
 	
-	public boolean esTuPosicion(int indice) {
-		return (posicion == indice);
-	}
-	
 	public void cobrarPremioDelQuini() {
 		int premioACobrar=this.premioQuiniAGanar.obtenerPremio();
 		this.aumentarEfectivo(premioACobrar);
@@ -106,6 +102,10 @@ public class Jugador {
 
 	public void setPosicion(int nuevaPosicion) {
 		this.posicion = nuevaPosicion;
+	}
+	
+	public int getPosicion() {
+		return this.posicion;
 	}
 
 	public boolean montoMenorA(int precioFianza) {

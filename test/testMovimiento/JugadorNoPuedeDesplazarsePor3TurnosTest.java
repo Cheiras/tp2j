@@ -4,7 +4,9 @@ package testMovimiento;
 import org.junit.Assert;
 import org.junit.Test;
 
-import movimiento.Dado;
+import movimiento.MeMuevo;
+import movimiento.MovimientoCarcel;
+import partida.Jugador;
 
 public class JugadorNoPuedeDesplazarsePor3TurnosTest {
 
@@ -16,10 +18,8 @@ public class JugadorNoPuedeDesplazarsePor3TurnosTest {
 		for(int i = 0; i < 4; i++) {
 			Pepe.avanzarCasillero();
 		}
-	
-		boolean result = Pepe.esTuPosicion(1);
 		
-		assert.assertTrue(result==true);
+		Assert.assertTrue(Pepe.getPosicion() == 1);
 			
 		}
 	}
