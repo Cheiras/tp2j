@@ -65,8 +65,12 @@ public class BarrioNormal extends Barrio {
 
 	}
 
-	public void cobrarAlquiler() {
-
+	public void cobrarAlquiler(Jugador unJugador) {
+		/*Pora ahora para probar los comportamientos del juego pedidos por la entrega*/
+		int costoAlquiler=this.getPrecioAlquiler();
+		unJugador.reducirEfectivo(costoAlquiler);
+		/*Habria que evaluar si tiene efectivo suficiente*/
+		this.duenio.aumentarEfectivo(costoAlquiler);
 	}
 
 	public void construirCasa() {

@@ -24,9 +24,15 @@ public class BarrioEspecial extends Barrio {
 	public void comprar(){
 		
 	}
+	public int getPrecioAlquiler() {
+		return this.precioAlquiler;
+	}
 	
-	public void cobrarAlquiler(){
-		
+	public void cobrarAlquiler(Jugador unJugador){
+/*Por ahora si algun jugador cae directamente cobra el alquiler sin edificio construido*/
+		int precioAlquiler=this.getPrecioAlquiler();
+		unJugador.reducirEfectivo(precioAlquiler);
+		this.duenio.aumentarEfectivo(precioAlquiler);
 	}
 	
 	public void construirEdificioHistorico(){

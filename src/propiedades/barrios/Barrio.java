@@ -12,11 +12,7 @@ public abstract class Barrio  extends Propiedad{
 		this.precioAlquiler = precioAlquiler;
 	}
 	
-	public void comprar(){
-		
-	}
-	
-	public void cobrarAlquiler(){
+	public void cobrarAlquiler(Jugador unJugador){
 		
 	}
 	
