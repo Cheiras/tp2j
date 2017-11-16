@@ -28,7 +28,7 @@ public class PropiedadTest {
 		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
 
-		BuenosAiresSur.cayoJugador(unJugador);
+		BuenosAiresSur.accionar(unJugador);
 
 		Assert.assertEquals(unJugador, BuenosAiresSur.obtenerDuenio());
 	}
@@ -40,8 +40,8 @@ public class PropiedadTest {
 		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
 
-		BuenosAiresSur.cayoJugador(unJugador);
-		BuenosAiresSur.cayoJugador(otroJugador);
+		BuenosAiresSur.accionar(unJugador);
+		BuenosAiresSur.accionar(otroJugador);
 
 		Assert.assertEquals(98000, otroJugador.getEfectivo(), 0.1);
 	}
@@ -53,8 +53,8 @@ public class PropiedadTest {
 		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
 
-		BuenosAiresSur.cayoJugador(unJugador);
-		BuenosAiresSur.cayoJugador(otroJugador);
+		BuenosAiresSur.accionar(unJugador);
+		BuenosAiresSur.accionar(otroJugador);
 
 		Assert.assertEquals(82000, unJugador.getEfectivo(), 0.1);
 	}

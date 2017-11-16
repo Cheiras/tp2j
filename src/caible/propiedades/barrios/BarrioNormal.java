@@ -81,9 +81,5 @@ public class BarrioNormal extends Barrio {
 
 	}
 
-	@Override
-	public void accionar(Jugador unJugador) {
-		// TODO Auto-generated method stub
-		
-	}
+
 }

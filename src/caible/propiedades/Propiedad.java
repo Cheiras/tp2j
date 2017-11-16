@@ -21,18 +21,24 @@ public abstract class Propiedad extends Caible {
 		this.posicion = posicion;
 	}
 
+	public void accionar(Jugador unJugador) {
+		
+		this.estadoDuenio.jugadorCayo(unJugador, this);
+		
+		
+	}
+	
 	public int getPrecioDeCompra() {
 		return precio;
 	};
 
-	public void cambiarDuenio(Jugador nuevoDuenio) {
+	public void setDuenio(Jugador nuevoDuenio) {
 		this.duenio = nuevoDuenio;
 	}
 
 	public void comprar(Jugador jugadorQueCompra) {
 		jugadorQueCompra.reducirEfectivo(this.getPrecioDeCompra());
-		this.cambiarDuenio(jugadorQueCompra);
-
+		this.setDuenio(jugadorQueCompra);
 		jugadorQueCompra.agregarPropiedad(this);
 	}
 
@@ -42,10 +48,6 @@ public abstract class Propiedad extends Caible {
 
 	public void cobrarAlquiler(Jugador unJugador) {
 
-	}
-
-	public void cayoJugador(Jugador jugadorQueCayo) {
-		this.estadoDuenio.jugadorCayo(jugadorQueCayo, this);
 	}
 
 	public void asignarDuenio() {

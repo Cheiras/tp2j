@@ -3,7 +3,7 @@ package testRetrocesoDinamico;
 import org.junit.Assert;
 import org.junit.Test;
 
-import caible.avanceYRetrocesoDinamico.RetrocesoDinamico;
+import caible.especiales.RetrocesoDinamico;
 import movimiento.MeMuevo;
 import movimiento.MovimientoNormal;
 import partida.Jugador;
