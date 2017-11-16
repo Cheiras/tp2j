@@ -20,6 +20,8 @@ public class Jugador {
 	ListaDePremios premiosQuini;
 	IteradorListaPremios premioQuiniAGanar;
 	
+	int numeroTotalSacadoEnDados; //(Auxiliar para los tests de esta entrega.)
+	
 	public Jugador(int efectivoInicial, MeMuevo movimientoNormal) {
 		
 		this.posicion = 0;
@@ -40,7 +42,7 @@ public class Jugador {
 	}
 	
 	public void retrocederCasillero() {
-		// TODO Auto-generated method stub
+		this.posicion-=1;	
 		
 	}
 
@@ -57,9 +59,8 @@ public class Jugador {
 		this.posicion+=1;		
 	}
 
-	public int numeroTotalSacadoEnDados() {
-		// Tiene que devolver la suma de los dos numeros de dado que sacó en su turno
-		return 0;
+	public int getNumeroTotalSacadoEnDados() {
+		return numeroTotalSacadoEnDados;
 	}
 
 	public int cantidadDePropiedadesASuNombre() {
@@ -109,5 +110,7 @@ public class Jugador {
 	public boolean montoMenorA(int precioFianza) {
 		return (this.efectivoDisponible < precioFianza);
 	}
-
+	public void setNumeroTotalSacadoEnDados(int numero) {
+		numeroTotalSacadoEnDados = numero;
+	}
 }

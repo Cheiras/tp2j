@@ -19,18 +19,18 @@ public class RetrocesoDinamico extends Caible{
 
 		int cantidadDeCasillerosQueDeberaRetroceder;
 
-		if (unJugador.numeroTotalSacadoEnDados() <= 6) {
-			cantidadDeCasillerosQueDeberaRetroceder = unJugador.numeroTotalSacadoEnDados()
-					- unJugador.cantidadDePropiedadesASuNombre();
+		if (unJugador.getNumeroTotalSacadoEnDados() <= 6) {
+			cantidadDeCasillerosQueDeberaRetroceder = unJugador.getNumeroTotalSacadoEnDados()
+					+ unJugador.cantidadDePropiedadesASuNombre();
 			retrocederJugadorUnaCantidadDeCasilleros(unJugador, cantidadDeCasillerosQueDeberaRetroceder);
-		} else if (unJugador.numeroTotalSacadoEnDados() <= 6) {
-			cantidadDeCasillerosQueDeberaRetroceder = unJugador.getEfectivo() * unJugador.numeroTotalSacadoEnDados()
+		} else if (unJugador.getNumeroTotalSacadoEnDados() <= 10) {
+			cantidadDeCasillerosQueDeberaRetroceder = unJugador.getEfectivo() * unJugador.getNumeroTotalSacadoEnDados()
 					% 100;
 			retrocederJugadorUnaCantidadDeCasilleros(unJugador, cantidadDeCasillerosQueDeberaRetroceder);
 		} else {
-			cantidadDeCasillerosQueDeberaRetroceder = unJugador.numeroTotalSacadoEnDados() - 2;
+			cantidadDeCasillerosQueDeberaRetroceder = unJugador.getNumeroTotalSacadoEnDados() - 2;
 			retrocederJugadorUnaCantidadDeCasilleros(unJugador, cantidadDeCasillerosQueDeberaRetroceder);
 		}
 	}
-
+	
 }
