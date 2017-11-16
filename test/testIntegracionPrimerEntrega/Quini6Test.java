@@ -1,10 +1,10 @@
-package testCaibles;
+package testIntegracionPrimerEntrega;
 import org.junit.Assert;
 import org.junit.Test;
 
 import caible.especiales.Quini6;
 import partida.Jugador;
-public class Quni6Test {
+public class Quini6Test {
 
 		@Test
 		public void unJugadorCaeUnaVezEnElQuini6YAumentaSuEfectivoEnCincuentaMil() {

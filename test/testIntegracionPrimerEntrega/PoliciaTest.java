@@ -1,4 +1,4 @@
-package testCaibles;
+package testIntegracionPrimerEntrega;
 
 import org.junit.Assert;
 import org.junit.Test;
