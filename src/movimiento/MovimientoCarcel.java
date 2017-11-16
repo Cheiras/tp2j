@@ -12,7 +12,7 @@ public class MovimientoCarcel implements MeMuevo {
 			
 	}
 	
-	public void mover(Jugador Prisionero) {
+	public void mover(Jugador Prisionero,int cantidad) {
 		
 		if(turnosEnCarcel == 3) {
 		
@@ -20,11 +20,11 @@ public class MovimientoCarcel implements MeMuevo {
 			
 			Prisionero.nuevoMovimiento(movimiento);
 			
+			return;
+			
 		}
 		
 		turnosEnCarcel += 1;
 		
-		
 	}
-
 }

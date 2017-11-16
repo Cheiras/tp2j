@@ -3,22 +3,25 @@ package testMovimiento;
 import org.junit.Assert;
 import org.junit.Test;
 
+import caible.especiales.Carcel;
 import movimiento.MeMuevo;
 import movimiento.MovimientoNormal;
 import partida.Jugador;
 
-public class MovimientoNormalAumentaEnUnoLaPosicionTest {
+public class JugadorCaeEnCarcelNoPuedeMoverseDeLaPosicionDeLaCarcelQueEsCincoTest {
 
 	@Test
 	public void test() {
-		MeMuevo movNormal = new MovimientoNormal();
-		Jugador Pedro = new Jugador(1000, movNormal);
-		
-		Pedro.avanzar(1);
-		
-		Pedro.avanzar(1);
-		
 
-		Assert.assertTrue(Pedro.getPosicion() == 2);
+		Carcel carcel = new Carcel();
+		MeMuevo movNormal = new MovimientoNormal();
+		Jugador Pedro = new Jugador(10000, movNormal);
+		
+		carcel.accionar(Pedro);
+		Pedro.avanzar(1);
+		Pedro.avanzar(1);
+		
+		Assert.assertTrue(Pedro.getPosicion() == 5);
+		
 	}
 }

@@ -45,9 +45,7 @@ public class Jugador {
 	}
 
 	public void avanzar(int cantidad) {
-		for(int i = 0; i<cantidad;i++) {
-			this.movimiento.mover(this);
-		}
+		this.movimiento.mover(this, cantidad);
 	}
 	
 	public void nuevoMovimiento(MeMuevo  nuevoMovimiento) {
@@ -56,7 +54,7 @@ public class Jugador {
 	}
 	
 	public void avanzarCasillero() {
-		this.posicion=+1;		
+		this.posicion+=1;		
 	}
 
 	public int numeroTotalSacadoEnDados() {
@@ -111,4 +109,5 @@ public class Jugador {
 	public boolean montoMenorA(int precioFianza) {
 		return (this.efectivoDisponible < precioFianza);
 	}
+
 }

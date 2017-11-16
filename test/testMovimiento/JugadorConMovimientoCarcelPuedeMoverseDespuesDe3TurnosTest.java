@@ -1,5 +1,7 @@
 package testMovimiento;
 
+
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -7,19 +9,19 @@ import movimiento.MeMuevo;
 import movimiento.MovimientoCarcel;
 import partida.Jugador;
 
-public class MovimientoCarcelNoModificaLaPosicionTest {
+public class JugadorConMovimientoCarcelPuedeMoverseDespuesDe3TurnosTest {
 
 	@Test
 	public void test() {
-		
 		MeMuevo movCarcel = new MovimientoCarcel();
 		Jugador Pepe = new Jugador(1000, movCarcel);
-
 		
-		Pepe.avanzar(1);
+		for(int i = 0; i <= 4; i++) {
+			Pepe.avanzar(1);			//avanza 1 casillero 5 veces
+		}
+	
+		Assert.assertTrue(Pepe.getPosicion() == 1 );
 		
-
-		Assert.assertTrue(Pepe.getPosicion() == 0);
 	}
 
 }

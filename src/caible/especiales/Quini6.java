@@ -9,15 +9,7 @@ public class Quini6 extends Caible {
 		this.posicion = 1;
 	}
 
-	public void accionar(Jugador unJugador) {
-
-	}
-
-	public void jugadorCayo(Jugador unJugador) {
-		this.unJugadorGanoElQuini(unJugador);
-	}
-
-	public void unJugadorGanoElQuini(Jugador unJugadorConSuerte) {
+	public void accionar(Jugador unJugadorConSuerte) {
 		unJugadorConSuerte.cobrarPremioDelQuini();
 	}
 }
