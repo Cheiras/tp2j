@@ -19,14 +19,14 @@ public class AvanceDinamico extends Caible {
 
 		int cantidadDeCasillerosQueDeberaAvanzar;
 
-		if (unJugador.numeroTotalSacadoEnDados() <= 6) {
-			cantidadDeCasillerosQueDeberaAvanzar = unJugador.numeroTotalSacadoEnDados() - 2;
+		if (unJugador.getNumeroTotalSacadoEnDados() <= 6) {
+			cantidadDeCasillerosQueDeberaAvanzar = unJugador.getNumeroTotalSacadoEnDados() - 2;
 			avanzarJugadorUnaCantidadDeCasilleros(unJugador, cantidadDeCasillerosQueDeberaAvanzar);
-		} else if (unJugador.numeroTotalSacadoEnDados() <= 6) {
-			cantidadDeCasillerosQueDeberaAvanzar = unJugador.getEfectivo() * unJugador.numeroTotalSacadoEnDados() % 100;
+		} else if (unJugador.getNumeroTotalSacadoEnDados() <= 10) {
+			cantidadDeCasillerosQueDeberaAvanzar = unJugador.getEfectivo() * unJugador.getNumeroTotalSacadoEnDados() % 100;
 			avanzarJugadorUnaCantidadDeCasilleros(unJugador, cantidadDeCasillerosQueDeberaAvanzar);
 		} else {
-			cantidadDeCasillerosQueDeberaAvanzar = unJugador.numeroTotalSacadoEnDados()
+			cantidadDeCasillerosQueDeberaAvanzar = unJugador.getNumeroTotalSacadoEnDados()
 					- unJugador.cantidadDePropiedadesASuNombre();
 			avanzarJugadorUnaCantidadDeCasilleros(unJugador, cantidadDeCasillerosQueDeberaAvanzar);
 		}
