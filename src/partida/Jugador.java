@@ -91,13 +91,6 @@ public class Jugador {
 		this.premioQuiniAGanar.avanzar();
 	}
 
-
-	public  void OpcionPagarFianza() {
-		//resto el efectivo
-		//modifico el movimiento u otro modifica el movimiento
-		return;
-	}
-
 	public void setPosicion(int nuevaPosicion) {
 		this.posicion = nuevaPosicion;
 	}
@@ -106,8 +99,8 @@ public class Jugador {
 		return this.posicion;
 	}
 
-	public boolean montoMenorA(int precioFianza) {
-		return (this.efectivoDisponible < precioFianza);
+	public boolean montoMenorA(int monto) {
+		return (this.efectivoDisponible < monto);
 	}
 
 }

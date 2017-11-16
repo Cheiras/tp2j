@@ -1,4 +1,4 @@
-package testPropiedadesEspeciales;
+package testCaibles;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ public class Quni6Test {
 			Quini6 quini=new Quini6();
 			Jugador unJugador=new Jugador(100000, null);
 			
-			quini.jugadorCayo(unJugador);
+			quini.accionar(unJugador);
 			
 			Assert.assertEquals(150000,unJugador.getEfectivo(),0.1);
 		}
@@ -21,8 +21,8 @@ public class Quni6Test {
 			Quini6 quini=new Quini6();
 			Jugador unJugador=new Jugador(100000, null);
 			
-			quini.jugadorCayo(unJugador);
-			quini.jugadorCayo(unJugador);
+			quini.accionar(unJugador);
+			quini.accionar(unJugador);
 			
 			Assert.assertEquals(180000,unJugador.getEfectivo(),0.1);	
 		}
@@ -32,11 +32,11 @@ public class Quni6Test {
 			Quini6 quini=new Quini6();
 			Jugador unJugador=new Jugador(100000, null);
 			
-			quini.jugadorCayo(unJugador);
-			quini.jugadorCayo(unJugador);
-			quini.jugadorCayo(unJugador);
-			quini.jugadorCayo(unJugador);
-			quini.jugadorCayo(unJugador);
+			quini.accionar(unJugador);
+			quini.accionar(unJugador);
+			quini.accionar(unJugador);
+			quini.accionar(unJugador);
+			quini.accionar(unJugador);
 			
 			Assert.assertEquals(180000,unJugador.getEfectivo(),0.1);
 		}

@@ -16,4 +16,8 @@ public abstract class Barrio  extends Propiedad{
 		
 	}
 	
+	public void comprar() {
+		
+	}
+	
 }

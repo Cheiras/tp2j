@@ -11,8 +11,8 @@ public class BarrioNormal extends Barrio {
 	private int precioConstruirHotel;
 
 	public BarrioNormal(String nombre, int precio, Jugador duenio, int posicion, int precioAlquiler, int precioAlquilerConUnaCasa,
-			int precioAlquilerConDosCasas, int precioAlquilerConHotel, int precioConstruirCasa,
-			int precioConstruirHotel) {
+		int precioAlquilerConDosCasas, int precioAlquilerConHotel, int precioConstruirCasa,
+		int precioConstruirHotel) {
 		super(nombre, precio, duenio, posicion,precioAlquiler);
 		this.precioAlquilerConUnaCasa = precioAlquilerConUnaCasa;
 		this.precioAlquilerConDosCasas = precioAlquilerConDosCasas;
