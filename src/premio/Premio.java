@@ -2,7 +2,7 @@ package premio;
 
 import partida.Jugador;
 
-public class Premio {
+public abstract class Premio {
 	
 	protected int valorPremio;
 	

@@ -1,10 +1,11 @@
 package partida;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
+import Excepciones.MontoInsuficiente;
 import caible.propiedades.Propiedad;
-import casilleros.Caible;
 import movimiento.MeMuevo;
+import movimiento.MovimientoNormal;
 import premio.Premio;
 import premio.Premio50k;
 
@@ -14,10 +15,8 @@ public class Jugador {
 
 	private int posicion;
 
-	private Caible casilleroActual;
-
 	int efectivoDisponible;
-	LinkedList<Propiedad> listaDePropiedades;
+	ArrayList<Propiedad> listaDePropiedades;
 	Premio premioQuini = new Premio50k();
 
 	int numeroTotalSacadoEnDados; // (Auxiliar para los tests de esta entrega.)
@@ -27,11 +26,10 @@ public class Jugador {
 		this.posicion = 0;
 		this.movimiento = movimientoNormal;
 		this.efectivoDisponible = efectivoInicial;
-		this.listaDePropiedades = new LinkedList<Propiedad>();
+		this.listaDePropiedades = new ArrayList<Propiedad>();
 	}
 
 	public int getEfectivo() {
-		// TODO Auto-generated method stub
 		return efectivoDisponible;
 	}
 
@@ -58,8 +56,7 @@ public class Jugador {
 	}
 
 	public int cantidadDePropiedadesASuNombre() {
-		// Tanto los terrenos como las casas como los hoteles suman como propiedad.
-		return 0;
+		return this.listaDePropiedades.size();
 	}
 
 	public void reducirEfectivo(int efectivoAReducir) {
@@ -75,11 +72,7 @@ public class Jugador {
 	}
 
 	public boolean contienePropiedad(Propiedad propiedadABuscar) {
-		int esta = this.listaDePropiedades.indexOf(propiedadABuscar);
-		if (esta != -1) {
-			return true;
-		}
-		return false;
+		return listaDePropiedades.contains(propiedadABuscar);
 	}
 
 	public void cobrarPremioDelQuini() {
