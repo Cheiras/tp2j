@@ -1,5 +1,6 @@
 package caible.especiales;
 
+import Excepciones.FianzaInhabilitadaException;
 import Excepciones.MontoInsuficiente;
 import casilleros.Caible;
 import movimiento.MeMuevo;
@@ -22,8 +23,20 @@ public class Carcel extends Caible {
 		unJugador.setPosicion(this.posicion);
 	}
 	
-	public int getPrecioFianza() {
-		return this.precioFianza;
+	public void pagarFianza(Jugador unJugador) throws RuntimeException {
+		
+		if(unJugador.montoMenorA(this.precioFianza)) {
+			throw new MontoInsuficiente("No tienes dinero suficiente para pagar la fianza");
+		}
+		if(unJugador.estadoDeHabilitacion()) {
+			
+			MeMuevo movNormal = new MovimientoNormal();
+			unJugador.nuevoMovimiento(movNormal);
+			unJugador.reducirEfectivo(this.precioFianza);
+			return;
+			
+		}
+		throw new FianzaInhabilitadaException("No estas habilitado a pagar la fianza");
 	}
 
 }

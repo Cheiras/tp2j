@@ -2,10 +2,8 @@ package partida;
 
 import java.util.ArrayList;
 
-import Excepciones.MontoInsuficiente;
 import caible.propiedades.Propiedad;
 import movimiento.MeMuevo;
-import movimiento.MovimientoNormal;
 import premio.Premio;
 import premio.Premio50k;
 
@@ -20,6 +18,8 @@ public class Jugador {
 	Premio premioQuini = new Premio50k();
 
 	int numeroTotalSacadoEnDados; // (Auxiliar para los tests de esta entrega.)
+
+	private boolean habilitadoAPagarFianza = false;
 
 	public Jugador(int efectivoInicial, MeMuevo movimientoNormal) {
 
@@ -97,5 +97,15 @@ public class Jugador {
 
 	public void setPremio(Premio unPremio) {
 		this.premioQuini = unPremio;
+	}
+
+	public boolean estadoDeHabilitacion() {
+		return this.habilitadoAPagarFianza;
+	}
+	public void deshabilitar() {
+		this.habilitadoAPagarFianza = false;
+	}
+	public void habilitar() {
+		this.habilitadoAPagarFianza = true;
 	}
 }

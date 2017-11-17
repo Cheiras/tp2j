@@ -9,6 +9,8 @@ public class MovimientoCarcelDiaTres implements MeMuevo {
 		MeMuevo movimiento = new MovimientoNormal();
 
 		Prisionero.nuevoMovimiento(movimiento);
+		
+		Prisionero.deshabilitar();
 	}
 
 }
