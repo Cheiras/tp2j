@@ -21,7 +21,7 @@ public class RetrocesoDinamico extends Caible {
 		int valorDados = unJugador.getNumeroTotalSacadoEnDados();
 
 		if (unJugador.getNumeroTotalSacadoEnDados() <= 6) {
-			cantidadDeCasillerosQueDeberaRetroceder = valorDados + unJugador.cantidadDePropiedadesASuNombre();
+			cantidadDeCasillerosQueDeberaRetroceder = valorDados - unJugador.cantidadDePropiedadesASuNombre();
 		} else if (unJugador.getNumeroTotalSacadoEnDados() <= 10) {
 			cantidadDeCasillerosQueDeberaRetroceder = unJugador.getEfectivo() * valorDados % 100;
 		} else {

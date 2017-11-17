@@ -19,7 +19,7 @@ public class AvanceDinamico extends Caible {
 
 		int cantidadDeCasillerosQueDeberaAvanzar;
 		int valorDados = unJugador.getNumeroTotalSacadoEnDados();
-
+		
 		if (unJugador.getNumeroTotalSacadoEnDados() <= 6) {
 			cantidadDeCasillerosQueDeberaAvanzar = valorDados - 2;
 		} else if (unJugador.getNumeroTotalSacadoEnDados() <= 10) {
