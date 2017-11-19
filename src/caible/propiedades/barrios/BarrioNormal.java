@@ -10,10 +10,10 @@ public class BarrioNormal extends Barrio {
 	private int precioConstruirCasa;
 	private int precioConstruirHotel;
 
-	public BarrioNormal(String nombre, int precio, Jugador duenio, int posicion, int precioAlquiler, int precioAlquilerConUnaCasa,
-		int precioAlquilerConDosCasas, int precioAlquilerConHotel, int precioConstruirCasa,
-		int precioConstruirHotel) {
-		super(nombre, precio, duenio, posicion,precioAlquiler);
+	public BarrioNormal(String nombre, int precio, Jugador duenio, int posicion, int precioAlquiler,
+			int precioAlquilerConUnaCasa, int precioAlquilerConDosCasas, int precioAlquilerConHotel,
+			int precioConstruirCasa, int precioConstruirHotel) {
+		super(nombre, precio, duenio, posicion, precioAlquiler);
 		this.precioAlquilerConUnaCasa = precioAlquilerConUnaCasa;
 		this.precioAlquilerConDosCasas = precioAlquilerConDosCasas;
 		this.precioAlquilerConHotel = precioAlquilerConHotel;
@@ -66,10 +66,13 @@ public class BarrioNormal extends Barrio {
 	}
 
 	public void cobrarAlquiler(Jugador unJugador) {
-		/*Pora ahora para probar los comportamientos del juego pedidos por la entrega*/
-		int costoAlquiler=this.getPrecioAlquiler();
+		/*
+		 * Pora ahora para probar los comportamientos del juego pedidos por la
+		 * entrega
+		 */
+		int costoAlquiler = this.getPrecioAlquiler();
 		unJugador.reducirEfectivo(costoAlquiler);
-		/*Habria que evaluar si tiene efectivo suficiente*/
+		/* Habria que evaluar si tiene efectivo suficiente */
 		this.duenio.aumentarEfectivo(costoAlquiler);
 	}
 
@@ -80,6 +83,5 @@ public class BarrioNormal extends Barrio {
 	public void construirHotel() {
 
 	}
-
 
 }

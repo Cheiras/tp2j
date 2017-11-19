@@ -22,15 +22,14 @@ public abstract class Propiedad extends Caible {
 	}
 
 	public void accionar(Jugador unJugador) {
-		
+
 		this.estadoDuenio.jugadorCayo(unJugador, this);
-		
-		
+
 	}
-	
+
 	public int getPrecioDeCompra() {
 		return precio;
-	};
+	}
 
 	public void setDuenio(Jugador nuevoDuenio) {
 		this.duenio = nuevoDuenio;

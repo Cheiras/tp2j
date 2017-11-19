@@ -11,13 +11,4 @@ public abstract class Barrio  extends Propiedad{
 		super(nombre, precio, duenio, posicion);
 		this.precioAlquiler = precioAlquiler;
 	}
-	
-	public void cobrarAlquiler(Jugador unJugador){
-		
-	}
-	
-	public void comprar() {
-		
-	}
-	
 }
