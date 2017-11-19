@@ -1,22 +1,29 @@
 package caible.propiedades.compania;
 
 import caible.propiedades.Propiedad;
+import calculadoras.CalculadoraCompanias;
 import partida.Jugador;
 
 public class Compania extends Propiedad{
 	
-	private int multiplicador;
+	private int multiplicadorComun;
+	private int multiplicadorEspecial; // <-Se usa cuando hay un jugador que posee trenes y subtes
+	private CalculadoraCompanias calculadoraCompanias;
 
-	public Compania(String nombre, int precio, Jugador duenio, int posicion, int multiplicador) {
+	public Compania(String nombre, int precio, Jugador duenio, int posicion, int multiplicadorComun, int multiplicadorEspecial) {
 		super(nombre, precio, duenio, posicion);
-		this.multiplicador = multiplicador;
+		this.multiplicadorComun = multiplicadorComun;
+		this.multiplicadorEspecial = multiplicadorEspecial;
 	}
 
-	
-	//HAY QUE AGREGAR LA LOGICA SI TIENE LAS DOS COMPANIAS PARA EL MULTIPLICADOR.
-	public void cobrarAlquiler(){
-		//int costoAlquiler =turno.valorDados()*this.multiplicador;
-		//unJugador.reducirEfectivo(costoAlquiler);
-		//this.duenio.aumentarEfectivo(costoAlquiler);
+	public void cobrarAlquiler(Jugador unJugador){
+		// Todavia no se me ocurre como hacer que Subte y Tren usen un metodo
+		//y Aysa y Edesur el otro sin repetir codigo, y tambien 
+		//necesito una referencia a la calculadora
+		int costoAlquiler = calculadoraCompanias.PrecioDeAlquilerAysEde(
+				unJugador.getNumeroTotalSacadoEnDados(),
+				multiplicadorComun, multiplicadorEspecial);
+		unJugador.reducirEfectivo(costoAlquiler);
+		this.duenio.aumentarEfectivo(costoAlquiler);
 	}
 }

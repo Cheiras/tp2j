@@ -43,7 +43,7 @@ public class Partida {
 		
 		Caible avanzeDinamico = new AvanceDinamico();
 		
-		Caible subte = new Compania("Subte", 40000, noJugador, 8, 600);
+		Caible subte = new Subte();
 		
 		Caible cordobaNorte = new BarrioNormal("Cordoba Norte", 20000, noJugador, 9, 1300, 1800, 2900, 3500, 2200,
 				3500);
