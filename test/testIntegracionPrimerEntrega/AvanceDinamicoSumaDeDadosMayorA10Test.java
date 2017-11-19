@@ -10,7 +10,7 @@ import movimiento.MeMuevo;
 import movimiento.MovimientoNormal;
 import partida.Jugador;
 
-public class AvanceDinamicoSumaDeDadosMayorA10 {
+public class AvanceDinamicoSumaDeDadosMayorA10Test {
 	
 	MeMuevo movNormal = new MovimientoNormal();
 	Jugador jugador = new Jugador(200000, movNormal);

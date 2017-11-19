@@ -8,7 +8,7 @@ import movimiento.MeMuevo;
 import movimiento.MovimientoNormal;
 import partida.Jugador;
 
-public class RetrocesoDinamicoSumaDeDadosMayorA10 {
+public class RetrocesoDinamicoSumaDeDadosMayorA10Test {
 	
 	MeMuevo movNormal = new MovimientoNormal();
 	Jugador jugador = new Jugador(0, movNormal);
