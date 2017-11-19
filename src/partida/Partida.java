@@ -8,6 +8,8 @@ import caible.propiedades.barrios.BuenosAiresNorte;
 import caible.propiedades.barrios.BuenosAiresSur;
 import caible.propiedades.barrios.CordobaSur;
 import caible.propiedades.compania.Compania;
+import caible.propiedades.compania.Edesur;
+import caible.propiedades.compania.Subte;
 import casilleros.Caible;
 import movimiento.Dado;
 
@@ -31,7 +33,7 @@ public class Partida {
 		Caible buenosAiresSur = new BuenosAiresSur("Buenos Aires Sur", 20000, noJugador, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
 		
-		Caible edesur = new Compania("Edesur", 35000, noJugador, 3, 500);
+		Caible edesur = new Edesur();
 		
 		Caible buenosAiresNorte = new BuenosAiresNorte("Buenos Aires Norte", 25000, noJugador, 4, 2500, 3500, 4000, 6000, 5500,
 				9000);
