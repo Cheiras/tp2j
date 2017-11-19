@@ -4,6 +4,9 @@ import caible.especiales.AvanceDinamico;
 import caible.especiales.Carcel;
 import caible.especiales.Quini6;
 import caible.propiedades.barrios.BarrioNormal;
+import caible.propiedades.barrios.BuenosAiresNorte;
+import caible.propiedades.barrios.BuenosAiresSur;
+import caible.propiedades.barrios.CordobaSur;
 import caible.propiedades.compania.Compania;
 import casilleros.Caible;
 import movimiento.Dado;
@@ -25,17 +28,17 @@ public class Partida {
 		//TODO ESTO IRIA AL TABLERO.
 		Caible quini6 = new Quini6();
 		
-		Caible buenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, noJugador, 2, 2000, 3000, 3500, 5000, 5000,
+		Caible buenosAiresSur = new BuenosAiresSur("Buenos Aires Sur", 20000, noJugador, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
 		
 		Caible edesur = new Compania("Edesur", 35000, noJugador, 3, 500);
 		
-		Caible buenosAiresNorte = new BarrioNormal("Buenos Aires Norte", 25000, noJugador, 4, 2500, 3500, 4000, 6000, 5500,
+		Caible buenosAiresNorte = new BuenosAiresNorte("Buenos Aires Norte", 25000, noJugador, 4, 2500, 3500, 4000, 6000, 5500,
 				9000);
 		
 		Caible carcel = new Carcel();
 		
-		Caible cordobaSur = new BarrioNormal("Cordoba Sur", 18000, noJugador, 6, 1000, 1500, 2500, 3000, 2000,
+		Caible cordobaSur = new CordobaSur("Cordoba Sur", 18000, noJugador, 6, 1000, 1500, 2500, 3000, 2000,
 				3000);
 		
 		Caible avanzeDinamico = new AvanceDinamico();
