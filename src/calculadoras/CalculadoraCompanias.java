@@ -18,7 +18,7 @@ public class CalculadoraCompanias {
 		companiaEdesur = edesur;
 	}
 	public int PrecioDeAlquilerTrSubt(int valorDados, int multiplicadorComun, int multiplicadorEspecial) {
-		if (companiaSubte.obtenerDuenio()==companiaTren.obtenerDuenio()) {
+		if (companiaSubte.obtenerDuenio() == companiaTren.obtenerDuenio()) {
 			return valorDados*multiplicadorEspecial;
 		}
 		return valorDados*multiplicadorComun;
