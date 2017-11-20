@@ -1,6 +1,6 @@
 package premio;
 
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class Premio50k extends Premio {
 	

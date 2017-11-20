@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import movimiento.MeMuevo;
 import movimiento.MovimientoNormal;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class MovimientoNormalAumentaEnUnoLaPosicionTest {
 

@@ -8,7 +8,7 @@ import caible.propiedades.barrios.Barrio;
 import caible.propiedades.barrios.BarrioNormal;
 import movimiento.MeMuevo;
 import movimiento.MovimientoNormal;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 
 public class RetrocesoDinamicoSumaDeDadosMenorA7Test {

@@ -1,6 +1,6 @@
 package movimiento;
 
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class MovimientoCarcelDiaUno implements MeMuevo {
 

@@ -6,7 +6,7 @@ import org.junit.Test;
 import caible.especiales.Carcel;
 import caible.especiales.Policia;
 import casilleros.Caible;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 
 

@@ -1,6 +1,6 @@
 package caible.propiedades.barrios;
 
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class CordobaSur extends BarrioNormal {
 

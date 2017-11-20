@@ -1,4 +1,4 @@
-package testMovimiento;
+package testIntegracionPrimerEntrega;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 import caible.especiales.Carcel;
 import movimiento.MeMuevo;
 import movimiento.MovimientoNormal;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class JugadorPuedePagarFianzaLuegoDelPrimerTurnoPresoTest {
 

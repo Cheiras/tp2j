@@ -1,6 +1,6 @@
 package casilleros;
 
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public abstract class Caible {
 

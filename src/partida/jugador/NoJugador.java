@@ -1,7 +1,6 @@
 package partida.jugador;
 
 import movimiento.MeMuevo;
-import partida.Jugador;
 
 public class NoJugador extends Jugador{
 

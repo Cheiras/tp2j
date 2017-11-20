@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import movimiento.MeMuevo;
 import movimiento.MovimientoCarcelDiaUno;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class JugadorConMovimientoCarcelPuedeMoverseDespuesDe3TurnosTest {
 

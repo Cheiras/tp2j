@@ -4,7 +4,7 @@ import casilleros.Caible;
 import estadoDuenio.ConDuenio;
 import estadoDuenio.EstadoDuenio;
 import estadoDuenio.SinDuenio;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public abstract class Propiedad extends Caible {
 

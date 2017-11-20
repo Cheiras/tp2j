@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import caible.propiedades.barrios.Barrio;
 import caible.propiedades.barrios.BarrioNormal;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class PropiedadTest {
 

@@ -6,7 +6,7 @@ import org.junit.Test;
 import caible.especiales.AvanceDinamico;
 import movimiento.MeMuevo;
 import movimiento.MovimientoNormal;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 
 public class AvanceDinamicoSumaDeDadosMenorA7Test {

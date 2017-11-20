@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import caible.especiales.Quini6;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class Quini6Test {
 

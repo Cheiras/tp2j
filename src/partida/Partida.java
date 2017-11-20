@@ -37,5 +37,9 @@ public class Partida {
 	public Jugador jugadorActual() {
 		return jugadorActual;
 	}
+	
+	public int getTurno(){
+		return this.turno;
+	}
 
 }

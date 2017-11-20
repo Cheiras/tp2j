@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import caible.especiales.ImpuestoDeLujo;
 import casilleros.Caible;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class ImpuestoDeLujoReduceCorrectamenteElEfectivoDelJugadorTest {
 

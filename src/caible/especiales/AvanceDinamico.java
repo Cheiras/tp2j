@@ -1,7 +1,7 @@
 package caible.especiales;
 
 import casilleros.Caible;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class AvanceDinamico extends Caible {
 

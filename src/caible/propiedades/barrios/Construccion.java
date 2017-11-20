@@ -1,7 +1,7 @@
 package caible.propiedades.barrios;
 
 import excepciones.MontoInsuficienteException;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public abstract class Construccion {
 	

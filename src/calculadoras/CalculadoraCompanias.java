@@ -4,7 +4,7 @@ import caible.propiedades.compania.Aysa;
 import caible.propiedades.compania.Edesur;
 import caible.propiedades.compania.Subte;
 import caible.propiedades.compania.Trenes;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class CalculadoraCompanias {
 	private Subte companiaSubte;

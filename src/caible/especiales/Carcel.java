@@ -6,7 +6,7 @@ import excepciones.MontoInsuficienteException;
 import movimiento.MeMuevo;
 import movimiento.MovimientoCarcelDiaUno;
 import movimiento.MovimientoNormal;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class Carcel extends Caible {
 

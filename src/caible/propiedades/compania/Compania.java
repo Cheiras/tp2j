@@ -2,7 +2,7 @@ package caible.propiedades.compania;
 
 import caible.propiedades.Propiedad;
 import calculadoras.CalculadoraCompanias;
-import partida.Jugador;
+import partida.jugador.Jugador;
 
 public class Compania extends Propiedad{
 	
