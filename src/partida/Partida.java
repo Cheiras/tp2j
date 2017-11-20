@@ -34,6 +34,8 @@ public class Partida {
 		jugadorActual = jugadores.get(turno % 3);
 
 		tablero = new Tablero();
+		
+		
 
 	}
 

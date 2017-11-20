@@ -1,8 +1,8 @@
 package partida.turno;
 
-import movimiento.Dado;
 import movimiento.Tirador;
 import partida.jugador.Jugador;
+import partida.tablero.Tablero;
 
 public class Turno {
 
@@ -11,6 +11,6 @@ public class Turno {
 	public Turno(Jugador unJugador, Tirador tirador, Tablero tablero){
 		valorTirada = tirador.tirar();
 		unJugador.avanzar(valorTirada);
-		tablero.
+		
 	}
 }
