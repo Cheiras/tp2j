@@ -1,4 +1,4 @@
-package partida;
+package partida.jugador;
 
 import java.util.ArrayList;
 
