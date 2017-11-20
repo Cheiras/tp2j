@@ -52,6 +52,8 @@ public class Jugador {
 		this.posicion += 1;
 	}
 
+	
+	//Solo para pruebas, lo contiene el turno.
 	public int getNumeroTotalSacadoEnDados() {
 		return numeroTotalSacadoEnDados;
 	}
@@ -92,6 +94,7 @@ public class Jugador {
 		return (this.efectivoDisponible < monto);
 	}
 
+	//Solo para pruebas, lo contiene el turno.
 	public void setNumeroTotalSacadoEnDados(int numero) {
 		numeroTotalSacadoEnDados = numero;
 	}
