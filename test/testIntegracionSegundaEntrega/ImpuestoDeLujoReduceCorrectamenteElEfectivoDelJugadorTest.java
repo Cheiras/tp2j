@@ -10,7 +10,7 @@ import partida.Jugador;
 public class ImpuestoDeLujoReduceCorrectamenteElEfectivoDelJugadorTest {
 
 	Caible impuestoDeLujo = new ImpuestoDeLujo();
-	Jugador unJugador = new Jugador(100000, null);
+	Jugador unJugador = new Jugador("", 100000, null);
 
 	@Test
 	public void test() {

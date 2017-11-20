@@ -12,20 +12,18 @@ public class JugadorPuedePagarFianzaLuegoDelPrimerTurnoPresoTest {
 
 	@Test
 	public void test() {
-		
+
 		Carcel carcel = new Carcel();
 		MeMuevo movInicial = new MovimientoNormal();
-		Jugador pepe = new Jugador(100000,movInicial);
-		
+		Jugador pepe = new Jugador("", 100000, movInicial);
+
 		carcel.accionar(pepe);
 		pepe.avanzar(1);
 		carcel.pagarFianza(pepe);
 		pepe.avanzar(1);
-		
+
 		Assert.assertEquals(pepe.getPosicion(), 6);
-		
-		
-		
+
 	}
 
 }

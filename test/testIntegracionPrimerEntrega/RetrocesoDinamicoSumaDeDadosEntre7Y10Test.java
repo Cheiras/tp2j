@@ -11,7 +11,7 @@ import partida.Jugador;
 public class RetrocesoDinamicoSumaDeDadosEntre7Y10Test{
 	
 	MeMuevo movNormal = new MovimientoNormal();
-	Jugador jugador = new Jugador(0, movNormal);
+	Jugador jugador = new Jugador("", 0, movNormal);
 	
 	
 	RetrocesoDinamico retrocesoDinamico = new RetrocesoDinamico();

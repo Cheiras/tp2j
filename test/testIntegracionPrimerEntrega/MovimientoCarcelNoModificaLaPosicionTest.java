@@ -13,7 +13,7 @@ public class MovimientoCarcelNoModificaLaPosicionTest {
 	public void test() {
 		
 		MeMuevo movCarcel = new MovimientoCarcelDiaUno();
-		Jugador Pepe = new Jugador(1000, movCarcel);
+		Jugador Pepe = new Jugador("", 1000, movCarcel);
 
 		
 		Pepe.avanzar(1);

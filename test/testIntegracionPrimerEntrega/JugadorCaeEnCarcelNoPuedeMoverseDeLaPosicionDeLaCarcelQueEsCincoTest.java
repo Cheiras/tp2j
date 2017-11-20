@@ -15,7 +15,7 @@ public class JugadorCaeEnCarcelNoPuedeMoverseDeLaPosicionDeLaCarcelQueEsCincoTes
 
 		Carcel carcel = new Carcel();
 		MeMuevo movNormal = new MovimientoNormal();
-		Jugador Pedro = new Jugador(10000, movNormal);
+		Jugador Pedro = new Jugador("", 10000, movNormal);
 		
 		carcel.accionar(Pedro);
 		Pedro.avanzar(1);

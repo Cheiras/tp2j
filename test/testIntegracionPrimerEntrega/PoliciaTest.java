@@ -16,7 +16,7 @@ public class PoliciaTest {
 	public void test() {
 		Caible carcel = new Carcel();
 		Caible policia = new Policia(carcel);
-		Jugador jugador = new Jugador(0, null);
+		Jugador jugador = new Jugador("", 0, null);
 		policia.accionar(jugador);
 		
 		Assert.assertEquals(jugador.getPosicion(), carcel.getPosicion());

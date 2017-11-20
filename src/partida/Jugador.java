@@ -12,17 +12,18 @@ public class Jugador {
 	private MeMuevo movimiento;
 
 	private int posicion;
-
-	int efectivoDisponible;
-	ArrayList<Propiedad> listaDePropiedades;
-	Premio premioQuini = new Premio50k();
+	private String nombre;
+	private int efectivoDisponible;
+	private ArrayList<Propiedad> listaDePropiedades;
+	private Premio premioQuini = new Premio50k();
 
 	int numeroTotalSacadoEnDados; // (Auxiliar para los tests de esta entrega.)
 
 	private boolean habilitadoAPagarFianza = false;
 
-	public Jugador(int efectivoInicial, MeMuevo movimientoNormal) {
-
+	public Jugador(String nombre, int efectivoInicial, MeMuevo movimientoNormal) {
+		
+		this.nombre = nombre;
 		this.posicion = 0;
 		this.movimiento = movimientoNormal;
 		this.efectivoDisponible = efectivoInicial;
@@ -110,4 +111,9 @@ public class Jugador {
 	public void habilitar() {
 		this.habilitadoAPagarFianza = true;
 	}
+	
+	public String toString(){
+		return String.format("%s", this.nombre);
+	}
+	
 }

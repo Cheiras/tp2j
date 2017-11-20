@@ -14,7 +14,7 @@ import partida.Jugador;
 public class RetrocesoDinamicoSumaDeDadosMenorA7Test {
 	
 	MeMuevo movNormal = new MovimientoNormal();
-	Jugador jugador = new Jugador(100000, movNormal);
+	Jugador jugador = new Jugador("", 100000, movNormal);
 	
 	RetrocesoDinamico retrocesoDinamico = new RetrocesoDinamico();
 	

@@ -13,7 +13,7 @@ import partida.Jugador;
 public class AvanceDinamicoSumaDeDadosMayorA10Test {
 	
 	MeMuevo movNormal = new MovimientoNormal();
-	Jugador jugador = new Jugador(200000, movNormal);
+	Jugador jugador = new Jugador("", 200000, movNormal);
 	
 	AvanceDinamico avanceDinamico = new AvanceDinamico();
 	

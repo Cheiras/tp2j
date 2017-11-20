@@ -12,7 +12,7 @@ public class MovimientoNormalAumentaEnUnoLaPosicionTest {
 	@Test
 	public void test() {
 		MeMuevo movNormal = new MovimientoNormal();
-		Jugador Pedro = new Jugador(1000, movNormal);
+		Jugador Pedro = new Jugador("", 1000, movNormal);
 		
 		Pedro.avanzar(1);
 		

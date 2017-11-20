@@ -11,7 +11,7 @@ import partida.Jugador;
 public class AvanceDinamicoSumaDeDadosEntre7Y10Test {
 
 	MeMuevo movNormal = new MovimientoNormal();
-	Jugador jugador = new Jugador(0, movNormal);
+	Jugador jugador = new Jugador("", 0, movNormal);
 
 	AvanceDinamico avanceDinamico = new AvanceDinamico();
 
