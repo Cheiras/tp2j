@@ -1,8 +1,8 @@
 package caible.especiales;
 
-import Excepciones.FianzaInhabilitadaException;
-import Excepciones.MontoInsuficienteException;
 import casilleros.Caible;
+import excepciones.FianzaInhabilitadaException;
+import excepciones.MontoInsuficienteException;
 import movimiento.MeMuevo;
 import movimiento.MovimientoCarcelDiaUno;
 import movimiento.MovimientoNormal;
