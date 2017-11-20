@@ -23,7 +23,7 @@ import caible.propiedades.compania.Edesur;
 import caible.propiedades.compania.Subte;
 import caible.propiedades.compania.Trenes;
 import casilleros.Caible;
-import partida.NoJugador;
+import partida.jugador.NoJugador;
 
 public class Tablero {
 

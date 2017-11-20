@@ -1,9 +1,10 @@
-package partida;
+package partida.jugador;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 import movimiento.Dado;
+import partida.Jugador;
 import partida.tablero.Tablero;
 
 public class Partida {
