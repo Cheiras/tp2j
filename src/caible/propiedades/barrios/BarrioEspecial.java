@@ -4,17 +4,17 @@ import partida.Jugador;
 
 public class BarrioEspecial extends Barrio {
 
-	private int precioAlquilerConEdificioHistorico;
+	private int precioAlquilerConUnicoEdificio;
 	private int precioConstruirEdificioHistorico;
 	
-	public BarrioEspecial(String nombre, int precio, Jugador duenio, int posicion, int precioAlquiler, int precioAlquilerConEdificioHistorico, int precioConstruirEdificioHistorico){
+	public BarrioEspecial(String nombre, int precio, Jugador duenio, int posicion, int precioAlquiler, int precioAlquilerConUnicoEdificio, int precioConstruirEdificioHistorico){
 		super(nombre, precio, duenio, posicion, precioAlquiler);
-		this.precioAlquilerConEdificioHistorico = precioAlquilerConEdificioHistorico;
+		this.precioAlquilerConUnicoEdificio = precioAlquilerConUnicoEdificio;
 		this.precioConstruirEdificioHistorico = precioConstruirEdificioHistorico;
 	}
 
-	public int getPrecioAlquilerConEdificioHistorico() {
-		return precioAlquilerConEdificioHistorico;
+	public int getprecioAlquilerConUnicoEdificio() {
+		return precioAlquilerConUnicoEdificio;
 	}
 
 	public int getPrecioConstruirEdificioHistorico() {

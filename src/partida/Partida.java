@@ -2,14 +2,23 @@ package partida;
 
 import caible.especiales.AvanceDinamico;
 import caible.especiales.Carcel;
+import caible.especiales.ImpuestoDeLujo;
+import caible.especiales.Policia;
 import caible.especiales.Quini6;
+import caible.especiales.RetrocesoDinamico;
 import caible.propiedades.barrios.BarrioNormal;
 import caible.propiedades.barrios.BuenosAiresNorte;
 import caible.propiedades.barrios.BuenosAiresSur;
 import caible.propiedades.barrios.CordobaSur;
-import caible.propiedades.compania.Compania;
+import caible.propiedades.barrios.Neuquen;
+import caible.propiedades.barrios.SaltaNorte;
+import caible.propiedades.barrios.SaltaSur;
+import caible.propiedades.barrios.SantaFe;
+import caible.propiedades.barrios.Tucuman;
+import caible.propiedades.compania.Aysa;
 import caible.propiedades.compania.Edesur;
 import caible.propiedades.compania.Subte;
+import caible.propiedades.compania.Trenes;
 import casilleros.Caible;
 import movimiento.Dado;
 
@@ -49,6 +58,27 @@ public class Partida {
 		
 		Caible cordobaNorte = new BarrioNormal("Cordoba Norte", 20000, noJugador, 9, 1300, 1800, 2900, 3500, 2200,
 				3500);
+		
+		Caible impuestoDeLujo = new ImpuestoDeLujo();
+		
+		Caible santaFe = new SantaFe("Santa Fe", 15000, noJugador, 11, 1500, 3500, 4000);
+		
+		Caible aysa = new Aysa("Aysa", 30000, noJugador, 12, 300, 500);
+		
+		Caible saltaNorte = new SaltaNorte("Salta Norte", 23000, noJugador, 13, 2000, 3250, 3850, 5500, 4500, 7500);
+		
+		Caible saltaSur = new SaltaSur("Salta Sur", 23000, noJugador, 14, 2000, 3250, 3850, 5500, 4500, 7500);
+		
+		Caible policia = new Policia(carcel);
+		
+		Caible trenes = new Trenes("Trenes", 3800, noJugador, 16, 450, 800);
+		
+		Caible neuquen = new Neuquen("Neuquen", 17000, noJugador, 17, 1800, 3800, 4800);
+		
+		Caible retrocesoDinamico = new RetrocesoDinamico();
+		
+		Caible tucuman = new Tucuman("Tucuman", 25000, noJugador, 19, 2500, 4500, 7000);
+		
 		
 
 	}

@@ -6,6 +6,10 @@ import partida.Jugador;
 public class ImpuestoDeLujo extends Caible {
 
 	private double porcentaje = 10;
+	
+	public ImpuestoDeLujo(){
+		this.posicion = 10;
+	}
 
 	public void accionar(Jugador unJugador) {
 		double impuestoTotal = unJugador.getEfectivo() * (porcentaje / 100);
