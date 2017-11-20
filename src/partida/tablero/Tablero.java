@@ -55,15 +55,15 @@ public class Tablero {
 
 	Caible santaFe = new SantaFe("Santa Fe", 15000, noJugador, 11, 1500, 3500, 4000);
 
-	Caible aysa = new Aysa("Aysa", 30000, noJugador, 12, 300, 500);
-
+	Caible aysa = new Aysa();
+	
 	Caible saltaNorte = new SaltaNorte("Salta Norte", 23000, noJugador, 13, 2000, 3250, 3850, 5500, 4500, 7500);
 
 	Caible saltaSur = new SaltaSur("Salta Sur", 23000, noJugador, 14, 2000, 3250, 3850, 5500, 4500, 7500);
 
 	Caible policia = new Policia(carcel);
 
-	Caible trenes = new Trenes("Trenes", 3800, noJugador, 16, 450, 800);
+	Caible trenes = new Trenes();
 
 	Caible neuquen = new Neuquen("Neuquen", 17000, noJugador, 17, 1800, 3800, 4800);
 
