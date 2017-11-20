@@ -102,9 +102,11 @@ public class Jugador {
 	public boolean estadoDeHabilitacion() {
 		return this.habilitadoAPagarFianza;
 	}
+
 	public void deshabilitar() {
 		this.habilitadoAPagarFianza = false;
 	}
+
 	public void habilitar() {
 		this.habilitadoAPagarFianza = true;
 	}

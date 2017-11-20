@@ -1,7 +1,6 @@
 package partida.tablero;
 
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 import caible.especiales.AvanceDinamico;
 import caible.especiales.Carcel;
@@ -29,9 +28,9 @@ import partida.NoJugador;
 public class Tablero {
 
 	NoJugador noJugador = new NoJugador(0, null);
-	
+
 	Caible salida = new Salida();
-	
+
 	Caible quini6 = new Quini6();
 
 	Caible buenosAiresSur = new BuenosAiresSur("Buenos Aires Sur", 20000, noJugador, 2, 2000, 3000, 3500, 5000, 5000,
@@ -72,4 +71,32 @@ public class Tablero {
 
 	Caible tucuman = new Tucuman("Tucuman", 25000, noJugador, 19, 2500, 4500, 7000);
 
+	ArrayList<Caible> tablero = new ArrayList<Caible>();
+	
+	public Tablero(){
+		tablero.add(salida);
+		tablero.add(quini6);
+		tablero.add(buenosAiresSur);
+		tablero.add(edesur);
+		tablero.add(buenosAiresNorte);
+		tablero.add(carcel);
+		tablero.add(cordobaSur);
+		tablero.add(avanzeDinamico);
+		tablero.add(subte);
+		tablero.add(cordobaNorte);
+		tablero.add(impuestoDeLujo);
+		tablero.add(santaFe);
+		tablero.add(aysa);
+		tablero.add(saltaNorte);
+		tablero.add(saltaSur);
+		tablero.add(policia);
+		tablero.add(trenes);
+		tablero.add(neuquen);
+		tablero.add(retrocesoDinamico);
+		tablero.add(tucuman);
+	}
+	
+	public ArrayList<Caible> getTablero(){
+		return this.tablero;
+	}
 }
