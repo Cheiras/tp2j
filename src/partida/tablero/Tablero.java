@@ -96,7 +96,7 @@ public class Tablero {
 		tablero.add(tucuman);
 	}
 	
-	public ArrayList<Caible> getTablero(){
-		return this.tablero;
+	public Caible getCaible(int posicion){
+		return tablero.get(posicion);
 	}
 }
