@@ -8,6 +8,7 @@ import partida.tablero.Tablero;
 
 public class Partida {
 
+	//bla
 	private Jugador jugadorActual;
 	private Jugador jugador1 = new Jugador("J1", 100000, null);
 	private Jugador jugador2 = new Jugador("J2", 100000, null);
