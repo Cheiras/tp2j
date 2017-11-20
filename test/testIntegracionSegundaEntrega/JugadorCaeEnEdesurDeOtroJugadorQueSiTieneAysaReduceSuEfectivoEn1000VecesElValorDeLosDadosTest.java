@@ -7,7 +7,7 @@ import caible.propiedades.compania.Aysa;
 import caible.propiedades.compania.Edesur;
 import partida.jugador.Jugador;
 
-public class JugadorCaeEnEdesurDeOtroJugadorQueNoTieneAysaReduceSuEfectivoEn500VecesElValorDeLosDados {
+public class JugadorCaeEnEdesurDeOtroJugadorQueSiTieneAysaReduceSuEfectivoEn1000VecesElValorDeLosDadosTest {
 	Jugador jugadorUno=new Jugador("Bob",100000,null);
 	Jugador jugadorDos=new Jugador("El constructor",100000,null);
 	Aysa unAysa=new Aysa();
@@ -20,8 +20,9 @@ public class JugadorCaeEnEdesurDeOtroJugadorQueNoTieneAysaReduceSuEfectivoEn500V
 		unEdesur.setPar(unAysa);
 		jugadorDos.setNumeroTotalSacadoEnDados(valorDados);
 		unEdesur.accionar(jugadorUno);
+		unAysa.accionar(jugadorUno);
 		unEdesur.accionar(jugadorDos);
 		
-		Assert.assertEquals(100000-valorDados*500, jugadorDos.getEfectivo());
+		Assert.assertEquals(100000-valorDados*1000, jugadorDos.getEfectivo());
 	}
 }
