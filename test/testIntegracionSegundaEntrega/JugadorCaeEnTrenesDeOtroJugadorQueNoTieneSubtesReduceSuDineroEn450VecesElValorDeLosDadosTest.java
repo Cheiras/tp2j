@@ -8,11 +8,12 @@ import junit.framework.Assert;
 import partida.jugador.Jugador;
 
 public class JugadorCaeEnTrenesDeOtroJugadorQueNoTieneSubtesReduceSuDineroEn450VecesElValorDeLosDadosTest {
-	Jugador jugadorUno=new Jugador("Bob",100000,null);
-	Jugador jugadorDos=new Jugador("El constructor",100000,null);
-	Trenes unTren=new Trenes();
-	Subte unSubte=new Subte();
-	int valorDados=5;
+	Jugador jugadorUno = new Jugador("Bob", 100000, null);
+	Jugador jugadorDos = new Jugador("El constructor", 100000, null);
+	Trenes unTren = new Trenes();
+	Subte unSubte = new Subte();
+	int valorDados = 5;
+
 	@Test
 	public void test() {
 		unTren.setPar(unSubte);
@@ -20,7 +21,7 @@ public class JugadorCaeEnTrenesDeOtroJugadorQueNoTieneSubtesReduceSuDineroEn450V
 		jugadorDos.setNumeroTotalSacadoEnDados(valorDados);
 		unTren.accionar(jugadorUno);
 		unTren.accionar(jugadorDos);
-		
-		Assert.assertEquals(100000-450*valorDados,jugadorDos.getEfectivo());
+
+		Assert.assertEquals(100000 - 450 * valorDados, jugadorDos.getEfectivo());
 	}
 }
