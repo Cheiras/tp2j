@@ -7,9 +7,9 @@ public abstract class Construccion {
 	
 	protected int costoConstruccion;
 	protected int costoRenta;	
-	protected BarrioNormal barrio;
 
-	public abstract Construccion construir(Jugador unJugador);
+
+	public abstract Construccion construir(Jugador unJugador,BarrioNormal unBarrio);
 	
 	public int getCostoRenta() {
 		return costoRenta;

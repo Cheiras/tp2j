@@ -12,13 +12,12 @@ public class PropiedadTest {
 	Jugador unJugador = new Jugador("", 100000, null);
 	Jugador otroJugador = new Jugador("", 100000, null);
 
-	Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2, 2000, 3000, 3500, 5000, 5000,
+	Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
 			8000);
 
 	@Test
 	public void propiedadDevuelveElPrecioDeCompraCuandoSeLePregunta() {
-		Jugador noJugador = new Jugador("", 0, null);
-		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, noJugador, 2, 2000, 3000, 3500, 5000, 5000,
+		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
 		Assert.assertEquals(20000, BuenosAiresSur.getPrecioDeCompra(), 0.1);
 	}
@@ -26,9 +25,9 @@ public class PropiedadTest {
 	@Test
 	public void jugadorCompraUnaPropiedadLaPropiedadLoReconoceComoDuenio() {
 
-		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2, 2000, 3000, 3500, 5000, 5000,
+		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
-
+		BuenosAiresSur.setDuenio(unJugador);
 		BuenosAiresSur.accionar(unJugador);
 
 		Assert.assertEquals(unJugador, BuenosAiresSur.obtenerDuenio());
@@ -37,7 +36,7 @@ public class PropiedadTest {
 	@Test
 	public void jugadorQueCaeEnPropiedadQueNoLePertenecePagaAlquiler() {
 
-		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2, 2000, 3000, 3500, 5000, 5000,
+		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
 
 		BuenosAiresSur.accionar(unJugador);
@@ -49,10 +48,10 @@ public class PropiedadTest {
 	@Test
 	public void jugadorQueCaeEnPropiedadQueNoLePertenceAumentaElDineroDelDuenio() {
 
-		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2, 2000, 3000, 3500, 5000, 5000,
+		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
-
-		BuenosAiresSur.accionar(unJugador);
+		BuenosAiresSur.setDuenio(unJugador);
+		
 		BuenosAiresSur.accionar(otroJugador);
 
 		Assert.assertEquals(82000, unJugador.getEfectivo(), 0.1);

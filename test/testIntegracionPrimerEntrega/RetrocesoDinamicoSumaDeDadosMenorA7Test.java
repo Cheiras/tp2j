@@ -38,18 +38,26 @@ public class RetrocesoDinamicoSumaDeDadosMenorA7Test {
 	}
 	@Test
 	public void DependeDeLaCantidadDePropiedades() {
-		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, jugador, 2, 2000, 3000, 3500, 5000, 5000,
+		Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
-		BuenosAiresSur.accionar(jugador);
-		Barrio OtroBarrio = new BarrioNormal("Buenos Aires Sur", 20000, jugador, 2, 2000, 3000, 3500, 5000, 5000,
+		
+
+		Barrio OtroBarrio = new BarrioNormal("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
 				8000);
-		OtroBarrio.accionar(jugador);
 		int numeroSacadoEnDados = 6;
+
+		
+		BuenosAiresSur.setDuenio(jugador);
+		BuenosAiresSur.accionar(jugador);
+		OtroBarrio.setDuenio(jugador);
+		OtroBarrio.accionar(jugador);
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
 		int posicionInicial= jugador.getPosicion();
 		retrocesoDinamico.accionar(jugador);
 		int posicionFinal= jugador.getPosicion();
-		Assert.assertEquals(2, jugador.cantidadDePropiedadesASuNombre());
+		
+		
+		Assert.assertEquals(2, jugador.cantidadDePropiedadesASuNombre()); //hacer un test aparte
 		Assert.assertEquals(posicionFinal, posicionInicial- (numeroSacadoEnDados - jugador.cantidadDePropiedadesASuNombre()));
 	}
 }

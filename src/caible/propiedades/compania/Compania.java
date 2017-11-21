@@ -11,8 +11,8 @@ public class Compania extends Propiedad{
 	private CalculadoraCompanias calculadoraCompanias;
 	private Compania CompaniaPar;
 
-	public Compania(String nombre, int precio, Jugador duenio, int posicion, int multiplicadorComun, int multiplicadorEspecial) {
-		super(nombre, precio, duenio, posicion);
+	public Compania(String nombre, int precio, int posicion, int multiplicadorComun, int multiplicadorEspecial) {
+		super(nombre, precio, posicion);
 		this.multiplicadorComun = multiplicadorComun;
 		this.multiplicadorEspecial = multiplicadorEspecial;
 	}

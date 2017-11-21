@@ -1,22 +1,24 @@
 package caible.propiedades.barrios;
 
+import caible.propiedades.Propiedad;
 import partida.jugador.Jugador;
 
 public class BarrioNormal extends Barrio {
 
+	private int precioAlquiler;
 	private int precioAlquilerConUnaCasa;
 	private int precioAlquilerConDosCasas;
 	private int precioAlquilerConHotel;
 	private int precioConstruirCasa;
 	private int precioConstruirHotel;
-	
+	protected String duplaBarrioNormal; //lo asigno en la subclase propia
 	private Construccion construcciones = new ConstruccionNula(this);
 
-	public BarrioNormal(String nombre, int precio, Jugador duenio, int posicion, int precioAlquiler,
+	public BarrioNormal(String nombre, int precio, int posicion, int precioAlquiler,
 			int precioAlquilerConUnaCasa, int precioAlquilerConDosCasas, int precioAlquilerConHotel,
 			int precioConstruirCasa, int precioConstruirHotel) {
 		
-		super(nombre, precio, duenio, posicion, precioAlquiler);
+		super(nombre, precio, posicion, precioAlquiler);
 		this.precioAlquilerConUnaCasa = precioAlquilerConUnaCasa;
 		this.precioAlquilerConDosCasas = precioAlquilerConDosCasas;
 		this.precioAlquilerConHotel = precioAlquilerConHotel;
@@ -69,22 +71,23 @@ public class BarrioNormal extends Barrio {
 	}
 
 	public void cobrarAlquiler(Jugador unJugador) {
-		/*
-		 * Pora ahora para probar los comportamientos del juego pedidos por la
-		 * entrega
-		 */
-		int costoAlquiler = this.getPrecioAlquiler();
+		
+		int costoAlquiler = this.construcciones.getCostoRenta();
 		unJugador.reducirEfectivo(costoAlquiler);
 		/* Habria que evaluar si tiene efectivo suficiente */
 		this.duenio.aumentarEfectivo(costoAlquiler);
 	}
 
 	public void construirCasa() {
-		this.construcciones = this.construcciones.construir(this.duenio);
+		this.construcciones = this.construcciones.construir(this.duenio,this);
 	}
 
 	public void construirHotel() {
 			
+	}
+
+	public String getNombreBarrioDupla() {
+		return this.duplaBarrioNormal;
 	}
 
 }

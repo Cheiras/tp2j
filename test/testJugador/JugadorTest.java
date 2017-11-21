@@ -10,11 +10,14 @@ import partida.jugador.Jugador;
 public class JugadorTest {
 
 	Jugador unJugador = new Jugador("", 100000, null);
-	Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, unJugador, 2, 2000, 3000, 3500, 5000, 5000,
+	Barrio BuenosAiresSur = new BarrioNormal("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
 			8000);
+
+	
 
 	@Test
 	public void elJugadorRecienCreadoIniciaConUnaCantidadDeDineroDeterminadaArbitrariamente() {
+		BuenosAiresSur.setDuenio(unJugador);
 		Assert.assertEquals(100000, unJugador.getEfectivo(), 0.1);
 	}
 
@@ -28,7 +31,9 @@ public class JugadorTest {
 
 	@Test
 	public void elJugadorAlComprarUnaPropiedadEstaEsAgregadaCorrectamenteAlJugador() {
-
+		
+		BuenosAiresSur.setDuenio(unJugador);
+		
 		BuenosAiresSur.accionar(unJugador);
 
 		Assert.assertTrue(unJugador.contienePropiedad(BuenosAiresSur));

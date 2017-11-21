@@ -4,9 +4,9 @@ import partida.jugador.Jugador;
 
 public class SantaFe extends BarrioEspecial{
 
-	public SantaFe(String nombre, int precio, Jugador duenio, int posicion, int precioAlquiler,
+	public SantaFe(String nombre, int precio, int posicion, int precioAlquiler,
 			int precioAlquilerConUnicoEdificio, int precioConstruirUnicoEdificio) {
-		super(nombre, precio, duenio, posicion, precioAlquiler, precioAlquilerConUnicoEdificio,
+		super(nombre, precio, posicion, precioAlquiler, precioAlquilerConUnicoEdificio,
 				precioConstruirUnicoEdificio);
 	}
 

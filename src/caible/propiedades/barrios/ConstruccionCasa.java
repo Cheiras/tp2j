@@ -6,15 +6,13 @@ public class ConstruccionCasa extends Construccion {
 
 	public ConstruccionCasa(BarrioNormal barrio) {
 		
-		this.barrio = barrio;
 		this.costoConstruccion = barrio.getPrecioConstruirCasa();
-		this.costoRenta = barrio.getPrecioAlquilerConDosCasas();
-
+		this.costoRenta = barrio.getPrecioAlquilerConUnaCasa();
 
 	}
 	@Override
-	public Construccion construir(Jugador unJugador) {
-		Construccion casaConstruida = new ConstruccionSegundaCasa(this.barrio);
+	public Construccion construir(Jugador unJugador,BarrioNormal unBarrio) {
+		Construccion casaConstruida = new ConstruccionSegundaCasa(unBarrio);
 		cobrarCostoConstruccion(unJugador);
 		return casaConstruida;
 	}

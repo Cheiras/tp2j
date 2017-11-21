@@ -7,8 +7,8 @@ public class BarrioEspecial extends Barrio {
 	private int precioAlquilerConUnicoEdificio;
 	private int precioConstruirEdificioHistorico;
 	
-	public BarrioEspecial(String nombre, int precio, Jugador duenio, int posicion, int precioAlquiler, int precioAlquilerConUnicoEdificio, int precioConstruirEdificioHistorico){
-		super(nombre, precio, duenio, posicion, precioAlquiler);
+	public BarrioEspecial(String nombre, int precio, int posicion, int precioAlquiler, int precioAlquilerConUnicoEdificio, int precioConstruirEdificioHistorico){
+		super(nombre, precio, posicion, precioAlquiler);
 		this.precioAlquilerConUnicoEdificio = precioAlquilerConUnicoEdificio;
 		this.precioConstruirEdificioHistorico = precioConstruirEdificioHistorico;
 	}

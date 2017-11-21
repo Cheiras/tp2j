@@ -4,9 +4,9 @@ import partida.jugador.Jugador;
 
 public class Tucuman extends BarrioEspecial {
 
-	public Tucuman(String nombre, int precio, Jugador duenio, int posicion, int precioAlquiler,
+	public Tucuman(String nombre, int precio, int posicion, int precioAlquiler,
 			int precioAlquilerConUnicoEdificio, int precioConstruirEdificioHistorico) {
-		super(nombre, precio, duenio, posicion, precioAlquiler, precioAlquilerConUnicoEdificio,
+		super(nombre, precio, posicion, precioAlquiler, precioAlquilerConUnicoEdificio,
 				precioConstruirEdificioHistorico);
 	}
 

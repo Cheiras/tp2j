@@ -118,5 +118,9 @@ public class Jugador {
 	public String toString(){
 		return String.format("%s", this.nombre);
 	}
+
+	public boolean contienePropiedadString(String nombreBarrioDupla) {
+		return true;
+	}
 	
 }

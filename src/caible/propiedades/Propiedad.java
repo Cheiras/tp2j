@@ -5,6 +5,7 @@ import estadoDuenio.ConDuenio;
 import estadoDuenio.EstadoDuenio;
 import estadoDuenio.SinDuenio;
 import partida.jugador.Jugador;
+import partida.jugador.NoJugador;
 
 public abstract class Propiedad extends Caible {
 
@@ -13,10 +14,10 @@ public abstract class Propiedad extends Caible {
 	protected Jugador duenio;
 	private EstadoDuenio estadoDuenio;
 
-	public Propiedad(String nombre, int precio, Jugador duenio, int posicion) {
+	public Propiedad(String nombre, int precio, int posicion) {
 		this.nombre = nombre;
 		this.precio = precio;
-		this.duenio = duenio;
+		this.duenio = new NoJugador(0,null);
 		this.estadoDuenio = new SinDuenio();
 		this.posicion = posicion;
 	}
@@ -26,13 +27,15 @@ public abstract class Propiedad extends Caible {
 		this.estadoDuenio.jugadorCayo(unJugador, this);
 
 	}
-
+	
 	public int getPrecioDeCompra() {
 		return precio;
 	}
 
 	public void setDuenio(Jugador nuevoDuenio) {
 		this.duenio = nuevoDuenio;
+		this.asignarDuenio();
+		nuevoDuenio.agregarPropiedad(this);
 	}
 
 	public void comprar(Jugador jugadorQueCompra) {
