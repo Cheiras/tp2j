@@ -59,4 +59,8 @@ public abstract class Propiedad extends Caible {
 	public String toString(){
 		return String.format("%s", this.nombre);
 	}
+	
+	public void eliminarConstrucciones() {
+		
+	}
 }
