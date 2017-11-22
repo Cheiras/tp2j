@@ -1,0 +1,5 @@
+package testIntegracionSegundaEntrega;
+
+public class JugadorIntercambiaPropiedadPorOtraDeOtroJugadorUnTercerJugadorCaeEnLaPropiedadYElAlquilerSeAcreditaAlNuevoDuenioTest {
+
+}

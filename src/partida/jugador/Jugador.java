@@ -137,5 +137,9 @@ public class Jugador {
 		unaPropiedad.eliminarConstrucciones();
 		nuevoDuenio.agregarPropiedad(unaPropiedad);
 	}
+	public void intercambiarPropiedades(Jugador oponente,Propiedad propiedadDelJugador,Propiedad propiedadDelOponente) {
+		this.transferirPropiedad(propiedadDelJugador, oponente);
+		oponente.transferirPropiedad(propiedadDelOponente, this);
+	}
 	
 }
