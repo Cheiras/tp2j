@@ -19,6 +19,7 @@ public class JugadorQueTieneDineroSuficienteYLosDosBarriosPuedeConstruirCasaTest
 		
 		bairesSur.accionar(carlos);
 		bairesNorte.accionar(carlos);//set duenio lo asigna sin cobrarle. accionar(carlos) le cobra
+		
 		carlos.construirEn(bairesNorte);
 		
 		Assert.assertEquals(95000, carlos.getEfectivo());		

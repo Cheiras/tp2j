@@ -153,4 +153,7 @@ public class Jugador {
 		unBarrio.construir();
 	}
 	
+	public ArrayList getListaDePropiedades(){
+		return this.listaDePropiedades;
+	}
 }
