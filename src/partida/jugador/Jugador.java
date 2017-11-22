@@ -122,5 +122,14 @@ public class Jugador {
 	public boolean contienePropiedadString(String nombreBarrioDupla) {
 		return true;
 	}
+	public void removerPropiedad(Propiedad unaPropiedad) {
+		this.listaDePropiedades.remove(unaPropiedad);
+	}
+	public void transferirPropiedad(Propiedad unaPropiedad,Jugador nuevoDuenio) {
+		this.removerPropiedad(unaPropiedad);
+		unaPropiedad.setDuenio(nuevoDuenio);
+		unaPropiedad.eliminarConstrucciones();
+		nuevoDuenio.agregarPropiedad(unaPropiedad);
+	}
 	
 }
