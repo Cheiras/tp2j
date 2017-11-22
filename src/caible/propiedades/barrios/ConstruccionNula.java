@@ -1,7 +1,5 @@
 package caible.propiedades.barrios;
 
-import excepciones.MontoInsuficienteException;
-import excepciones.RequisitosInsuficientesException;
 import partida.jugador.Jugador;
 
 public class ConstruccionNula extends Construccion {
@@ -17,9 +15,9 @@ public class ConstruccionNula extends Construccion {
 
 	@Override
 	public Construccion construir(Jugador unJugador, BarrioNormal unBarrio) throws RuntimeException {
-		if(! unJugador.contienePropiedadString(unBarrio.getNombreBarrioDupla())) {
-			throw new RequisitosInsuficientesException("Debes tener los dos barrios para construir");
-		}
+		
+		this.habilitadoAConstruir(unJugador, unBarrio);//chequea efectivo y barrios
+		
 		Construccion casaConstruida = new ConstruccionCasa(unBarrio);
 		cobrarCostoConstruccion(unJugador);
 		return casaConstruida;

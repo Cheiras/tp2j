@@ -12,6 +12,9 @@ public class ConstruccionCasa extends Construccion {
 	}
 	@Override
 	public Construccion construir(Jugador unJugador,BarrioNormal unBarrio) {
+
+		this.habilitadoAConstruir(unJugador, unBarrio);//chequea efectivo y barrios
+
 		Construccion casaConstruida = new ConstruccionSegundaCasa(unBarrio);
 		cobrarCostoConstruccion(unJugador);
 		return casaConstruida;
