@@ -11,4 +11,6 @@ public abstract class Barrio  extends Propiedad{
 		super(nombre, precio, posicion);
 		this.precioAlquiler = precioAlquiler;
 	}
+	
+	
 }

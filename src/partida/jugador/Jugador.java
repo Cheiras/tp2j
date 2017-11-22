@@ -120,7 +120,13 @@ public class Jugador {
 	}
 
 	public boolean contienePropiedadString(String nombreBarrioDupla) {
-		return true;
+		
+		for(Propiedad propiedad : this.listaDePropiedades ) {
+			if(propiedad.getNombre() == nombreBarrioDupla) {
+				return true;
+			}
+		}
+		return false;
 	}
 	public void removerPropiedad(Propiedad unaPropiedad) {
 		this.listaDePropiedades.remove(unaPropiedad);

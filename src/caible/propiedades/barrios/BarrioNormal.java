@@ -1,6 +1,7 @@
 package caible.propiedades.barrios;
 
 import caible.propiedades.Propiedad;
+import excepciones.JugadorEnBancarrotaException;
 import partida.jugador.Jugador;
 
 public class BarrioNormal extends Barrio {
@@ -26,9 +27,7 @@ public class BarrioNormal extends Barrio {
 		this.precioConstruirHotel = precioConstruirHotel;
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
+
 
 	public int getPrecio() {
 		return precio;
@@ -70,11 +69,13 @@ public class BarrioNormal extends Barrio {
 
 	}
 
-	public void cobrarAlquiler(Jugador unJugador) {
+	public void cobrarAlquiler(Jugador unJugador) throws RuntimeException{
 		
 		int costoAlquiler = this.construcciones.getCostoRenta();
+		if(unJugador.montoMenorA(costoAlquiler)) {
+			throw new JugadorEnBancarrotaException("Has entrado en Bancarrota, lo siento.");
+		}
 		unJugador.reducirEfectivo(costoAlquiler);
-		/* Habria que evaluar si tiene efectivo suficiente */
 		this.duenio.aumentarEfectivo(costoAlquiler);
 	}
 
