@@ -1,7 +1,6 @@
 package caible.propiedades.barrios;
 
 import caible.propiedades.Propiedad;
-import partida.jugador.Jugador;
 
 public abstract class Barrio  extends Propiedad{
 	

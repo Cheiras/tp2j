@@ -1,6 +1,5 @@
 package caible.propiedades.barrios;
 
-import caible.propiedades.Propiedad;
 import excepciones.JugadorEnBancarrotaException;
 import partida.jugador.Jugador;
 

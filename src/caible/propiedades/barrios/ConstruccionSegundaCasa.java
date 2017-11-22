@@ -7,16 +7,19 @@ public class ConstruccionSegundaCasa extends Construccion {
 	
 	public ConstruccionSegundaCasa(BarrioNormal barrio) {
 		
-		this.costoConstruccion = barrio.getPrecioConstruirCasa();
+		this.costoConstruccion = barrio.getPrecioConstruirHotel();
 		this.costoRenta = barrio.getPrecioAlquilerConDosCasas();
 
 	}
 	
 	@Override
 	public Construccion construir(Jugador unJugador, BarrioNormal unBarrio) {
-		// TODO Auto-generated method stub
-		//chequear que este habilitado para construir hotel
-		return null;
-	}
+		
+		this.habilitadoAConstruir(unJugador, unBarrio);//chequea efectivo y barrios
+		
+		Construccion hotel = new ConstruccionHotel(unBarrio);
+		cobrarCostoConstruccion(unJugador);
+		return hotel;
+		}
 
 }
