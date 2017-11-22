@@ -73,18 +73,16 @@ public class BarrioNormal extends Barrio {
 		int costoAlquiler = this.construcciones.getCostoRenta();
 		if(unJugador.montoMenorA(costoAlquiler)) {
 			throw new JugadorEnBancarrotaException("Has entrado en Bancarrota, lo siento.");
+		
 		}
 		unJugador.reducirEfectivo(costoAlquiler);
 		this.duenio.aumentarEfectivo(costoAlquiler);
 	}
 
-	public void construirCasa() {
+	public void construir() {
 		this.construcciones = this.construcciones.construir(this.duenio,this);
 	}
 
-	public void construirHotel() {
-			
-	}
 
 	public String getNombreBarrioDupla() {
 		return this.duplaBarrioNormal;

@@ -1,7 +1,5 @@
 package caible.propiedades.barrios;
 
-import partida.jugador.Jugador;
-
 public class BuenosAiresSur extends BarrioNormal{
 
 	public BuenosAiresSur(String nombre, int precio, int posicion, int precioAlquiler,
@@ -9,6 +7,7 @@ public class BuenosAiresSur extends BarrioNormal{
 			int precioConstruirCasa, int precioConstruirHotel) {
 		super(nombre, precio, posicion, precioAlquiler, precioAlquilerConUnaCasa, precioAlquilerConDosCasas,
 				precioAlquilerConHotel, precioConstruirCasa, precioConstruirHotel);
+		this.duplaBarrioNormal = "Buenos Aires Norte";
 		
 	}
 
