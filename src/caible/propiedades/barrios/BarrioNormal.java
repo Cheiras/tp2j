@@ -90,5 +90,9 @@ public class BarrioNormal extends Barrio {
 	public String getNombreBarrioDupla() {
 		return this.duplaBarrioNormal;
 	}
+	@Override
+	public void eliminarConstrucciones() {
+		this.construcciones=new ConstruccionNula(this);
+	}
 
 }
