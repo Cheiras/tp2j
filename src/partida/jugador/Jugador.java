@@ -3,6 +3,8 @@ package partida.jugador;
 import java.util.ArrayList;
 
 import caible.propiedades.Propiedad;
+import caible.propiedades.barrios.BarrioNormal;
+import excepciones.AccionInvalida;
 import movimiento.MeMuevo;
 import premio.Premio;
 import premio.Premio50k;
@@ -136,6 +138,15 @@ public class Jugador {
 		unaPropiedad.setDuenio(nuevoDuenio);
 		unaPropiedad.eliminarConstrucciones();
 		nuevoDuenio.agregarPropiedad(unaPropiedad);
+	}
+	
+	public void construirEn(BarrioNormal unBarrio)throws RuntimeException {
+		
+		if(! listaDePropiedades.contains(unBarrio)) {
+			throw new AccionInvalida("No puedes construir en un barrio que no te pertenece");
+		}
+		
+		unBarrio.construir();
 	}
 	
 }
