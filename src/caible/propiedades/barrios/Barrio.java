@@ -14,5 +14,9 @@ public abstract class Barrio  extends Propiedad{
 	public int getPrecioRentaActual(){
 		return -1;/**Es solo para debuggear**/
 	}
+
+	public void construir() {
+		
+	}
 	
 }

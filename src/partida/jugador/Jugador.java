@@ -3,6 +3,7 @@ package partida.jugador;
 import java.util.ArrayList;
 
 import caible.propiedades.Propiedad;
+import caible.propiedades.barrios.Barrio;
 import caible.propiedades.barrios.BarrioNormal;
 import excepciones.AccionInvalida;
 import movimiento.MeMuevo;
@@ -147,7 +148,7 @@ public class Jugador {
 		oponente.transferirPropiedad(propiedadDelOponente, this);
 	}
 
-	public void construirEn(BarrioNormal unBarrio) throws RuntimeException {
+	public void construirEn(Barrio unBarrio) throws RuntimeException {
 
 		if (!listaDePropiedades.contains(unBarrio)) {
 			throw new AccionInvalida("No puedes construir en un barrio que no te pertenece");
