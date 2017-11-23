@@ -1,13 +1,10 @@
 package caible.propiedades.barrios;
 
-import partida.jugador.Jugador;
-
 public class SantaFe extends BarrioEspecial{
 
-	public SantaFe(String nombre, int precio, int posicion, int precioAlquiler,
-			int precioAlquilerConUnicoEdificio, int precioConstruirUnicoEdificio) {
-		super(nombre, precio, posicion, precioAlquiler, precioAlquilerConUnicoEdificio,
-				precioConstruirUnicoEdificio);
+	public SantaFe() {
+		super("Santa Fe", 15000, 12, 1500, 3500,
+				4000);
 	}
 
 }

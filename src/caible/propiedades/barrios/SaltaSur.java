@@ -2,13 +2,10 @@ package caible.propiedades.barrios;
 
 public class SaltaSur extends BarrioNormal{
 
-	public SaltaSur(String nombre, int precio, int posicion, int precioAlquiler,
-			int precioAlquilerConUnaCasa, int precioAlquilerConDosCasas, int precioAlquilerConHotel,
-			int precioConstruirCasa, int precioConstruirHotel) {
-		super(nombre, precio, posicion, precioAlquiler, precioAlquilerConUnaCasa, precioAlquilerConDosCasas,
-				precioAlquilerConHotel, precioConstruirCasa, precioConstruirHotel);
+	public SaltaSur() {
+		super("Salta Sur",23000,15
+				,2000,3250,3850,5500,4500,7500);
 		this.duplaBarrioNormal = "Salta Norte";
-
 	}
 
 }

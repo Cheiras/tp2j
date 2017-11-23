@@ -9,11 +9,9 @@ import junit.framework.Assert;
 import partida.jugador.Jugador;
 
 public class JugadorIntercambiaUnaPropiedadConOtroJugadorUnTercerJugadorCaeSobreLaPropiedadIntercambiadaElDineroDelActualDuenioSeIncrementaEnUnMontoIgualAlDelAlquilerSinConstruccionesTest {
-	Propiedad buenosAiresSur = new BuenosAiresSur("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
-			8000);
+	Propiedad buenosAiresSur = new BuenosAiresSur();
 
-	Propiedad buenosAiresNorte = new BuenosAiresNorte("Buenos Aires Norte", 25000, 4, 2500, 3500, 4000, 6000,
-			5500, 9000);
+	Propiedad buenosAiresNorte = new BuenosAiresNorte();
 	Jugador juancito=new Jugador("juancito",100000,null);
 	Jugador carlitos=new Jugador("carlitos",100000,null);	
 	Jugador pepito=new Jugador("pepito",100000,null);

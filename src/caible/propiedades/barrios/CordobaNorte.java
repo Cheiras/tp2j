@@ -3,11 +3,9 @@ package caible.propiedades.barrios;
 public class CordobaNorte extends BarrioNormal {
 
 	
-	public CordobaNorte(String nombre, int precio, int posicion, int precioAlquiler,
-		int precioAlquilerConUnaCasa, int precioAlquilerConDosCasas, int precioAlquilerConHotel,
-		int precioConstruirCasa, int precioConstruirHotel) {
-		super(nombre, precio, posicion, precioAlquiler, precioAlquilerConUnaCasa, precioAlquilerConDosCasas,
-				precioAlquilerConHotel, precioConstruirCasa, precioConstruirHotel);
+	public CordobaNorte() {
+		super("Cordoba Norte", 20000, 10, 1300, 1800, 2900,
+				3500, 2200, 3500);
 		this.duplaBarrioNormal = "Cordoba Sur";
 	}
 }

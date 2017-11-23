@@ -4,11 +4,8 @@ public class BuenosAiresNorte extends BarrioNormal{
 
 	
 	
-	public BuenosAiresNorte(String nombre, int precio, int posicion, int precioAlquiler,
-			int precioAlquilerConUnaCasa, int precioAlquilerConDosCasas, int precioAlquilerConHotel,
-			int precioConstruirCasa, int precioConstruirHotel) {
-		super(nombre, precio, posicion, precioAlquiler, precioAlquilerConUnaCasa, precioAlquilerConDosCasas,
-				precioAlquilerConHotel, precioConstruirCasa, precioConstruirHotel);
+	public BuenosAiresNorte() {
+		super("Buenos Aires Norte", 25000, 5, 2500, 3500, 4000, 6000, 5500, 9000);
 			this.duplaBarrioNormal = "Buenos Aires Sur";
 	}
 

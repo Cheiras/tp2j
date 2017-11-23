@@ -9,9 +9,9 @@ import caible.especiales.Policia;
 import caible.especiales.Quini6;
 import caible.especiales.RetrocesoDinamico;
 import caible.especiales.Salida;
-import caible.propiedades.barrios.BarrioNormal;
 import caible.propiedades.barrios.BuenosAiresNorte;
 import caible.propiedades.barrios.BuenosAiresSur;
+import caible.propiedades.barrios.CordobaNorte;
 import caible.propiedades.barrios.CordobaSur;
 import caible.propiedades.barrios.Neuquen;
 import caible.propiedades.barrios.SaltaNorte;
@@ -23,7 +23,6 @@ import caible.propiedades.compania.Edesur;
 import caible.propiedades.compania.Subte;
 import caible.propiedades.compania.Trenes;
 import casilleros.Caible;
-import partida.jugador.NoJugador;
 
 public class Tablero {
 
@@ -32,43 +31,41 @@ public class Tablero {
 
 	Caible quini6 = new Quini6();
 
-	Caible buenosAiresSur = new BuenosAiresSur("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
-			8000);
+	Caible buenosAiresSur = new BuenosAiresSur();
 
 	Caible edesur = new Edesur();
 
-	Caible buenosAiresNorte = new BuenosAiresNorte("Buenos Aires Norte", 25000, 4, 2500, 3500, 4000, 6000,
-			5500, 9000);
+	Caible buenosAiresNorte = new BuenosAiresNorte();
 
 	Caible carcel = new Carcel();
 
-	Caible cordobaSur = new CordobaSur("Cordoba Sur", 18000, 6, 1000, 1500, 2500, 3000, 2000, 3000);
+	Caible cordobaSur = new CordobaSur();
 
 	Caible avanzeDinamico = new AvanceDinamico();
 
 	Caible subte = new Subte();
 
-	Caible cordobaNorte = new BarrioNormal("Cordoba Norte", 20000, 9, 1300, 1800, 2900, 3500, 2200, 3500);
+	Caible cordobaNorte = new CordobaNorte();
 
 	Caible impuestoDeLujo = new ImpuestoDeLujo();
 
-	Caible santaFe = new SantaFe("Santa Fe", 15000, 11, 1500, 3500, 4000);
+	Caible santaFe = new SantaFe();
 
 	Caible aysa = new Aysa();
 	
-	Caible saltaNorte = new SaltaNorte("Salta Norte", 23000, 13, 2000, 3250, 3850, 5500, 4500, 7500);
+	Caible saltaNorte = new SaltaNorte();
 
-	Caible saltaSur = new SaltaSur("Salta Sur", 23000, 14, 2000, 3250, 3850, 5500, 4500, 7500);
+	Caible saltaSur = new SaltaSur();
 
 	Caible policia = new Policia(carcel);
 
 	Caible trenes = new Trenes();
 
-	Caible neuquen = new Neuquen("Neuquen", 17000, 17, 1800, 3800, 4800);
+	Caible neuquen = new Neuquen();
 
 	Caible retrocesoDinamico = new RetrocesoDinamico();
 
-	Caible tucuman = new Tucuman("Tucuman", 25000, 19, 2500, 4500, 7000);
+	Caible tucuman = new Tucuman();
 
 	ArrayList<Caible> tablero = new ArrayList<Caible>();
 	

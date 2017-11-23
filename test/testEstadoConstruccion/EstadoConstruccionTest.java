@@ -1,5 +1,4 @@
 package testEstadoConstruccion;
-import estadoConstruccion.EstadoConstruccion;
 import estadoConstruccion.EstadoConstruccionUnaCasa;
 import estadoConstruccion.EstadoSinConstruccion;
 import caible.propiedades.barrios.BarrioNormal;
@@ -8,8 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class EstadoConstruccionTest {
-	BarrioNormal BairesSur=new BuenosAiresSur("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
-			8000);
+	BarrioNormal BairesSur=new BuenosAiresSur();
 	EstadoSinConstruccion estado=new EstadoSinConstruccion(BairesSur);
 	EstadoConstruccionUnaCasa estadoConCasa=new EstadoConstruccionUnaCasa(BairesSur);
 	

@@ -1,13 +1,10 @@
 package caible.propiedades.barrios;
 
-import partida.jugador.Jugador;
-
 public class Neuquen extends BarrioEspecial{
 
-	public Neuquen(String nombre, int precio, int posicion, int precioAlquiler,
-			int precioAlquilerConUnicoEdificio, int precioConstruirEdificioHistorico) {
-		super(nombre, precio, posicion, precioAlquiler, precioAlquilerConUnicoEdificio,
-				precioConstruirEdificioHistorico);
+	public Neuquen() {
+		super("Neuquen", 17000, 18, 1800, 3800,
+				4800);
 	}
 
 }

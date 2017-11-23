@@ -1,5 +1,4 @@
 package caible.propiedades.compania;
-import partida.jugador.NoJugador;
 
 
 public class Aysa extends Compania{

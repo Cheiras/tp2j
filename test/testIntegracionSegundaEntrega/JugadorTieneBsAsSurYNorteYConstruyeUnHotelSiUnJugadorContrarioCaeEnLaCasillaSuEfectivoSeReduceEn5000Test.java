@@ -12,8 +12,8 @@ public class JugadorTieneBsAsSurYNorteYConstruyeUnHotelSiUnJugadorContrarioCaeEn
 	public void test() {
 		Jugador carlos=new Jugador("Carlos",100000,null);
 		Jugador pedro=new Jugador("Pedro",100000,null);
-		BarrioNormal bairesSur = new BuenosAiresSur("Buenos Aires Sur", 0, 2, 2000, 3000, 3500, 5000, 5000, 8000);
-		BarrioNormal bairesNorte = new BuenosAiresNorte("Buenos Aires Norte", 0, 2, 2000, 3000, 3500, 5000, 5000, 8000);
+		BarrioNormal bairesSur = new BuenosAiresSur();
+		BarrioNormal bairesNorte = new BuenosAiresNorte();
 		
 		bairesSur.accionar(carlos);
 		bairesNorte.accionar(carlos);
