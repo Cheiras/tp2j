@@ -7,9 +7,13 @@ public class ConstruccionNula extends Construccion {
 	
 
 	public ConstruccionNula(BarrioNormal barrio) {
-	
+		this.costoRenta=barrio.getAlquiler();
+		this.costoConstruccion=barrio.getPrecioConstruirCasa();
 	}
-
+	@Override
+	public int getCostoRenta() {
+		return this.costoRenta;
+	}
 
 
 	public Construccion construir(Jugador unJugador, BarrioNormal unBarrio) throws RuntimeException {

@@ -2,7 +2,8 @@ package caible.propiedades.barrios;
 
 import excepciones.JugadorEnBancarrotaException;
 import partida.jugador.Jugador;
-
+import estadoConstruccion.EstadoConstruccion;
+import estadoConstruccion.EstadoSinConstruccion;
 public class BarrioNormal extends Barrio {
 
 	private int precioAlquiler;
@@ -12,7 +13,7 @@ public class BarrioNormal extends Barrio {
 	private int precioConstruirCasa;
 	private int precioConstruirHotel;
 	protected String duplaBarrioNormal; //lo asigno en la subclase propia
-	private Construccion construcciones = new ConstruccionNula(this);
+	private EstadoConstruccion construcciones;
 
 	public BarrioNormal(String nombre, int precio, int posicion, int precioAlquiler,
 			int precioAlquilerConUnaCasa, int precioAlquilerConDosCasas, int precioAlquilerConHotel,
@@ -24,6 +25,8 @@ public class BarrioNormal extends Barrio {
 		this.precioAlquilerConHotel = precioAlquilerConHotel;
 		this.precioConstruirCasa = precioConstruirCasa;
 		this.precioConstruirHotel = precioConstruirHotel;
+		this.precioAlquiler=precioAlquiler;
+		this.construcciones=new EstadoSinConstruccion(this);
 	}
 
 
@@ -80,7 +83,7 @@ public class BarrioNormal extends Barrio {
 	}
 
 	public void construir() {
-		this.construcciones = this.construcciones.construir(this.duenio,this);
+		//***this.construcciones = this.construcciones.construir(this.duenio,this);**/
 	}
 
 
@@ -89,10 +92,14 @@ public class BarrioNormal extends Barrio {
 	}
 	@Override
 	public void eliminarConstrucciones() {
-		this.construcciones = new ConstruccionNula(this);
+		this.construcciones = new EstadoSinConstruccion(this);
 	}
 
-	public Construccion getConstrucciones(){
+	public EstadoConstruccion getConstrucciones(){
 		return this.construcciones;
+	}
+	@Override
+	public int getPrecioRentaActual() {
+		return this.construcciones.getCostoRenta();
 	}
 }

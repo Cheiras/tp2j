@@ -12,7 +12,7 @@ public abstract class Construccion {
 	public abstract Construccion construir(Jugador unJugador, BarrioNormal unBarrio);
 
 	public int getCostoRenta() {
-		return costoRenta;
+		return this.costoRenta;
 	}
 
 	public void cobrarCostoConstruccion(Jugador unJugador, int unValor) throws MontoInsuficienteException {

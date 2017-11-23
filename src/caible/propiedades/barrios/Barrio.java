@@ -11,5 +11,8 @@ public abstract class Barrio  extends Propiedad{
 		this.precioAlquiler = precioAlquiler;
 	}
 	
+	public int getPrecioRentaActual(){
+		return -1;/**Es solo para debuggear**/
+	}
 	
 }
