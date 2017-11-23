@@ -18,9 +18,9 @@ public class JugadorQueTieneDineroSuficienteYLosDosBarriosPuedeConstruirCasaTest
 		BarrioNormal bairesNorte = new BuenosAiresNorte("Buenos Aires Norte", 0, 2, 2000, 3000, 3500, 5000, 5000, 8000);
 		
 		bairesSur.accionar(carlos);
-		bairesNorte.accionar(carlos);//set duenio lo asigna sin cobrarle. accionar(carlos) le cobra
-		carlos.construirEn(bairesNorte);
+		bairesNorte.accionar(carlos);
 		
+		carlos.construirEn(bairesNorte);		
 		Assert.assertEquals(95000, carlos.getEfectivo());		
 	}
 

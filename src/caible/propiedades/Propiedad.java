@@ -42,8 +42,7 @@ public abstract class Propiedad extends Caible {
 	}
 	public void comprar(Jugador jugadorQueCompra) {
 		jugadorQueCompra.reducirEfectivo(this.getPrecioDeCompra());
-		this.setDuenio(jugadorQueCompra);
-		jugadorQueCompra.agregarPropiedad(this);
+		this.setDuenio(jugadorQueCompra);	
 	}
 
 	public Jugador obtenerDuenio() {

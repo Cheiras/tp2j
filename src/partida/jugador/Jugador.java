@@ -24,7 +24,7 @@ public class Jugador {
 	private boolean habilitadoAPagarFianza = false;
 
 	public Jugador(String nombre, int efectivoInicial, MeMuevo movimientoNormal) {
-		
+
 		this.nombre = nombre;
 		this.posicion = 0;
 		this.movimiento = movimientoNormal;
@@ -54,8 +54,7 @@ public class Jugador {
 		this.posicion += 1;
 	}
 
-	
-	//Solo para pruebas, lo contiene el turno.
+	// Solo para pruebas, lo contiene el turno.
 	public int getNumeroTotalSacadoEnDados() {
 		return numeroTotalSacadoEnDados;
 	}
@@ -96,7 +95,7 @@ public class Jugador {
 		return (this.efectivoDisponible < monto);
 	}
 
-	//Solo para pruebas, lo contiene el turno.
+	// Solo para pruebas, lo contiene el turno.
 	public void setNumeroTotalSacadoEnDados(int numero) {
 		numeroTotalSacadoEnDados = numero;
 	}
@@ -116,41 +115,45 @@ public class Jugador {
 	public void habilitar() {
 		this.habilitadoAPagarFianza = true;
 	}
-	
-	public String toString(){
+
+	public String toString() {
 		return String.format("%s", this.nombre);
 	}
 
 	public boolean contienePropiedadString(String nombreBarrioDupla) {
-		
-		for(Propiedad propiedad : this.listaDePropiedades ) {
-			if(propiedad.getNombre() == nombreBarrioDupla) {
+
+		for (Propiedad propiedad : this.listaDePropiedades) {
+			if (propiedad.getNombre() == nombreBarrioDupla) {
 				return true;
 			}
 		}
 		return false;
 	}
+
 	public void removerPropiedad(Propiedad unaPropiedad) {
 		this.listaDePropiedades.remove(unaPropiedad);
 	}
-	public void transferirPropiedad(Propiedad unaPropiedad,Jugador nuevoDuenio) {
+
+	public void transferirPropiedad(Propiedad unaPropiedad, Jugador nuevoDuenio) {
 		this.removerPropiedad(unaPropiedad);
 		unaPropiedad.setDuenio(nuevoDuenio);
 		unaPropiedad.eliminarConstrucciones();
 		nuevoDuenio.agregarPropiedad(unaPropiedad);
 	}
-	public void intercambiarPropiedades(Jugador oponente,Propiedad propiedadDelJugador,Propiedad propiedadDelOponente) {
+
+	public void intercambiarPropiedades(Jugador oponente, Propiedad propiedadDelJugador,
+			Propiedad propiedadDelOponente) {
 		this.transferirPropiedad(propiedadDelJugador, oponente);
 		oponente.transferirPropiedad(propiedadDelOponente, this);
 	}
-	
-	public void construirEn(BarrioNormal unBarrio)throws RuntimeException {
-		
-		if(! listaDePropiedades.contains(unBarrio)) {
+
+	public void construirEn(BarrioNormal unBarrio) throws RuntimeException {
+
+		if (!listaDePropiedades.contains(unBarrio)) {
 			throw new AccionInvalida("No puedes construir en un barrio que no te pertenece");
 		}
-		
+
 		unBarrio.construir();
 	}
-	
+
 }
