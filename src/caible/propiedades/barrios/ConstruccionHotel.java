@@ -7,9 +7,6 @@ public class ConstruccionHotel extends Construccion {
 
 	
 	public ConstruccionHotel(BarrioNormal barrio) {
-	
-		this.costoConstruccion = barrio.getPrecioConstruirHotel();
-		this.costoRenta = barrio.getPrecioAlquilerConHotel();
 
 	}
 	

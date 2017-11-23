@@ -89,7 +89,10 @@ public class BarrioNormal extends Barrio {
 	}
 	@Override
 	public void eliminarConstrucciones() {
-		this.construcciones=new ConstruccionNula(this);
+		this.construcciones = new ConstruccionNula(this);
 	}
 
+	public Construccion getConstrucciones(){
+		return this.construcciones;
+	}
 }
