@@ -6,7 +6,7 @@ import caible.propiedades.barrios.BuenosAiresSur;
 import junit.framework.Assert;
 import partida.jugador.Jugador;
 import org.junit.Test;
-public class JugadorPoseeBsAsSurYNorteConLaMaximaCantidadDeCasasYConstruyeUnHotelSuEfectivoSeReduceEn8000test {
+public class JugadorPoseeBsAsSurYNorteConLaMaximaCantidadDeCasasYConstruyeUnHotelSuEfectivoSeReduceEn8000Test {
 
 	@Test
 	public void test() {

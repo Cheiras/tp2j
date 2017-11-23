@@ -1,16 +1,19 @@
 package caible.propiedades.barrios;
-
+import construccionesBarriosEspeciales.ConstruccionEnProvinciasUnicas;
+import construccionesBarriosEspeciales.SinConstruccionEnProvinciasUnicas;
 import partida.jugador.Jugador;
 
 public class BarrioEspecial extends Barrio {
 
 	private int precioAlquilerConUnicoEdificio;
 	private int precioConstruirEdificioHistorico;
+	protected ConstruccionEnProvinciasUnicas construccion;
 	
 	public BarrioEspecial(String nombre, int precio, int posicion, int precioAlquiler, int precioAlquilerConUnicoEdificio, int precioConstruirEdificioHistorico){
 		super(nombre, precio, posicion, precioAlquiler);
 		this.precioAlquilerConUnicoEdificio = precioAlquilerConUnicoEdificio;
 		this.precioConstruirEdificioHistorico = precioConstruirEdificioHistorico;
+		construccion=new SinConstruccionEnProvinciasUnicas(this); 
 	}
 
 	public int getprecioAlquilerConUnicoEdificio() {
@@ -43,5 +46,9 @@ public class BarrioEspecial extends Barrio {
 	public void accionar(Jugador unJugador) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void setConstruccion(ConstruccionEnProvinciasUnicas unaConstruccion) {
+		this.construccion=unaConstruccion;
 	}
 }
