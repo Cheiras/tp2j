@@ -83,7 +83,7 @@ public class BarrioNormal extends Barrio {
 	}
 
 	public void construir() {
-		//***this.construcciones = this.construcciones.construir(this.duenio,this);**/
+		this.construcciones = this.construcciones.construir(this.duenio,this);
 	}
 
 

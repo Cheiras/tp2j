@@ -1,15 +1,14 @@
 package testIntegracionSegundaEntrega;
-import partida.jugador.Jugador;
+
+import org.junit.Test;
+
 import caible.propiedades.Propiedad;
 import caible.propiedades.barrios.BuenosAiresNorte;
 import caible.propiedades.barrios.BuenosAiresSur;
-import casilleros.Caible;
+import junit.framework.Assert;
+import partida.jugador.Jugador;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-public class JugadorIntercambiaPropiedadPorOtraDeOtroJugadorUnTercerJugadorCaeEnLaPropiedadYElAlquilerSeAcreditaAlNuevoDuenioTest {
-
+public class JugadorIntercambiaUnaPropiedadConOtroJugadorUnTercerJugadorCaeSobreLaPropiedadIntercambiadaElDineroDelActualDuenioSeIncrementaEnUnMontoIgualAlDelAlquilerSinConstruccionesTest {
 	Propiedad buenosAiresSur = new BuenosAiresSur("Buenos Aires Sur", 20000, 2, 2000, 3000, 3500, 5000, 5000,
 			8000);
 
@@ -25,9 +24,6 @@ public class JugadorIntercambiaPropiedadPorOtraDeOtroJugadorUnTercerJugadorCaeEn
 		carlitos.intercambiarPropiedades(juancito,buenosAiresNorte,buenosAiresSur);
 		buenosAiresSur.accionar(pepito);
 
-
-		Assert.assertTrue(carlitos.getEfectivo()>75000);
-
-		
+		Assert.assertEquals(75000+2000,carlitos.getEfectivo());
 	}
 }
