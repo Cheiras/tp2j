@@ -2,9 +2,7 @@ package construccionesBarriosEspeciales;
 
 import caible.propiedades.barrios.Barrio;
 import caible.propiedades.barrios.BarrioEspecial;
-import caible.propiedades.barrios.BarrioNormal;
 import excepciones.MontoInsuficienteException;
-import excepciones.RequisitosInsuficientesException;
 import partida.jugador.Jugador;
 
 public abstract class EstadoConstruccionEnProvinciasUnicas {

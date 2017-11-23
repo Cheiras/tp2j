@@ -1,6 +1,5 @@
 package construccionesBarriosEspeciales;
 import caible.propiedades.barrios.BarrioEspecial;
-import caible.propiedades.barrios.BarrioNormal;
 import excepciones.ConstruccionException;
 import partida.jugador.Jugador;
 

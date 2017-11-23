@@ -8,7 +8,7 @@ import caible.propiedades.barrios.SaltaSur;
 import junit.framework.Assert;
 import partida.jugador.Jugador;
 
-public class MismosCasosDeBsAsParaSalta {
+public class MismosCasosDeBsAsParaSaltaTest {
 
 	@Test
 	public void JugadorCuentaConSaltaSurYNorteConDosCasasEnAmbasUnContrincanteQueCaeEnCualquieraDeEllasVeSuEfectivoReducidoEn3500() {

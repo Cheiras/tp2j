@@ -1,9 +1,6 @@
 package construccionesBarriosEspeciales;
 
 import caible.propiedades.barrios.BarrioEspecial;
-import caible.propiedades.barrios.BarrioNormal;
-import estadoConstruccion.EstadoConstruccion;
-import estadoConstruccion.EstadoConstruccionUnaCasa;
 import partida.jugador.Jugador;
 
 public class EstadoSinConstruccionEnProvinciasUnicas extends EstadoConstruccionEnProvinciasUnicas {
