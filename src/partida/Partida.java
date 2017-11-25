@@ -3,6 +3,7 @@ package partida;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import excepciones.JugadorEnBancarrotaException;
 import javafx.application.Application;
 import movimiento.Dado;
 import movimiento.Tirador;
@@ -10,7 +11,7 @@ import partida.jugador.Jugador;
 import partida.tablero.Tablero;
 import partida.turno.Turno;
 
-public class Partida{
+public class Partida {
 
 	private Jugador jugadorActual;
 	private Jugador jugador1;
@@ -33,10 +34,32 @@ public class Partida{
 		jugadores.add(jugador2);
 		jugadores.add(jugador3);
 		Collections.shuffle(jugadores);
-		jugadorActual = jugadores.get(turnos % 3);
 
 		tablero = new Tablero();
 
+		int indexJugadorActual = 0;
+		int cantidadJugadoresActuales = jugadores.size();
+		while (cantidadJugadoresActuales > 1) {
+
+			jugadorActual = jugadores.get(indexJugadorActual);
+
+			try {
+				
+				Turno turno = new Turno(jugadorActual, tirador, tablero);
+
+			} catch (JugadorEnBancarrotaException excepcion) {
+				
+				jugadores.remove(jugadorActual);
+				cantidadJugadoresActuales -= 1;
+				
+			}
+			
+			indexJugadorActual++;
+			if (indexJugadorActual > cantidadJugadoresActuales)
+				indexJugadorActual = 0;
+		}
+		
+		//El juego termina y gana el jugador que queda en la lista de jugadores
 	}
 
 	public Jugador jugadorActual() {

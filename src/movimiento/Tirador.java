@@ -1,5 +1,7 @@
 package movimiento;
 
+import excepciones.NumeroDobleEnDadosException;
+
 public class Tirador {
 	
 	private Dado dado1;
@@ -15,12 +17,14 @@ public class Tirador {
 	public int tirar(){
 		valorTiradaDado1 = dado1.tirar();
 		valorTiradaDado2 = dado2.tirar();
-		
+		if (this.dadosMismoValor()) {
+			throw new NumeroDobleEnDadosException("Sacaste el mismo numero en los dos dados");
+		}
 		return valorTiradaDado1 + valorTiradaDado2;
 	}
 	
 	public boolean dadosMismoValor(){
-		return valorTiradaDado1 == valorTiradaDado2;
+		return (valorTiradaDado1 == valorTiradaDado2);
 	}
 	
 	
