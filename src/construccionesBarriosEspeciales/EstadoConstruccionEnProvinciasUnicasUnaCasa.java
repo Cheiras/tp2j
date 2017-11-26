@@ -5,8 +5,8 @@ import partida.jugador.Jugador;
 
 public class EstadoConstruccionEnProvinciasUnicasUnaCasa extends EstadoConstruccionEnProvinciasUnicas{
 
-	public EstadoConstruccionEnProvinciasUnicasUnaCasa(BarrioEspecial unBarrio, int precioAlquilerConUnicoEdificio) {
-		this.costoRenta=precioAlquilerConUnicoEdificio;
+	public EstadoConstruccionEnProvinciasUnicasUnaCasa( int precioAlquilerConUnicoEdificio) {
+		this.costoRenta = precioAlquilerConUnicoEdificio;
 	}
 
 	@Override

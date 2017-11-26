@@ -12,7 +12,9 @@ public abstract class EstadoConstruccion {
 	protected int costoConstruccion;
 	
 	
-	public int getCostoRenta() {
+
+	
+	public int getCostoRenta(){
 		return this.costoRenta;
 	}
 	
@@ -51,10 +53,6 @@ public abstract class EstadoConstruccion {
 	
 	public abstract void construir (Jugador duenio,BarrioNormal unBarrio);
 	
-	public boolean puedeConstruirHotel() {
-		return false;
-	}
-
 	public boolean habilitadoParaConstruirHotel() {
 		return false;
 	}
