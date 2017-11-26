@@ -13,7 +13,7 @@ import estadoConstruccion.EstadoSinConstruccion;
 
 public class BarrioNormal extends Barrio {
 
-	protected String duplaBarrioNormal; // lo asigno en la subclase propia
+	protected String duplaBarrioNormal;
 	private ArrayList<EstadoConstruccion> construcciones = new ArrayList<EstadoConstruccion>();
 	private int indiceConstruccionActual;
 
@@ -42,18 +42,12 @@ public class BarrioNormal extends Barrio {
 	}
 
 	public void cobrarAlquiler(Jugador unJugador) throws RuntimeException {
+		this.construcciones.get(this.indiceConstruccionActual).cobrarAlquiler(unJugador, this.duenio);
 
-		int costoAlquiler = (this.construcciones.get(indiceConstruccionActual)).getCostoRenta();
-		if (unJugador.montoMenorA(costoAlquiler)) {
-			throw new JugadorEnBancarrotaException("Has entrado en Bancarrota, lo siento.");
-
-		}
-		unJugador.reducirEfectivo(costoAlquiler);
-		this.duenio.aumentarEfectivo(costoAlquiler);
 	}
 
 	public void construir() {
-		(this.construcciones.get(indiceConstruccionActual)).construir(this.duenio, this);
+		(this.construcciones.get(this.indiceConstruccionActual)).construir(this.duenio, this);
 	}
 
 	public String getNombreBarrioDupla() {

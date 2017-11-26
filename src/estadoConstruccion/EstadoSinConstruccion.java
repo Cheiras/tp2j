@@ -17,7 +17,7 @@ public class EstadoSinConstruccion extends EstadoConstruccion {
 	@Override
 	public void construir(Jugador duenio, BarrioNormal unBarrio) {
 		this.habilitadoAConstruir(duenio, unBarrio);
-		this.cobrarCostoConstruccion(duenio, costoConstruccion);
+		this.cobrarCostoConstruccion(duenio, this.costoConstruccion);
 		unBarrio.cambiarEstadoConstruccion();
 		
 	}

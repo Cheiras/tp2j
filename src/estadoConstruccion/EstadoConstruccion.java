@@ -1,6 +1,7 @@
 package estadoConstruccion;
 
 import caible.propiedades.barrios.BarrioNormal;
+import excepciones.JugadorEnBancarrotaException;
 import excepciones.MontoInsuficienteException;
 import excepciones.RequisitosInsuficientesException;
 import partida.jugador.Jugador;
@@ -22,14 +23,22 @@ public abstract class EstadoConstruccion {
 		}
 	}
 	
-	public void cobrarCostoConstruccion(Jugador unJugador, int unValor) throws MontoInsuficienteException {
 
+	public void cobrarAlquiler(Jugador unJugador, Jugador duenio ) throws RuntimeException {
+		if (unJugador.montoMenorA(costoRenta)) {
+			throw new JugadorEnBancarrotaException("Dinero insuficiente para pagar alquiler, entro en Bancarota");
+		}
+		duenio.aumentarEfectivo(this.costoRenta);
+		unJugador.reducirEfectivo(this.costoRenta);
+		
+	}
+		
+	
+	public void cobrarCostoConstruccion(Jugador unJugador, int unValor) throws MontoInsuficienteException {
 		if (unJugador.montoMenorA(unValor)) {
 			throw new MontoInsuficienteException("Dinero insuficiente para construir");
 		}
-		
 		unJugador.reducirEfectivo(unValor);
-		
 	}
 	
 	public abstract void construir (Jugador duenio,BarrioNormal unBarrio);
