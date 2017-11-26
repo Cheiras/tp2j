@@ -27,12 +27,12 @@ public abstract class EstadoConstruccion {
 		if (unJugador.montoMenorA(unValor)) {
 			throw new MontoInsuficienteException("Dinero insuficiente para construir");
 		}
-
+		
 		unJugador.reducirEfectivo(unValor);
 		
 	}
 	
-	public abstract EstadoConstruccion construir (Jugador duenio,BarrioNormal unBarrio);
+	public abstract void construir (Jugador duenio,BarrioNormal unBarrio);
 	
 	public boolean puedeConstruirHotel() {
 		return false;

@@ -5,16 +5,15 @@ import partida.jugador.Jugador;
 
 public class EstadoConstruccionSegundaCasa extends EstadoConstruccion {
 
-	public EstadoConstruccionSegundaCasa(BarrioNormal unBarrio) {
-		this.costoRenta=unBarrio.getPrecioAlquilerConDosCasas();
+	public EstadoConstruccionSegundaCasa(BarrioNormal unBarrio, int costoRenta, int costoConstruccion) {
+		this.costoRenta=costoRenta;
+		this.costoConstruccion=costoConstruccion;
 	}
 	@Override
-	public EstadoConstruccion construir(Jugador duenio, BarrioNormal unBarrio) {
-		// TODO Auto-generated method stub
+	public void construir(Jugador duenio, BarrioNormal unBarrio) {
 		this.habilitadoAConstruir(duenio, unBarrio);
-		EstadoConstruccion dosCasas=new EstadoConstruccionHotel(unBarrio);
-		cobrarCostoConstruccion(duenio,unBarrio.getPrecioConstruirHotel());
-		return dosCasas;
+		cobrarCostoConstruccion(duenio,costoConstruccion);
+		unBarrio.cambiarEstadoConstruccion();
 	}
 	
 	@Override

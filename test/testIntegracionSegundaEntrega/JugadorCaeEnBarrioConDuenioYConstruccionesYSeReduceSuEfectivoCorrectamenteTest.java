@@ -64,7 +64,6 @@ public class JugadorCaeEnBarrioConDuenioYConstruccionesYSeReduceSuEfectivoCorrec
 		neuquen.setDuenio(jugadorDuenio);;
 		jugadorDuenio.construirEn(neuquen);
 		neuquen.accionar(jugadorQueCae);
-		Assert.assertEquals(3800 , neuquen.getprecioAlquilerConUnicoEdificio());
 		Assert.assertEquals(100000 - 3800 , jugadorQueCae.getEfectivo());
 	}
 	@Test

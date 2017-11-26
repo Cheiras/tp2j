@@ -12,6 +12,5 @@ public class DadoTest {
 		Dado dado = new Dado(6);
 		int valor = dado.tirar();
 		Assert.assertTrue(1 <= valor && valor <= 6);
-		Assert.assertEquals(1,valor);
 	}
 }

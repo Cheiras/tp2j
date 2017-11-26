@@ -30,7 +30,7 @@ public abstract class EstadoConstruccionEnProvinciasUnicas {
 		
 	}
 	
-	public abstract EstadoConstruccionEnProvinciasUnicas construir (Jugador duenio,BarrioEspecial barrioEspecial);
+	public abstract void construir (Jugador duenio,BarrioEspecial barrioEspecial);
 	
 	public boolean puedeConstruirHotel() {
 		return false;

@@ -8,8 +8,8 @@ import org.junit.Test;
 
 public class EstadoConstruccionTest {
 	BarrioNormal BairesSur=new BuenosAiresSur();
-	EstadoSinConstruccion estado=new EstadoSinConstruccion(BairesSur);
-	EstadoConstruccionUnaCasa estadoConCasa=new EstadoConstruccionUnaCasa(BairesSur);
+	EstadoSinConstruccion estado=new EstadoSinConstruccion(BairesSur,2000,4000);
+	EstadoConstruccionUnaCasa estadoConCasa=new EstadoConstruccionUnaCasa(BairesSur,3000,4000);
 	
 	@Test
 	public void unEstadoSinConstruccionDevuelveElAlquilerSinNingunaConstruccionDeLaPropiedad() {

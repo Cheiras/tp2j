@@ -5,9 +5,9 @@ import partida.jugador.Jugador;
 
 public class EstadoSinConstruccionEnProvinciasUnicas extends EstadoConstruccionEnProvinciasUnicas {
 	
-	public EstadoSinConstruccionEnProvinciasUnicas(BarrioEspecial barrioEspecial) {
-		this.costoRenta=barrioEspecial.getPrecioAlquiler();
-		this.costoConstruccion=barrioEspecial.getPrecioConstruirEdificioHistorico();/***SE USA???***/
+	public EstadoSinConstruccionEnProvinciasUnicas(BarrioEspecial barrioEspecial, int precioAlquiler, int precioConstruirEdificioHistorico) {
+		this.costoRenta=precioAlquiler;
+		this.costoConstruccion=precioConstruirEdificioHistorico;
 	}
 	
 	public int getCostoRenta() {
@@ -15,13 +15,10 @@ public class EstadoSinConstruccionEnProvinciasUnicas extends EstadoConstruccionE
 	}
 
 	@Override
-	public EstadoConstruccionEnProvinciasUnicas construir(Jugador duenio, BarrioEspecial unBarrio) {
-		// TODO Auto-generated method stub
+	public void construir(Jugador duenio, BarrioEspecial unBarrio) {
 		this.habilitadoAConstruir(duenio, unBarrio);
-		EstadoConstruccionEnProvinciasUnicasUnaCasa casaConstruida=new EstadoConstruccionEnProvinciasUnicasUnaCasa(unBarrio);
-		this.cobrarCostoConstruccion(duenio, unBarrio.getPrecioConstruirEdificioHistorico());
-		return casaConstruida;
-		
+		this.cobrarCostoConstruccion(duenio,costoConstruccion);
+		unBarrio.cambiarEstadoConstruccion();		
 	}
 	
 
