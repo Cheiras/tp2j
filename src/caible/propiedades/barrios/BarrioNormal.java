@@ -1,6 +1,5 @@
 package caible.propiedades.barrios;
 
-import excepciones.JugadorEnBancarrotaException;
 import partida.jugador.Jugador;
 
 import java.util.ArrayList;
@@ -50,6 +49,10 @@ public class BarrioNormal extends Barrio {
 		(this.construcciones.get(this.indiceConstruccionActual)).construir(this.duenio, this);
 	}
 
+	public boolean barrioHabilitadoParaConstruirHotel() {
+		return this.construcciones.get(this.indiceConstruccionActual).habilitadoParaConstruirHotel();
+	}
+	
 	public String getNombreBarrioDupla() {
 		return this.duplaBarrioNormal;
 	}

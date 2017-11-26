@@ -1,6 +1,7 @@
 package estadoConstruccion;
 
 import caible.propiedades.barrios.BarrioNormal;
+import excepciones.ConstruccionException;
 import excepciones.JugadorEnBancarrotaException;
 import excepciones.MontoInsuficienteException;
 import excepciones.RequisitosInsuficientesException;
@@ -24,6 +25,13 @@ public abstract class EstadoConstruccion {
 	}
 	
 
+	public void habilitadoAConstruirHotel(Jugador unJugador, BarrioNormal unBarrio) throws RuntimeException {
+		BarrioNormal DuplaDelBarrio = unJugador.obtenerPropiedadString(unBarrio.getNombreBarrioDupla());
+		if(!DuplaDelBarrio.barrioHabilitadoParaConstruirHotel()) {
+			throw new ConstruccionException("No estas habilitado para construir un Hotel");
+		}
+	}
+	
 	public void cobrarAlquiler(Jugador unJugador, Jugador duenio ) throws RuntimeException {
 		if (unJugador.montoMenorA(costoRenta)) {
 			throw new JugadorEnBancarrotaException("Dinero insuficiente para pagar alquiler, entro en Bancarota");
@@ -44,6 +52,10 @@ public abstract class EstadoConstruccion {
 	public abstract void construir (Jugador duenio,BarrioNormal unBarrio);
 	
 	public boolean puedeConstruirHotel() {
+		return false;
+	}
+
+	public boolean habilitadoParaConstruirHotel() {
 		return false;
 	}
 }

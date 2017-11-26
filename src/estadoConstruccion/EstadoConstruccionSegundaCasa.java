@@ -12,12 +12,13 @@ public class EstadoConstruccionSegundaCasa extends EstadoConstruccion {
 	@Override
 	public void construir(Jugador duenio, BarrioNormal unBarrio) {
 		this.habilitadoAConstruir(duenio, unBarrio);
+		this.habilitadoAConstruirHotel(duenio, unBarrio);
 		cobrarCostoConstruccion(duenio,this.costoConstruccion);
 		unBarrio.cambiarEstadoConstruccion();
 	}
 	
 	@Override
-	public boolean puedeConstruirHotel() {
+	public boolean habilitadoParaConstruirHotel() {
 		return true;
 	}
 

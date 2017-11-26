@@ -157,4 +157,14 @@ public class Jugador {
 		unBarrio.construir();
 	}
 
+	public BarrioNormal obtenerPropiedadString(String nombreBarrioDupla) throws RuntimeException {
+		
+		for (Propiedad propiedad : this.listaDePropiedades) {
+			if (propiedad.getNombre() == nombreBarrioDupla) {
+				return (BarrioNormal) propiedad;
+			}
+		}
+		throw new RuntimeException("Error, nunca deberia caer aca");
+	}
+
 }
