@@ -6,6 +6,7 @@ import construccionesBarriosEspeciales.EstadoConstruccionEnProvinciasUnicas;
 import construccionesBarriosEspeciales.EstadoConstruccionEnProvinciasUnicasUnaCasa;
 import construccionesBarriosEspeciales.EstadoSinConstruccionEnProvinciasUnicas;
 import partida.jugador.Jugador;
+import excepciones.RequisitosInsuficientesException;
 
 public class BarrioEspecial extends Barrio {
 
@@ -38,6 +39,27 @@ public class BarrioEspecial extends Barrio {
 		if ((indiceConstruccionActual + 1) < this.construcciones.size()) {
 			indiceConstruccionActual++;
 		}
+	}
+	
+	public int getNumeroConstrucciones() {
+		return this.indiceConstruccionActual;
+	}
+	
+	public void venderConstruccion() {
+		int dineroACobrar=(this.construcciones.get(this.indiceConstruccionActual).getCostoConstruccion()*85)/100;
+		this.duenio.aumentarEfectivo(dineroACobrar);
+		this.indiceConstruccionActual-=1;
+	}
+	
+	public void vendete() throws RequisitosInsuficientesException {
+		int numConstrucciones=this.getNumeroConstrucciones();
+		if(numConstrucciones>0) {
+			throw new RequisitosInsuficientesException("La propiedad tiene construcciones. Por favor vendé las construcciones antes de vender la propiedad");
+		}
+		int EfectivoACobrar=(this.getPrecioDeCompra()*85)/100;
+		this.duenio.aumentarEfectivo(EfectivoACobrar);
+		this.duenio.removerPropiedad(this);
+		this.removeDuenio();
 	}
 
 }

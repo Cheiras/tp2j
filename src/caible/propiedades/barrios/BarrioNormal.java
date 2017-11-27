@@ -9,6 +9,7 @@ import estadoConstruccion.EstadoConstruccionHotel;
 import estadoConstruccion.EstadoConstruccionSegundaCasa;
 import estadoConstruccion.EstadoConstruccionUnaCasa;
 import estadoConstruccion.EstadoSinConstruccion;
+import excepciones.RequisitosInsuficientesException;
 
 public class BarrioNormal extends Barrio {
 
@@ -82,30 +83,47 @@ public class BarrioNormal extends Barrio {
 		return this.indiceConstruccionActual;
 	}
 	
-	public int calcularPrecioVenta() {
-		int precioCompra=this.getPrecio();
-		int numeroCasas;
-		int numeroHoteles;
-		int precioConstruirCasa=this.construcciones.get(0).getCostoConstruccion();
-		int precioConstruirHotel=this.construcciones.get(3).getCostoConstruccion();
+	public void venderConstruccion() throws RequisitosInsuficientesException {
 		int numeroConstrucciones=this.getNumeroConstrucciones();
-		if(numeroConstrucciones==3) {
-			numeroCasas=2;
-			numeroHoteles=1;
+		if(numeroConstrucciones==0) {
+			throw new RequisitosInsuficientesException("No hay construcciones para vender");
 		}
-		else {
-			numeroCasas=numeroConstrucciones;
-			numeroHoteles=0;
+		int dineroACobrarPorVenta=(this.construcciones.get(numeroConstrucciones).getCostoConstruccion()*85)/100;
+		this.duenio.aumentarEfectivo(dineroACobrarPorVenta);
+		this.indiceConstruccionActual=numeroConstrucciones-1;
+	}
+	
+	public void ventaSinDupla() {
+		/**Asumo que el jugador no tiene la dupla de propiedades y por lo tanto no tiene construcciones**/
+		int dineroACobrarPorVenta=(this.getPrecio()*85)/100;
+		this.duenio.aumentarEfectivo(dineroACobrarPorVenta);
+		this.duenio.removerPropiedad(this);
+		this.removeDuenio();
+	}
+	
+	public void ventaConDupla() throws RequisitosInsuficientesException {
+		/**Asumo que el jugador tiene la dupla de propiedades y puede tener construcciones**/
+		int numeroConstruccionesActuales=this.getNumeroConstrucciones();
+		BarrioNormal barrioPar=this.duenio.obtenerPropiedadString(this.duplaBarrioNormal);
+		int numeroConstruccionesBarrioPar=barrioPar.getNumeroConstrucciones();
+		if(numeroConstruccionesActuales>0 || numeroConstruccionesBarrioPar>0) {
+			throw new RequisitosInsuficientesException("No se puede vender la propiedad en tanto haya construcciones en algun miembro de la dupla");
 		}
-		return ((precioCompra+numeroCasas*precioConstruirCasa+numeroHoteles*precioConstruirHotel)*85)/100;
+		int dineroACobrarPorVenta=(this.getPrecio()*85)/100;
+		this.duenio.aumentarEfectivo(dineroACobrarPorVenta);
+		this.duenio.removerPropiedad(this);
+		this.removeDuenio();
 	}
 	
 	public void vendete() {
-		int precioACobrarPorVenta=this.calcularPrecioVenta();
-		this.duenio.aumentarEfectivo(precioACobrarPorVenta);
-		this.duenio.removerPropiedad(this);
-		this.removeDuenio();
-		this.eliminarConstrucciones();
-		
+		Boolean contienePar=this.duenio.contienePropiedadString(this.duplaBarrioNormal);
+		if(contienePar) {
+			this.ventaConDupla();
+		}
+		else {
+			this.ventaSinDupla();
+		}
 	}
+	
+
 }
