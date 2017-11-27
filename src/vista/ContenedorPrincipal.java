@@ -98,7 +98,7 @@ public class ContenedorPrincipal extends BorderPane {
 
         VBox contenedorConsola = new VBox(etiqueta);
         contenedorConsola.setSpacing(10);
-        contenedorConsola.setPadding(new Insets(15));
+        contenedorConsola.setPadding(new Insets(20));
         contenedorConsola.setStyle("-fx-background-color: black;");
 
         this.setBottom(contenedorConsola);
