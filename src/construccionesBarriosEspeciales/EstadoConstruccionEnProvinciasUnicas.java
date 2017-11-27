@@ -14,6 +14,10 @@ public abstract class EstadoConstruccionEnProvinciasUnicas{
 		return this.costoRenta;
 	}
 	
+	public int getCostoConstruccion() {
+		return this.costoConstruccion;
+	}
+	
 	public void habilitadoAConstruir(Jugador unJugador, Barrio unBarrio) throws RuntimeException {
 		 if (unJugador.montoMenorA(this.costoConstruccion)) {
 			throw new MontoInsuficienteException("No tienes el dinero suficiente como para construir");

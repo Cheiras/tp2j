@@ -18,6 +18,10 @@ public abstract class EstadoConstruccion {
 		return this.costoRenta;
 	}
 	
+	public int getCostoConstruccion() {
+		return this.costoConstruccion;
+	}
+	
 	public void habilitadoAConstruir(Jugador unJugador, BarrioNormal unBarrio) throws RuntimeException {
 		if (!unJugador.contienePropiedadString(unBarrio.getNombreBarrioDupla())) {
 			throw new RequisitosInsuficientesException("Debes tener los dos barrios para construir");

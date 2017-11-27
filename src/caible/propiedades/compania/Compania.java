@@ -45,4 +45,11 @@ public abstract class Compania extends Propiedad {
 	public Compania getPar() {
 		return this.CompaniaPar;
 	}
+	
+	public void vendete() {
+		int precioACobrar=(this.getPrecioDeCompra()*85)/100;
+		this.duenio.aumentarEfectivo(precioACobrar);
+		this.duenio.removerPropiedad(this);
+		this.removeDuenio();
+	}
 }

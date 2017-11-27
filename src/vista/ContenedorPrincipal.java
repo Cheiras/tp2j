@@ -80,8 +80,8 @@ public class ContenedorPrincipal extends BorderPane {
         contenedorCentral.setPadding(new Insets(95));
         contenedorCentral.setMaxWidth(800);
         contenedorCentral.setMinHeight(450);
-        Image imagen = new Image("file:src/vista/imagenes/Tablero.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        Image imagen = new Image("file:src/vista/imagenes/tablero.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         contenedorCentral.setBackground(new Background(imagenDeFondo));
 
         this.setCenter(contenedorCentral);

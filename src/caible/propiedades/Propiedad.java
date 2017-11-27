@@ -64,4 +64,13 @@ public abstract class Propiedad extends Caible {
 	public void eliminarConstrucciones() {
 		
 	}
+	
+	public void removeDuenio() {
+		this.duenio=new NoJugador(0,null);
+		this.estadoDuenio=new SinDuenio();
+	}
+	
+	public void vendete() {
+		
+	}
 }
