@@ -27,10 +27,11 @@ public class ContenedorBienvenidos extends VBox {
         super();
 
         this.stage = stage;
-
-        this.setAlignment(Pos.CENTER);
+        this.setAlignment(Pos.BOTTOM_CENTER);
+      
+        
         this.setSpacing(20);
-        this.setPadding(new Insets(25));
+        this.setPadding(new Insets(100));
         Image imagen = new Image("file:src/vista/imagenes/imagen-intro.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
