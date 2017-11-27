@@ -166,5 +166,9 @@ public class Jugador {
 		}
 		throw new RuntimeException("Error, nunca deberia caer aca");
 	}
+	
+	public void venderPropiedad(Propiedad unaPropiedad) {
+		unaPropiedad.vendete();
+	}
 
 }

@@ -25,7 +25,7 @@ public class BarrioNormal extends Barrio {
 		construcciones.add(new EstadoSinConstruccion(this, precioAlquiler, precioConstruirCasa));
 		construcciones.add(new EstadoConstruccionUnaCasa(this, precioAlquilerConUnaCasa, precioConstruirCasa));
 		construcciones.add(new EstadoConstruccionSegundaCasa(this, precioAlquilerConDosCasas, precioConstruirHotel));
-		construcciones.add(new EstadoConstruccionHotel(this, precioAlquilerConHotel));
+		construcciones.add(new EstadoConstruccionHotel(this, precioAlquilerConHotel,precioConstruirHotel));
 	}
 
 	public int getPrecio() {
@@ -76,5 +76,36 @@ public class BarrioNormal extends Barrio {
 			indiceConstruccionActual++;
 		}
 
+	}
+	
+	public int getNumeroConstrucciones() {
+		return this.indiceConstruccionActual;
+	}
+	
+	public int calcularPrecioVenta() {
+		int precioCompra=this.getPrecio();
+		int numeroCasas;
+		int numeroHoteles;
+		int precioConstruirCasa=this.construcciones.get(0).getCostoConstruccion();
+		int precioConstruirHotel=this.construcciones.get(3).getCostoConstruccion();
+		int numeroConstrucciones=this.getNumeroConstrucciones();
+		if(numeroConstrucciones==3) {
+			numeroCasas=2;
+			numeroHoteles=1;
+		}
+		else {
+			numeroCasas=numeroConstrucciones;
+			numeroHoteles=0;
+		}
+		return ((precioCompra+numeroCasas*precioConstruirCasa+numeroHoteles*precioConstruirHotel)*85)/100;
+	}
+	
+	public void vendete() {
+		int precioACobrarPorVenta=this.calcularPrecioVenta();
+		this.duenio.aumentarEfectivo(precioACobrarPorVenta);
+		this.duenio.removerPropiedad(this);
+		this.removeDuenio();
+		this.eliminarConstrucciones();
+		
 	}
 }
