@@ -25,6 +25,7 @@ public class BotonTirarDadosEventHandler implements EventHandler<ActionEvent> {
         }catch(RuntimeException e) {
         	this.handle(actionEvent);
         }
+        
         ///stage.setScene(proximaEscena);
         
     }
