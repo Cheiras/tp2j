@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 import movimiento.Dado;
 import movimiento.Tirador;
 import partida.Partida;
+import vista.eventos.BotonComprarCasilleroActualEventHandler;
 import vista.eventos.BotonEntrarEventHandler;
 import vista.eventos.BotonTirarDadosEventHandler;
 
@@ -54,13 +55,18 @@ public class ContenedorPrincipal extends BorderPane {
         botonTirar.setText("Tirar Dados");
         BotonTirarDadosEventHandler throwButtonHandler = new BotonTirarDadosEventHandler(stage, this.partida);
         botonTirar.setOnAction(throwButtonHandler);
-
+        
         Button botonConstruir = new Button();
         botonConstruir.setText("Construir");
         BotonConstruirHandler construirButtonHandler = new BotonConstruirHandler(stage, partida);
         botonConstruir.setOnAction(construirButtonHandler);
-
-        VBox contenedorVertical = new VBox(botonTirar, botonConstruir);
+        
+        Button botonComprar = new Button();
+        botonComprar.setText("Comprar casillero actual");
+        BotonComprarCasilleroActualEventHandler comprarButtonHandler = new BotonComprarCasilleroActualEventHandler(stage, partida);
+        botonConstruir.setOnAction(comprarButtonHandler);
+        
+        VBox contenedorVertical = new VBox(botonTirar, botonConstruir, botonComprar);
         contenedorVertical.setSpacing(20);
         contenedorVertical.setPadding(new Insets(15));
 
