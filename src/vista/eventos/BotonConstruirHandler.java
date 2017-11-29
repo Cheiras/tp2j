@@ -1,8 +1,7 @@
-package vista;
+package vista.eventos;
 
 import caible.propiedades.barrios.Barrio;
 import casilleros.Caible;
-import excepciones.CaibleNoConstruibleException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;

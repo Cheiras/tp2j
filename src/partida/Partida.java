@@ -5,6 +5,7 @@ import java.util.Collections;
 
 import caible.propiedades.barrios.Barrio;
 import casilleros.Caible;
+import excepciones.CaibleNoComprableException;
 import excepciones.CaibleNoConstruibleException;
 import excepciones.JugadorEnBancarrotaException;
 import javafx.application.Application;
@@ -15,6 +16,7 @@ import movimiento.Tirador;
 import partida.jugador.Jugador;
 import partida.tablero.Tablero;
 import partida.turno.Turno;
+import caible.propiedades.Propiedad;
 
 public class Partida {
 
@@ -72,7 +74,10 @@ public class Partida {
 	public void comprarCasilleroActual() {
 		if (turno.estaListoParaTerminar()) {
 			Caible caibleActual = this.getCaibleActual();
-			caibleActual.comprar(turno.getJugador());
+			try {
+				((Propiedad) caibleActual).comprar(turno.getJugador());
+			} catch (RuntimeException e) {
+			}
 		}
 	}
 
