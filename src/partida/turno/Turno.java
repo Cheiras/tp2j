@@ -11,34 +11,36 @@ public class Turno {
 	private int intentosParaTirarDados;
 	Tirador tirador;
 	Jugador jugador;
-	private boolean listoParaTerminar; 
+	private boolean listoParaTerminar;
 
 	public Turno(Jugador unJugador, Tirador unTirador, Tablero tablero) {
-	 intentosParaTirarDados=2;
-	 listoParaTerminar=false;
-	 jugador = unJugador;
-	 tirador=unTirador;
+		intentosParaTirarDados = 2;
+		listoParaTerminar = false;
+		jugador = unJugador;
+		tirador = unTirador;
 	}
+
 	public void tirarDados(Partida partida) {
 		try {
 			int valorTirada = tirador.tirar();
 			this.jugador.avanzar(valorTirada);
 			this.jugador.setNumeroTotalSacadoEnDados(valorTirada);
 			partida.getCaibleActual().accionar(this.jugador);
-			listoParaTerminar=true;
-			
-		}
-		catch(NumeroDobleEnDadosException exception) {
+			listoParaTerminar = true;
+
+		} catch (NumeroDobleEnDadosException exception) {
 			intentosParaTirarDados--;
 			if (intentosParaTirarDados == 0) {
-				listoParaTerminar=true;
+				listoParaTerminar = true;
 			}
 		}
-		
+
 	}
+
 	public boolean estaListoParaTerminar() {
 		return listoParaTerminar;
 	}
+
 	public Jugador getJugador() {
 		return jugador;
 	}
