@@ -9,7 +9,7 @@ public class VenderUnaCompaniaAumentaElEfectivoEn85PorCientoDelPrecioDeCompraTes
 	Jugador kevin=new Jugador("Kevin",100000,null);
 	@Test
 	public void test() {
-		unAysa.accionar(kevin);
+		unAysa.comprar(kevin);
 		kevin.venderPropiedad(unAysa);
 		
 		Assert.assertEquals(95500,kevin.getEfectivo());

@@ -19,7 +19,7 @@ public class JugadorCaeEnEdesurDeOtroJugadorQueNoTieneAysaReduceSuEfectivoEn500V
 		unAysa.setPar(unEdesur);
 		unEdesur.setPar(unAysa);
 		jugadorDos.setNumeroTotalSacadoEnDados(valorDados);
-		unEdesur.accionar(jugadorUno);
+		unEdesur.comprar(jugadorUno);
 		unEdesur.accionar(jugadorDos);
 
 		Assert.assertEquals(100000 - valorDados * 500, jugadorDos.getEfectivo());

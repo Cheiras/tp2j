@@ -2,17 +2,18 @@ package vista.eventos;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import partida.Partida;
 import vista.ContenedorPrincipal;
 
-public class BotonComprarCasilleroActualEventHandler implements EventHandler<ActionEvent> {
+public class BotonTerminarTurnoEventHandler implements EventHandler<ActionEvent> {
 
-    Stage stage;//no se usa?
+    Stage stage;
     Partida partida;
-	private ContenedorPrincipal contenedor;
+    ContenedorPrincipal contenedor;
     
-    public BotonComprarCasilleroActualEventHandler(Stage stage, Partida partida, ContenedorPrincipal contenedorPrincipal) { 
+    public BotonTerminarTurnoEventHandler(Stage stage, Partida partida, ContenedorPrincipal contenedorPrincipal) { 
         this.stage = stage;
         this.partida = partida;
         this.contenedor = contenedorPrincipal;
@@ -22,7 +23,7 @@ public class BotonComprarCasilleroActualEventHandler implements EventHandler<Act
     @Override
     public void handle(ActionEvent actionEvent) {
 
-        	partida.comprarCasilleroActual();
+        	partida.terminarTurno();
         	contenedor.setPanelDerecha();
 
     }

@@ -25,6 +25,6 @@ public class JugadorPuedePagarFianzaEnSegundoYTercerTurnoTest {
 		Pedro.avanzar(1);
 		
 		
-		Assert.assertTrue(Pedro.getPosicion() == 6);
+		Assert.assertTrue(Pedro.getIndice() == 6);
 	}
 }

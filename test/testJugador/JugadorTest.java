@@ -24,7 +24,7 @@ public class JugadorTest {
 	@Test
 	public void dineroBajaCuandoJugadorCaeEnUnaPropiedadYLaCompra() {
 
-		BuenosAiresSur.accionar(unJugador);
+		BuenosAiresSur.comprar(unJugador);
 
 		Assert.assertEquals(80000, unJugador.getEfectivo(), 0.1);
 	}

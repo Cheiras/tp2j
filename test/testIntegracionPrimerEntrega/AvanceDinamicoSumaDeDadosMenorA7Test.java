@@ -20,18 +20,18 @@ public class AvanceDinamicoSumaDeDadosMenorA7Test {
 	public void NumeroMenorASeis() {
 		int numeroSacadoEnDados = 3;
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getPosicion();
+		int posicionInicial= jugador.getIndice();
 		avanceDinamico.accionar(jugador);
-		int posicionFinal= jugador.getPosicion();
+		int posicionFinal= jugador.getIndice();
 		Assert.assertEquals(posicionFinal, posicionInicial+numeroSacadoEnDados-2);
 	}
 	@Test
 	public void NumeroIgualASeis() {
 		int numeroSacadoEnDados = 6;
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getPosicion();
+		int posicionInicial= jugador.getIndice();
 		avanceDinamico.accionar(jugador);
-		int posicionFinal= jugador.getPosicion();
+		int posicionFinal= jugador.getIndice();
 		Assert.assertEquals(posicionFinal, posicionInicial+numeroSacadoEnDados-2);
 	}
 }

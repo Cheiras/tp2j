@@ -16,7 +16,7 @@ public class JugadorCaeEnSubteDeOtroJugadorQueNoTieneTrenesReduceSuDineroEn600Ve
 		unTren.setPar(unSubte);
 		unSubte.setPar(unTren);
 		jugadorDos.setNumeroTotalSacadoEnDados(valorDados);
-		unSubte.accionar(jugadorUno);
+		unSubte.comprar(jugadorUno);
 		unSubte.accionar(jugadorDos);
 		
 		Assert.assertEquals(100000-600*valorDados,jugadorDos.getEfectivo());

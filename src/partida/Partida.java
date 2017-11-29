@@ -27,7 +27,7 @@ public class Partida {
 	private Tablero tablero;
 	private Tirador tirador;
 	private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-	private int turnos = 0;
+	private int turnos = 1;
 	private int indexJugadorActual;
 	private int cantidadJugadoresActuales;
 	private Turno turno;
@@ -60,9 +60,10 @@ public class Partida {
 	public void terminarTurno() {
 		if (turno.estaListoParaTerminar()) {
 			indexJugadorActual++;
-			if (indexJugadorActual > cantidadJugadoresActuales)
+			if (indexJugadorActual == cantidadJugadoresActuales)
 				indexJugadorActual = 0;
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
+			turnos++;
 		}
 
 	}
@@ -83,15 +84,12 @@ public class Partida {
 
 	public void construirEn(Barrio unBarrio) {
 		if (!turno.estaListoParaTerminar()) {
-			try {
-				if ((unBarrio.obtenerDuenio()) == this.jugadorActual()) {
-					unBarrio.construir();
-				}
-			} catch (RuntimeException e) {
 
-				throw new CaibleNoConstruibleException("No podes construir en este Caible");
+			if ((unBarrio.obtenerDuenio()) == this.jugadorActual()) {
+				unBarrio.construir();
 			}
 		}
+
 	}
 
 	public void tirarDados() {
@@ -105,7 +103,15 @@ public class Partida {
 	}
 
 	public Caible getCaibleActual() {
-		return this.tablero.getCaible(turno.getJugador().getPosicion());
+		return this.tablero.getCaible(turno.getJugador().getIndice());
+	}
+
+	public ArrayList<Jugador> getJugadores() {
+		return this.jugadores;
+	}
+
+	public int getNumeroJugadorActual() {
+		return indexJugadorActual + 1;
 	}
 
 }

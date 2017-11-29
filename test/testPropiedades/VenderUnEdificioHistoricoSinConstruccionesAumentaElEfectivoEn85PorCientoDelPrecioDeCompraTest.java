@@ -10,7 +10,7 @@ public class VenderUnEdificioHistoricoSinConstruccionesAumentaElEfectivoEn85PorC
 	
 	@Test
 	public void Test() {
-		neuquen.accionar(dan);
+		neuquen.comprar(dan);
 		dan.venderPropiedad(neuquen);
 		
 		Assert.assertEquals(97450,dan.getEfectivo());

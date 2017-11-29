@@ -11,10 +11,11 @@ import premio.Premio;
 import premio.Premio50k;
 
 public class Jugador {
+	
+	private TablaConversion tablaConversion;
 
 	private MeMuevo movimiento;
-
-	private int posicion;
+	private int indice;
 	private String nombre;
 	private int efectivoDisponible;
 	private ArrayList<Propiedad> listaDePropiedades;
@@ -25,9 +26,9 @@ public class Jugador {
 	private boolean habilitadoAPagarFianza = false;
 
 	public Jugador(String nombre, int efectivoInicial, MeMuevo movimientoNormal) {
-
+		this.tablaConversion = new TablaConversion();
 		this.nombre = nombre;
-		this.posicion = 0;
+		this.indice = 0;
 		this.movimiento = movimientoNormal;
 		this.efectivoDisponible = efectivoInicial;
 		this.listaDePropiedades = new ArrayList<Propiedad>();
@@ -38,7 +39,7 @@ public class Jugador {
 	}
 
 	public void retrocederCasillero() {
-		this.posicion -= 1;
+		this.indice -= 1;
 
 	}
 
@@ -52,7 +53,11 @@ public class Jugador {
 	}
 
 	public void avanzarCasillero() {
-		this.posicion += 1;
+	
+		this.indice += 1;
+		if(this.indice == 20) {
+			this.indice = 0;
+		}
 	}
 
 	// Solo para pruebas, lo contiene el turno.
@@ -84,12 +89,12 @@ public class Jugador {
 		this.premioQuini.cobrar(this);
 	}
 
-	public void setPosicion(int nuevaPosicion) {
-		this.posicion = nuevaPosicion;
+	public void setIndice(int nuevaindice) {
+		this.indice = nuevaindice;
 	}
 
-	public int getPosicion() {
-		return this.posicion;
+	public int getIndice() {
+		return this.indice;
 	}
 
 	public boolean montoMenorA(int monto) {
@@ -171,4 +176,8 @@ public class Jugador {
 		unaPropiedad.vendete();
 	}
 
+	
+	public Posicion getPosicion() {
+		return this.tablaConversion.getPosicion(this.indice);
+	}
 }

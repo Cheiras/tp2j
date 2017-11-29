@@ -20,27 +20,27 @@ public class RetrocesoDinamicoSumaDeDadosEntre7Y10Test{
 	public void NumeroIgualA7() {
 		int numeroSacadoEnDados = 7;
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getPosicion();
+		int posicionInicial= jugador.getIndice();
 		retrocesoDinamico.accionar(jugador);
-		int posicionFinal= jugador.getPosicion();
+		int posicionFinal= jugador.getIndice();
 		Assert.assertEquals(posicionFinal, posicionInicial-jugador.getEfectivo() *numeroSacadoEnDados % 100);
 	}
 	@Test
 	public void NumeroEntre7Y10() {
 		int numeroSacadoEnDados = 9;
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getPosicion();
+		int posicionInicial= jugador.getIndice();
 		retrocesoDinamico.accionar(jugador);
-		int posicionFinal= jugador.getPosicion();
+		int posicionFinal= jugador.getIndice();
 		Assert.assertEquals(posicionFinal, posicionInicial-jugador.getEfectivo() *numeroSacadoEnDados % 100);
 	}
 	@Test
 	public void NumeroIgualA10() {
 		int numeroSacadoEnDados = 10;
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getPosicion();
+		int posicionInicial= jugador.getIndice();
 		retrocesoDinamico.accionar(jugador);
-		int posicionFinal= jugador.getPosicion();
+		int posicionFinal= jugador.getIndice();
 		Assert.assertEquals(posicionFinal, posicionInicial-jugador.getEfectivo() *numeroSacadoEnDados % 100);
 	}
 	@Test
@@ -48,9 +48,9 @@ public class RetrocesoDinamicoSumaDeDadosEntre7Y10Test{
 		int numeroSacadoEnDados = 10;
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
 		jugador.aumentarEfectivo(10000);
-		int posicionInicial= jugador.getPosicion();
+		int posicionInicial= jugador.getIndice();
 		retrocesoDinamico.accionar(jugador);
-		int posicionFinal= jugador.getPosicion();
+		int posicionFinal= jugador.getIndice();
 		Assert.assertEquals(posicionFinal, posicionInicial-jugador.getEfectivo() *numeroSacadoEnDados % 100);
 	}
 }
