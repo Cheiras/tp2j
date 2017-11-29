@@ -11,16 +11,14 @@ public class AvanceDinamico extends Caible {
 	}
 
 	private void avanzarJugadorUnaCantidadDeCasilleros(Jugador unJugador, int unaCantidad) {
-		for (int i = 0; i < unaCantidad; i++) {
-			unJugador.avanzarCasillero();
-		}
+		unJugador.avanzar(unaCantidad);
 	}
 
 	public void accionar(Jugador unJugador) {
 
 		int cantidadDeCasillerosQueDeberaAvanzar;
 		int valorDados = unJugador.getNumeroTotalSacadoEnDados();
-		
+	
 		if (unJugador.getNumeroTotalSacadoEnDados() <= 6) {
 			cantidadDeCasillerosQueDeberaAvanzar = valorDados - 2;
 		} else if (unJugador.getNumeroTotalSacadoEnDados() <= 10) {

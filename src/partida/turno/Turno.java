@@ -23,6 +23,7 @@ public class Turno {
 		try {
 			int valorTirada = tirador.tirar();
 			this.jugador.avanzar(valorTirada);
+			this.jugador.setNumeroTotalSacadoEnDados(valorTirada);
 			partida.getCaibleActual().accionar(this.jugador);
 			listoParaTerminar=true;
 			

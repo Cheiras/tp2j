@@ -21,7 +21,7 @@ public class Jugador {
 	private ArrayList<Propiedad> listaDePropiedades;
 	private Premio premioQuini = new Premio50k();
 
-	int numeroTotalSacadoEnDados; // (Auxiliar para los tests de esta entrega.)
+	int numeroTotalSacadoEnDados; 
 
 	private boolean habilitadoAPagarFianza = false;
 
@@ -40,6 +40,9 @@ public class Jugador {
 
 	public void retrocederCasillero() {
 		this.indice -= 1;
+		if(this.indice == -1) {
+			this.indice = 19;
+		}
 
 	}
 
@@ -61,7 +64,6 @@ public class Jugador {
 		}
 	}
 
-	// Solo para pruebas, lo contiene el turno.
 	public int getNumeroTotalSacadoEnDados() {
 		return numeroTotalSacadoEnDados;
 	}
@@ -102,9 +104,8 @@ public class Jugador {
 		return (this.efectivoDisponible < monto);
 	}
 
-	// Solo para pruebas, lo contiene el turno.
 	public void setNumeroTotalSacadoEnDados(int numero) {
-		numeroTotalSacadoEnDados = numero;
+		this.numeroTotalSacadoEnDados = numero;
 	}
 
 	public void setPremio(Premio unPremio) {
