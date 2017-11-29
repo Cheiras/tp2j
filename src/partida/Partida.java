@@ -94,7 +94,7 @@ public class Partida {
 
 	public void tirarDados() {
 		if (!turno.estaListoParaTerminar()) {
-			turno.tirarDados();
+			turno.tirarDados(this);
 		}
 	}
 

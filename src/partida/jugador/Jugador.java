@@ -45,6 +45,7 @@ public class Jugador {
 
 	public void avanzar(int cantidad) {
 		this.movimiento.mover(this, cantidad);
+		
 	}
 
 	public void nuevoMovimiento(MeMuevo nuevoMovimiento) {

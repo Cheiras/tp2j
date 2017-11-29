@@ -2,6 +2,7 @@ package partida.turno;
 
 import excepciones.NumeroDobleEnDadosException;
 import movimiento.Tirador;
+import partida.Partida;
 import partida.jugador.Jugador;
 import partida.tablero.Tablero;
 
@@ -18,10 +19,11 @@ public class Turno {
 	 jugador = unJugador;
 	 tirador=unTirador;
 	}
-	public void tirarDados() {
+	public void tirarDados(Partida partida) {
 		try {
 			int valorTirada = tirador.tirar();
 			this.jugador.avanzar(valorTirada);
+			partida.getCaibleActual().accionar(this.jugador);
 			listoParaTerminar=true;
 			
 		}
