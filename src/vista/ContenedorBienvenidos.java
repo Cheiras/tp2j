@@ -41,7 +41,7 @@ public class ContenedorBienvenidos extends VBox {
 
         Label etiqueta = new Label();
         etiqueta.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
-        etiqueta.setText("Bienvenidos a AlgoPoly. Haga click en entrar");
+        etiqueta.setText("Bienvenidos a AlgoPoly. En este universo se ha descubierto la teletransportación, que genial! Haga click en entrar");
         etiqueta.setTextFill(Color.web("#66A7C5"));
 
         BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena);
