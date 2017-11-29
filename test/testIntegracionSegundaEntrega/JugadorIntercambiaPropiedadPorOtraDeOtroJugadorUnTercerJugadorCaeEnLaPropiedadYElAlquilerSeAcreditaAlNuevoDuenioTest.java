@@ -17,8 +17,8 @@ public class JugadorIntercambiaPropiedadPorOtraDeOtroJugadorUnTercerJugadorCaeEn
 	Jugador pepito=new Jugador("pepito",100000,null);
 	@Test
 	public void test() {
-		buenosAiresNorte.accionar(carlitos);
-		buenosAiresSur.accionar(juancito);
+		buenosAiresNorte.comprar(carlitos);
+		buenosAiresSur.comprar(juancito);
 		carlitos.intercambiarPropiedades(juancito,buenosAiresNorte,buenosAiresSur);
 		buenosAiresSur.accionar(pepito);
 

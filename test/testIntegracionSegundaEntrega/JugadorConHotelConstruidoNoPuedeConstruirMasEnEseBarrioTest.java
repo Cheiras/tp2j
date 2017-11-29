@@ -19,8 +19,8 @@ public class JugadorConHotelConstruidoNoPuedeConstruirMasEnEseBarrioTest {
 		BuenosAiresSur bsasSur = new BuenosAiresSur();
 		Jugador unDuenio = new Jugador("Carlos", 100000, null);
 		
-		bsasNorte.accionar(unDuenio);
-		bsasSur.accionar(unDuenio);
+		bsasNorte.comprar(unDuenio);
+		bsasSur.comprar(unDuenio);
 		
 		bsasNorte.construir();
 		bsasNorte.construir();

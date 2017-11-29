@@ -18,8 +18,8 @@ public class MismosCasosDeBsAsParaCordobaTest {
 		BarrioNormal cordobaSur = new CordobaSur();
 		BarrioNormal cordobaNorte = new CordobaNorte();
 
-		cordobaSur.accionar(carlos);
-		cordobaNorte.accionar(carlos);
+		cordobaSur.comprar(carlos);
+		cordobaNorte.comprar(carlos);
 
 		carlos.construirEn(cordobaNorte);
 		carlos.construirEn(cordobaSur);
@@ -41,8 +41,8 @@ public class MismosCasosDeBsAsParaCordobaTest {
 		BarrioNormal cordobaSur = new CordobaSur();
 		BarrioNormal cordobaNorte = new CordobaNorte();
 
-		cordobaSur.accionar(carlos);
-		cordobaNorte.accionar(carlos);
+		cordobaSur.comprar(carlos);
+		cordobaNorte.comprar(carlos);
 
 		carlos.construirEn(cordobaNorte);
 		carlos.construirEn(cordobaSur);
@@ -59,8 +59,8 @@ public class MismosCasosDeBsAsParaCordobaTest {
 		BarrioNormal cordobaSur = new CordobaSur();
 		BarrioNormal cordobaNorte = new CordobaNorte();
 
-		cordobaSur.accionar(carlos);
-		cordobaNorte.accionar(carlos);
+		cordobaSur.comprar(carlos);
+		cordobaNorte.comprar(carlos);
 
 		carlos.construirEn(cordobaNorte);
 		carlos.construirEn(cordobaSur);
@@ -79,8 +79,8 @@ public class MismosCasosDeBsAsParaCordobaTest {
 		BarrioNormal cordobaSur = new CordobaSur();
 		BarrioNormal cordobaNorte = new CordobaNorte();
 
-		cordobaSur.accionar(carlos);
-		cordobaNorte.accionar(carlos);
+		cordobaSur.comprar(carlos);
+		cordobaNorte.comprar(carlos);
 
 		carlos.construirEn(cordobaNorte);
 		carlos.construirEn(cordobaSur);

@@ -14,8 +14,8 @@ public class JugadorPoseeBsAsSurYNorteConLaMaximaCantidadDeCasasYConstruyeUnHote
 		BarrioNormal bairesSur = new BuenosAiresSur();
 		BarrioNormal bairesNorte = new BuenosAiresNorte();
 		
-		bairesSur.accionar(carlos);
-		bairesNorte.accionar(carlos);
+		bairesSur.comprar(carlos);
+		bairesNorte.comprar(carlos);
 		
 		carlos.construirEn(bairesNorte);
 		carlos.construirEn(bairesSur);

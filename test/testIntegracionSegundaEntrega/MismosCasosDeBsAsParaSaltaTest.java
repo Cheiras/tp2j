@@ -18,8 +18,8 @@ public class MismosCasosDeBsAsParaSaltaTest {
 		BarrioNormal SaltaSur = new SaltaSur();
 		BarrioNormal SaltaNorte = new SaltaNorte();
 
-		SaltaSur.accionar(carlos);
-		SaltaNorte.accionar(carlos);
+		SaltaSur.comprar(carlos);
+		SaltaNorte.comprar(carlos);
 
 		carlos.construirEn(SaltaNorte);
 		carlos.construirEn(SaltaSur);
@@ -41,8 +41,8 @@ public class MismosCasosDeBsAsParaSaltaTest {
 		BarrioNormal SaltaSur = new SaltaSur();
 		BarrioNormal SaltaNorte = new SaltaNorte();
 
-		SaltaSur.accionar(carlos);
-		SaltaNorte.accionar(carlos);
+		SaltaSur.comprar(carlos);
+		SaltaNorte.comprar(carlos);
 
 		carlos.construirEn(SaltaNorte);
 		carlos.construirEn(SaltaSur);
@@ -59,8 +59,8 @@ public class MismosCasosDeBsAsParaSaltaTest {
 		BarrioNormal SaltaSur = new SaltaSur();
 		BarrioNormal SaltaNorte = new SaltaNorte();
 
-		SaltaSur.accionar(carlos);
-		SaltaNorte.accionar(carlos);
+		SaltaSur.comprar(carlos);
+		SaltaNorte.comprar(carlos);
 
 		carlos.construirEn(SaltaNorte);
 		carlos.construirEn(SaltaSur);
@@ -79,8 +79,8 @@ public class MismosCasosDeBsAsParaSaltaTest {
 		BarrioNormal SaltaSur = new SaltaSur();
 		BarrioNormal SaltaNorte = new SaltaNorte();
 
-		SaltaSur.accionar(carlos);
-		SaltaNorte.accionar(carlos);
+		SaltaSur.comprar(carlos);
+		SaltaNorte.comprar(carlos);
 
 		carlos.construirEn(SaltaNorte);
 		carlos.construirEn(SaltaSur);

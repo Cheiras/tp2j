@@ -10,7 +10,7 @@ public class VenderUnBarrioNormalSinConstruccionesAumentaElEfectivoEnUn85PorCien
 	
 	@Test
 	public void test() {
-		cordobaSur.accionar(tester);
+		cordobaSur.comprar(tester);
 		tester.venderPropiedad(cordobaSur);
 		
 		Assert.assertEquals(97300,tester.getEfectivo());

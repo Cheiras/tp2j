@@ -23,7 +23,7 @@ public class ComprarUnBarrioReduceElDineroDelJugadorTest {
 	@Test
 	public void testBsAsSur() {
 
-		BuenosAiresSur.accionar(unJugador);
+		BuenosAiresSur.comprar(unJugador);
 
 		Assert.assertEquals(80000, unJugador.getEfectivo(), 0.1);
 	}
@@ -31,7 +31,7 @@ public class ComprarUnBarrioReduceElDineroDelJugadorTest {
 	@Test
 	public void testBsAsNorte() {
 
-		BuenosAiresNorte.accionar(unJugador);
+		BuenosAiresNorte.comprar(unJugador);
 
 		Assert.assertEquals(100000 - 25000, unJugador.getEfectivo(), 0.1);
 	}
@@ -39,7 +39,7 @@ public class ComprarUnBarrioReduceElDineroDelJugadorTest {
 	@Test
 	public void testSantaFe() {
 
-		SantaFe.accionar(unJugador);
+		SantaFe.comprar(unJugador);
 
 		Assert.assertEquals(100000 - 15000, unJugador.getEfectivo(), 0.1);
 	}
@@ -47,7 +47,7 @@ public class ComprarUnBarrioReduceElDineroDelJugadorTest {
 	@Test
 	public void testTucuman() {
 
-		Tucuman.accionar(unJugador);
+		Tucuman.comprar(unJugador);
 
 		Assert.assertEquals(100000 - 25000, unJugador.getEfectivo(), 0.1);
 	}
@@ -55,7 +55,7 @@ public class ComprarUnBarrioReduceElDineroDelJugadorTest {
 	@Test
 	public void testNeuquen() {
 
-		Neuquen.accionar(unJugador);
+		Neuquen.comprar(unJugador);
 
 		Assert.assertEquals(100000 - 17000, unJugador.getEfectivo(), 0.1);
 	}
@@ -63,7 +63,7 @@ public class ComprarUnBarrioReduceElDineroDelJugadorTest {
 	@Test
 	public void testCordobaNorte() {
 
-		CordobaNorte.accionar(unJugador);
+		CordobaNorte.comprar(unJugador);
 
 		Assert.assertEquals(100000 - 20000, unJugador.getEfectivo(), 0.1);
 	}
@@ -71,7 +71,7 @@ public class ComprarUnBarrioReduceElDineroDelJugadorTest {
 	@Test
 	public void testCordobaSur() {
 
-		CordobaSur.accionar(unJugador);
+		CordobaSur.comprar(unJugador);
 
 		Assert.assertEquals(100000 - 18000, unJugador.getEfectivo(), 0.1);
 	}
@@ -79,7 +79,7 @@ public class ComprarUnBarrioReduceElDineroDelJugadorTest {
 	@Test
 	public void testSaltaNorte() {
 
-		SaltaNorte.accionar(unJugador);
+		SaltaNorte.comprar(unJugador);
 
 		Assert.assertEquals(100000 - 23000, unJugador.getEfectivo(), 0.1);
 	}
@@ -87,7 +87,7 @@ public class ComprarUnBarrioReduceElDineroDelJugadorTest {
 	@Test
 	public void testSaltaSur() {
 
-		SaltaSur.accionar(unJugador);
+		SaltaSur.comprar(unJugador);
 
 		Assert.assertEquals(100000 - 23000, unJugador.getEfectivo(), 0.1);
 	}
