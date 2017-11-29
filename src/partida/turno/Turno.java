@@ -20,10 +20,6 @@ public class Turno {
 	 tirador=unTirador;
 	}
 	public void tirarDados() {
-		
-		if (listoParaTerminar || (intentosParaTirarDados == 0)){
-			return; // no puede volver a tirar dados
-		}
 		try {
 			valorTirada=tirador.tirar();
 			jugador.avanzar(valorTirada);
@@ -32,10 +28,16 @@ public class Turno {
 		}
 		catch(NumeroDobleEnDadosException exception) {
 			intentosParaTirarDados--;
+			if (intentosParaTirarDados == 0) {
+				listoParaTerminar=true;
+			}
 		}
 		
 	}
 	public boolean estaListoParaTerminar() {
 		return listoParaTerminar;
+	}
+	public Jugador getJugador() {
+		return jugador;
 	}
 }

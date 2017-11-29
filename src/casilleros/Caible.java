@@ -11,5 +11,10 @@ public abstract class Caible {
 	public int getPosicion() {
 		return this.posicion;
 	}
+
+	public void comprar(Jugador jugador) {
+		//Deberia tirar excepcion de casillero no comprable
+		
+	}
 	
 }

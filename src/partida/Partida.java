@@ -3,6 +3,7 @@ package partida;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import caible.propiedades.barrios.Barrio;
 import excepciones.JugadorEnBancarrotaException;
 import javafx.application.Application;
 import movimiento.Dado;
@@ -64,12 +65,18 @@ public class Partida {
 	}
 	public void comprarCasilleroActual() {
 		if (turno.estaListoParaTerminar()){
-			//Aca compra el casillero en el cual esta parado el jugador
+			(this.tablero.getCaible(turno.getJugador().getPosicion())).comprar(turno.getJugador());
 		}
 	}
 	
+	public void construirEn(Barrio unBarrio) {
+		unBarrio.construir();
+	}
+	
 	public void tirarDados() {
-		turno.tirarDados();
+		if (!turno.estaListoParaTerminar()){
+			turno.tirarDados();
+		}
 	}
 	
 	
