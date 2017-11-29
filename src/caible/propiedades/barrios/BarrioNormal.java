@@ -84,7 +84,7 @@ public class BarrioNormal extends Barrio {
 	}
 	
 	public void venderConstruccion() throws RequisitosInsuficientesException {
-		int numeroConstrucciones=this.getNumeroConstrucciones();
+		int numeroConstrucciones = this.getNumeroConstrucciones();
 		if(numeroConstrucciones==0) {
 			throw new RequisitosInsuficientesException("No hay construcciones para vender");
 		}

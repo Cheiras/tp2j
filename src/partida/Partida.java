@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import caible.propiedades.barrios.Barrio;
+import casilleros.Caible;
 import excepciones.JugadorEnBancarrotaException;
 import javafx.application.Application;
 import movimiento.Dado;
@@ -63,9 +64,12 @@ public class Partida {
 	public Jugador jugadorActual() {
 		return jugadores.get(indexJugadorActual);
 	}
+	
+	
 	public void comprarCasilleroActual() {
 		if (turno.estaListoParaTerminar()){
-			(this.tablero.getCaible(turno.getJugador().getPosicion())).comprar(turno.getJugador());
+			Caible caibleActual = this.getCaibleActual();
+			caibleActual.comprar(turno.getJugador());
 		}
 	}
 	
@@ -82,6 +86,10 @@ public class Partida {
 	
 	public int getTurno() {
 		return this.turnos;
+	}
+	
+	public Caible getCaibleActual() {
+		return this.tablero.getCaible(turno.getJugador().getPosicion());
 	}
 
 }

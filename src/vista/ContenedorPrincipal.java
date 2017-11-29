@@ -22,6 +22,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import movimiento.Dado;
 import movimiento.Tirador;
+import partida.Partida;
 import vista.eventos.BotonEntrarEventHandler;
 import vista.eventos.BotonTirarDadosEventHandler;
 
@@ -31,11 +32,13 @@ public class ContenedorPrincipal extends BorderPane {
     Canvas canvasCentral;
     VBox contenedorCentral;
     Tirador tirador;
+    Partida partida;
 
     public ContenedorPrincipal(Stage stage) {
     	
     	Dado dado = new Dado(6);
     	this.tirador = new Tirador(dado,dado);
+    	this.partida = new Partida();
     	
     	
     	
@@ -49,16 +52,16 @@ public class ContenedorPrincipal extends BorderPane {
 
         Button botonTirar = new Button();
         botonTirar.setText("Tirar Dados");
-        BotonTirarDadosEventHandler throwButtonHandler = new BotonTirarDadosEventHandler(stage, this.tirador);
+        BotonTirarDadosEventHandler throwButtonHandler = new BotonTirarDadosEventHandler(stage, this.partida);
         botonTirar.setOnAction(throwButtonHandler);
 
-//        Button botonDireccion = new Button();
-  //      botonDireccion.setText("Cambiar direccion");
-    //    BotonDireccionHandler directionButtonHandler = new BotonDireccionHandler(robot);
-      //  botonDireccion.setOnAction(directionButtonHandler);
+        Button botonConstruir = new Button();
+        botonConstruir.setText("Construir");
+        BotonConstruirHandler construirButtonHandler = new BotonConstruirHandler(stage, partida);
+        botonConstruir.setOnAction(construirButtonHandler);
 
         VBox contenedorVertical = new VBox( botonTirar);
-        contenedorVertical.setSpacing(10);
+        contenedorVertical.setSpacing(20);
         contenedorVertical.setPadding(new Insets(15));
 
         this.setLeft(contenedorVertical);

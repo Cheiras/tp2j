@@ -6,7 +6,7 @@ public class EstadoConstruccionUnaCasa extends EstadoConstruccion{
 
 	public EstadoConstruccionUnaCasa(BarrioNormal unBarrio, int costoRenta, int costoConstruccion) {
 		this.costoRenta=costoRenta;
-		this.costoConstruccion=costoConstruccion;
+		this.costoConstruccion = costoConstruccion;
 	}
 
 	@Override
@@ -15,5 +15,6 @@ public class EstadoConstruccionUnaCasa extends EstadoConstruccion{
 		cobrarCostoConstruccion(duenio,this.costoConstruccion);
 		unBarrio.cambiarEstadoConstruccion();
 	}
+	
 	
 }
