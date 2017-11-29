@@ -16,7 +16,7 @@ public abstract class Propiedad extends Caible {
 	private EstadoDuenio estadoDuenio;
 
 	public Propiedad(String nombre, int precio, int posicion) {
-		this.nombre = nombre;
+		super(nombre);
 		this.precio = precio;
 		this.duenio = new NoJugador(0,null);
 		this.estadoDuenio = new SinDuenio();
@@ -37,9 +37,6 @@ public abstract class Propiedad extends Caible {
 		this.duenio = nuevoDuenio;
 		this.asignarDuenio();
 		nuevoDuenio.agregarPropiedad(this);
-	}
-	public String getNombre() {
-		return nombre;
 	}
 	public void comprar(Jugador jugadorQueCompra) {
 		if(this.tieneDuenio()) {

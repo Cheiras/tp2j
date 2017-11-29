@@ -1,7 +1,5 @@
 package vista;
 
-
-
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -33,110 +31,119 @@ import vista.eventos.BotonTirarDadosEventHandler;
 
 public class ContenedorPrincipal extends BorderPane {
 
-    BarraDeMenu menuBar;
-    Canvas canvasCentral;
-    VBox contenedorCentral;
-    Tirador tirador;
-    Partida partida;
-    VBox panelDerecha;
+	BarraDeMenu menuBar;
+	Canvas canvasCentral;
+	VBox contenedorCentral;
+	Tirador tirador;
+	Partida partida;
+	VBox panelDerecha;
 
-    public ContenedorPrincipal(Stage stage) {
-    	
-    	Dado dado = new Dado(6);
-    	this.tirador = new Tirador(dado,dado);
-    	this.partida = new Partida();
-    	
-    	
-    	
-        this.setMenu(stage);
-        this.setCentro();
-        this.setConsola();
-        this.setBotonera(stage);
-        this.setPanelDerecha();
-    }
+	public ContenedorPrincipal(Stage stage) {
 
-    public void setPanelDerecha() {
-		panelDerecha= new VBox();
-		Text text = new Text("Turno: "+ (partida.getTurno()));
-		panelDerecha.getChildren().add(text);
+		Dado dado = new Dado(6);
+		this.tirador = new Tirador(dado, dado);
+		this.partida = new Partida();
+
+		this.setMenu(stage);
+		this.setCentro();
+		this.setConsola();
+		this.setBotonera(stage);
+		this.setPanelDerecha();
+	}
+
+	public void setPanelDerecha() {
+		panelDerecha = new VBox();
+		
+		Text turno = new Text("Turno: " + (partida.getTurno()));
+		panelDerecha.getChildren().add(turno);
+		
+		Text jugador = new Text("Jugador: " + (partida.getNumeroJugadorActual()));
+		panelDerecha.getChildren().add(jugador);
+
+		Text efectivo = new Text("Efectivo: " + (partida.jugadorActual().getEfectivo()));
+		panelDerecha.getChildren().add(efectivo);
+
+		Text ubicacion = new Text("Estas parado en: " + (partida.getCaibleActual().getNombre()));
+		panelDerecha.getChildren().add(ubicacion);
+
 		panelDerecha.setAlignment(Pos.TOP_RIGHT);
 		panelDerecha.setPadding(new Insets(95));
 		this.setRight(panelDerecha);
-		
-		
+
 	}
 
 	private void setBotonera(Stage stage) {
 
-        Button botonTirar = new Button();
-        botonTirar.setText("Tirar Dados");
-        BotonTirarDadosEventHandler throwButtonHandler = new BotonTirarDadosEventHandler(stage, this.partida);
-        botonTirar.setOnAction(throwButtonHandler);
-        
-        Button botonConstruir = new Button();
-        botonConstruir.setText("Construir");
-        BotonConstruirHandler construirButtonHandler = new BotonConstruirHandler(stage, partida);
-        botonConstruir.setOnAction(construirButtonHandler);
-        
-        Button botonComprar = new Button();
-        botonComprar.setText("Comprar casillero actual");
-        BotonComprarCasilleroActualEventHandler comprarButtonHandler = new BotonComprarCasilleroActualEventHandler(stage, partida);
-        botonConstruir.setOnAction(comprarButtonHandler);
-        
-        Button botonTerminarTurno = new Button();
-        botonTerminarTurno.setText("Terminar turno");
-        BotonTerminarTurnoEventHandler terminarButtonHandler = new BotonTerminarTurnoEventHandler(stage, partida,this);
-        botonTerminarTurno.setOnAction(terminarButtonHandler);
-        
-        VBox contenedorVertical = new VBox(botonTirar, botonConstruir, botonComprar,botonTerminarTurno);
-        contenedorVertical.setSpacing(20);
-        contenedorVertical.setPadding(new Insets(15));
+		Button botonTirar = new Button();
+		botonTirar.setText("Tirar Dados");
+		BotonTirarDadosEventHandler throwButtonHandler = new BotonTirarDadosEventHandler(stage, partida, this);
+		botonTirar.setOnAction(throwButtonHandler);
 
-        this.setLeft(contenedorVertical);
+		Button botonConstruir = new Button();
+		botonConstruir.setText("Construir");
+		BotonConstruirHandler construirButtonHandler = new BotonConstruirHandler(stage, partida, this);
+		botonConstruir.setOnAction(construirButtonHandler);
 
-    }
+		Button botonComprar = new Button();
+		botonComprar.setText("Comprar casillero actual");
+		BotonComprarCasilleroActualEventHandler comprarButtonHandler = new BotonComprarCasilleroActualEventHandler(
+				stage, partida, this);
+		botonConstruir.setOnAction(comprarButtonHandler);
 
-    private void setMenu(Stage stage) {
-        this.menuBar = new BarraDeMenu(stage);
-        this.setTop(menuBar);
-    }
+		Button botonTerminarTurno = new Button();
+		botonTerminarTurno.setText("Terminar turno");
+		BotonTerminarTurnoEventHandler terminarButtonHandler = new BotonTerminarTurnoEventHandler(stage, partida, this);
+		botonTerminarTurno.setOnAction(terminarButtonHandler);
 
-    private void setCentro() {
+		VBox contenedorVertical = new VBox(botonTirar, botonConstruir, botonComprar, botonTerminarTurno);
+		contenedorVertical.setSpacing(20);
+		contenedorVertical.setPadding(new Insets(15));
 
-        canvasCentral = new Canvas(460, 220);
-        VistaJugadores vistaJugadores = new VistaJugadores(this.partida, this.canvasCentral);
-        contenedorCentral = new VBox(canvasCentral);
-        contenedorCentral.setAlignment(Pos.CENTER);
-        contenedorCentral.setSpacing(20);
-        contenedorCentral.setPadding(new Insets(95));
-        contenedorCentral.setMaxWidth(800);
-        contenedorCentral.setMinHeight(450);
-        Image imagen = new Image("file:src/vista/imagenes/tablero.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-        contenedorCentral.setBackground(new Background(imagenDeFondo));
+		this.setLeft(contenedorVertical);
 
-        this.setCenter(contenedorCentral);
-    }
+	}
 
-    
-    private void setConsola() {
+	private void setMenu(Stage stage) {
+		this.menuBar = new BarraDeMenu(stage);
+		this.setTop(menuBar);
+	}
 
-        // TODO cambiar por el modelo de Consola...
-        Label etiqueta = new Label();
-        etiqueta.setText("consola...");
-        etiqueta.setFont(Font.font("courier new", FontWeight.SEMI_BOLD, 14));
-        etiqueta.setTextFill(Color.WHITE);
+	private void setCentro() {
 
-        VBox contenedorConsola = new VBox(etiqueta);
-        contenedorConsola.setSpacing(10);
-        contenedorConsola.setPadding(new Insets(20));
-        contenedorConsola.setStyle("-fx-background-color: black;");
+		canvasCentral = new Canvas(460, 220);
+		VistaJugadores vistaJugadores = new VistaJugadores(this.partida, this.canvasCentral);
+		contenedorCentral = new VBox(canvasCentral);
+		contenedorCentral.setAlignment(Pos.CENTER);
+		contenedorCentral.setSpacing(20);
+		contenedorCentral.setPadding(new Insets(95));
+		contenedorCentral.setMaxWidth(800);
+		contenedorCentral.setMinHeight(450);
+		Image imagen = new Image("file:src/vista/imagenes/tablero.jpg");
+		BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT,
+				BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+		contenedorCentral.setBackground(new Background(imagenDeFondo));
 
-        this.setBottom(contenedorConsola);
-    }
+		this.setCenter(contenedorCentral);
+	}
 
-    public BarraDeMenu getBarraDeMenu() {
-        return menuBar;
-    }
+	private void setConsola() {
+
+		// TODO cambiar por el modelo de Consola...
+		Label etiqueta = new Label();
+		etiqueta.setText("consola...");
+		etiqueta.setFont(Font.font("courier new", FontWeight.SEMI_BOLD, 14));
+		etiqueta.setTextFill(Color.WHITE);
+
+		VBox contenedorConsola = new VBox(etiqueta);
+		contenedorConsola.setSpacing(10);
+		contenedorConsola.setPadding(new Insets(20));
+		contenedorConsola.setStyle("-fx-background-color: black;");
+
+		this.setBottom(contenedorConsola);
+	}
+
+	public BarraDeMenu getBarraDeMenu() {
+		return menuBar;
+	}
 
 }

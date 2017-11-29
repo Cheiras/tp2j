@@ -6,6 +6,7 @@ import partida.jugador.Jugador;
 public class Salida extends Caible{
 	
 	public Salida(){
+		super("Salida");
 		this.posicion = 0;
 	}
 

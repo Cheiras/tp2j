@@ -6,6 +6,7 @@ import partida.jugador.Jugador;
 public class RetrocesoDinamico extends Caible {
 
 	public RetrocesoDinamico() {
+		super("Retroceso Dinamico");
 		this.posicion = 18;
 	}
 
