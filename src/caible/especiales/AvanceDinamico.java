@@ -6,6 +6,7 @@ import partida.jugador.Jugador;
 public class AvanceDinamico extends Caible {
 
 	public AvanceDinamico() {
+		super("Avance Dinamico");
 		this.posicion = 7;
 	}
 

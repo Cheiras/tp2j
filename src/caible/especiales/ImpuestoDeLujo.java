@@ -8,6 +8,7 @@ public class ImpuestoDeLujo extends Caible {
 	private double porcentaje = 10;
 	
 	public ImpuestoDeLujo(){
+		super("Impuesto de lujo");
 		this.posicion = 10;
 	}
 

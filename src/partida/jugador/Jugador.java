@@ -6,7 +6,6 @@ import caible.propiedades.Propiedad;
 import caible.propiedades.barrios.Barrio;
 import caible.propiedades.barrios.BarrioNormal;
 import excepciones.AccionInvalida;
-import excepciones.MontoInsuficienteException;
 import movimiento.MeMuevo;
 import premio.Premio;
 import premio.Premio50k;

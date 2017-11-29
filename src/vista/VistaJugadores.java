@@ -8,7 +8,7 @@ import partida.jugador.Jugador;
 
 public class VistaJugadores {
 
-	private ArrayList<VistaJugador> jugadores;
+	private ArrayList<VistaJugador> jugadores= new ArrayList<VistaJugador>();
 	private int indiceVistaJugadorActual = 0;
 	private VistaJugador vistaJugadorActual;
 	private Canvas canvas;

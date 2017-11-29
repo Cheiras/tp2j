@@ -6,6 +6,7 @@ import partida.jugador.Jugador;
 public class Quini6 extends Caible {
 
 	public Quini6() {
+		super("Quini 6");
 		this.posicion = 1;
 	}
 

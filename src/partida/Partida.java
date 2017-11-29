@@ -27,7 +27,7 @@ public class Partida {
 	private Tablero tablero;
 	private Tirador tirador;
 	private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-	private int turnos = 0;
+	private int turnos = 1;
 	private int indexJugadorActual;
 	private int cantidadJugadoresActuales;
 	private Turno turno;
@@ -47,7 +47,7 @@ public class Partida {
 		Collections.shuffle(jugadores);
 
 		this.jugadorActual = this.jugadorActual();
-
+		
 		tablero = new Tablero();
 		indexJugadorActual = 0;
 		cantidadJugadoresActuales = jugadores.size();
@@ -58,14 +58,13 @@ public class Partida {
 	// Deberiamos meter un metodo por cada boton que hagamos
 
 	public void terminarTurno() {
-		/*if (turno.estaListoParaTerminar()) {
+		if (turno.estaListoParaTerminar()) {
 			indexJugadorActual++;
 			if (indexJugadorActual > cantidadJugadoresActuales)
 				indexJugadorActual = 0;
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
 			turnos++;
-		}*/
-		turnos++;
+		}
 
 	}
 
@@ -112,6 +111,9 @@ public class Partida {
 
 	public ArrayList<Jugador> getJugadores() {
 		return this.jugadores;
+	}
+	public int getNumeroJugadorActual() {
+		return indexJugadorActual+1;
 	}
 
 }

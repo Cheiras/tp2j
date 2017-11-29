@@ -13,6 +13,7 @@ public class Carcel extends Caible {
 	private int precioFianza;
 
 	public Carcel() {
+		super("Carcel");
 		this.precioFianza = 10000;
 		this.posicion = 5;
 	}
