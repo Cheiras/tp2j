@@ -42,6 +42,8 @@ public class Partida {
 		jugadores.add(jugador2);
 		jugadores.add(jugador3);
 		Collections.shuffle(jugadores);
+		
+		this.jugadorActual = this.jugadorActual();
 
 		tablero = new Tablero();
 		indexJugadorActual = 0;

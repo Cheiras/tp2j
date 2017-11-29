@@ -7,7 +7,6 @@ import partida.tablero.Tablero;
 
 public class Turno {
 
-	private int valorTirada;
 	private int intentosParaTirarDados;
 	Tirador tirador;
 	Jugador jugador;
@@ -16,13 +15,13 @@ public class Turno {
 	public Turno(Jugador unJugador, Tirador unTirador, Tablero tablero) {
 	 intentosParaTirarDados=2;
 	 listoParaTerminar=false;
-	 jugador=unJugador;
+	 jugador = unJugador;
 	 tirador=unTirador;
 	}
 	public void tirarDados() {
 		try {
-			valorTirada=tirador.tirar();
-			jugador.avanzar(valorTirada);
+			int valorTirada = tirador.tirar();
+			this.jugador.avanzar(valorTirada);
 			listoParaTerminar=true;
 			
 		}

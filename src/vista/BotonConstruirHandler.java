@@ -2,6 +2,7 @@ package vista;
 
 import caible.propiedades.barrios.Barrio;
 import casilleros.Caible;
+import excepciones.CaibleNoConstruibleException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -29,7 +30,7 @@ public class BotonConstruirHandler implements EventHandler<ActionEvent> {
     		
     	} catch(RuntimeException e){
     		
-    		throw new RuntimeException("El Caible Actual no es contruible");    		
+    		throw new CaibleNoConstruibleException("El Caible Actual no es contruible");    		
     	}
 
     }

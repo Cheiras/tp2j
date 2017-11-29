@@ -60,7 +60,7 @@ public class ContenedorPrincipal extends BorderPane {
         BotonConstruirHandler construirButtonHandler = new BotonConstruirHandler(stage, partida);
         botonConstruir.setOnAction(construirButtonHandler);
 
-        VBox contenedorVertical = new VBox( botonTirar);
+        VBox contenedorVertical = new VBox(botonTirar, botonConstruir);
         contenedorVertical.setSpacing(20);
         contenedorVertical.setPadding(new Insets(15));
 
