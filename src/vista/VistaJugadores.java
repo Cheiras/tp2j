@@ -14,9 +14,12 @@ public class VistaJugadores {
 	private Canvas canvas;
 	
 	public VistaJugadores(Partida partida, Canvas canvas) {
+		
+		this.jugadores = new ArrayList<VistaJugador>();
 		for(Jugador jugador : partida.getJugadores()) {
 			VistaJugador nuevaVistaJugador = new VistaJugador(jugador);
 			jugadores.add(nuevaVistaJugador);
+			nuevaVistaJugador.dibujar(canvas);
 		}
 		this.vistaJugadorActual = this.jugadores.get(indiceVistaJugadorActual);
 		

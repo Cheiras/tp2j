@@ -28,26 +28,21 @@ import partida.Partida;
 import vista.eventos.BotonComprarCasilleroActualEventHandler;
 import vista.eventos.BotonConstruirHandler;
 import vista.eventos.BotonEntrarEventHandler;
-import vista.eventos.BotonTerminarTurnoEventHandler;
+//import vista.eventos.BotonTerminarTurnoEventHandler;
 import vista.eventos.BotonTirarDadosEventHandler;
 
 public class ContenedorPrincipal extends BorderPane {
 
-    BarraDeMenu menuBar;
-    Canvas canvasCentral;
-    VBox contenedorCentral;
-    Tirador tirador;
-    Partida partida;
-    VBox panelDerecha;
+    private BarraDeMenu menuBar;
+    private Canvas canvasCentral;
+    private VBox contenedorCentral;
+    private Partida partida;
+    private VBox panelDerecha;
+	private VistaJugadores vistaJugadores;
 
     public ContenedorPrincipal(Stage stage) {
     	
-    	Dado dado = new Dado(6);
-    	this.tirador = new Tirador(dado,dado);
-    	this.partida = new Partida();
-    	
-    	
-    	
+    	this.partida = new Partida();   	
         this.setMenu(stage);
         this.setCentro();
         this.setConsola();
@@ -85,8 +80,8 @@ public class ContenedorPrincipal extends BorderPane {
         
         Button botonTerminarTurno = new Button();
         botonTerminarTurno.setText("Terminar turno");
-        BotonTerminarTurnoEventHandler terminarButtonHandler = new BotonTerminarTurnoEventHandler(stage, partida,this);
-        botonTerminarTurno.setOnAction(terminarButtonHandler);
+        //BotonTerminarTurnoEventHandler terminarButtonHandler = new BotonTerminarTurnoEventHandler(stage, partida,this);
+       // botonTerminarTurno.setOnAction(terminarButtonHandler);
         
         VBox contenedorVertical = new VBox(botonTirar, botonConstruir, botonComprar,botonTerminarTurno);
         contenedorVertical.setSpacing(20);
@@ -104,7 +99,7 @@ public class ContenedorPrincipal extends BorderPane {
     private void setCentro() {
 
         canvasCentral = new Canvas(460, 220);
-        VistaJugadores vistaJugadores = new VistaJugadores(this.partida, this.canvasCentral);
+        this.vistaJugadores = new VistaJugadores(this.partida, this.canvasCentral);
         contenedorCentral = new VBox(canvasCentral);
         contenedorCentral.setAlignment(Pos.CENTER);
         contenedorCentral.setSpacing(20);
@@ -137,6 +132,10 @@ public class ContenedorPrincipal extends BorderPane {
 
     public BarraDeMenu getBarraDeMenu() {
         return menuBar;
+    }
+    
+    public void update() {
+    	this.vistaJugadores.update();
     }
 
 }

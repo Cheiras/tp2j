@@ -27,7 +27,7 @@ public class Jugador {
 	private boolean habilitadoAPagarFianza = false;
 
 	public Jugador(String nombre, int efectivoInicial, MeMuevo movimientoNormal) {
-
+		this.tablaConversion = new TablaConversion();
 		this.nombre = nombre;
 		this.indice = 0;
 		this.movimiento = movimientoNormal;

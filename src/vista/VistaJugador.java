@@ -8,8 +8,10 @@ public class VistaJugador {
 
 	private static final double RADIO = 100;
 	Jugador jugador;
+	
 	public VistaJugador(Jugador jugador) {
 		this.jugador = jugador;
+		
 	}
 	
 	public void dibujar(Canvas canvas) {
