@@ -23,6 +23,9 @@ public class Partida {
 	private Tirador tirador;
 	private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
 	private int turnos = 0;
+	private int indexJugadorActual;
+	private int cantidadJugadoresActuales;
+	private Turno turno;
 
 	public Partida() {
 
@@ -39,36 +42,37 @@ public class Partida {
 		Collections.shuffle(jugadores);
 
 		tablero = new Tablero();
-
-		int indexJugadorActual = 0;
-		int cantidadJugadoresActuales = jugadores.size();
-		while (cantidadJugadoresActuales > 1) {
-
-			jugadorActual = jugadores.get(indexJugadorActual);
-
-			try {
-				
-				Turno turno = new Turno(jugadorActual, tirador, tablero);
-
-			} catch (JugadorEnBancarrotaException excepcion) {
-				
-				jugadores.remove(jugadorActual);
-				cantidadJugadoresActuales -= 1;
-				
-			}
-			
+		indexJugadorActual = 0;
+		cantidadJugadoresActuales = jugadores.size();
+		turno = new Turno(jugadorActual, tirador, tablero);
+		
+	}
+	
+	//Deberiamos meter un metodo por cada boton que hagamos
+	
+	public void terminarTurno() {
+		if (turno.estaListoParaTerminar()){
 			indexJugadorActual++;
 			if (indexJugadorActual > cantidadJugadoresActuales)
 				indexJugadorActual = 0;
+			turno = new Turno(this.jugadorActual(), tirador, tablero);
 		}
 		
-		//El juego termina y gana el jugador que queda en la lista de jugadores
 	}
-
 	public Jugador jugadorActual() {
-		return jugadorActual;
+		return jugadores.get(indexJugadorActual);
 	}
-
+	public void comprarCasilleroActual() {
+		if (turno.estaListoParaTerminar()){
+			//Aca compra el casillero en el cual esta parado el jugador
+		}
+	}
+	
+	public void tirarDados() {
+		turno.tirarDados();
+	}
+	
+	
 	public int getTurno() {
 		return this.turnos;
 	}

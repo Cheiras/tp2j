@@ -8,20 +8,34 @@ import partida.tablero.Tablero;
 public class Turno {
 
 	private int valorTirada;
-	private int intentosParaTirarDados = 2;
+	private int intentosParaTirarDados;
+	Tirador tirador;
+	Jugador jugador;
+	private boolean listoParaTerminar; 
 
-	public Turno(Jugador unJugador, Tirador tirador, Tablero tablero) {
-		// Aca deberia preguntarse si quiere construir o pagar fianza y no se si algo
-		// mas
-
-		for (int i = 1; i <= intentosParaTirarDados; i++) {
-			try {
-				valorTirada = tirador.tirar();
-				unJugador.avanzar(valorTirada);
-				break;
-			} catch (NumeroDobleEnDadosException excepcion) {
-				// No se mueve
-			}
+	public Turno(Jugador unJugador, Tirador unTirador, Tablero tablero) {
+	 intentosParaTirarDados=2;
+	 listoParaTerminar=false;
+	 jugador=unJugador;
+	 tirador=unTirador;
+	}
+	public void tirarDados() {
+		
+		if (listoParaTerminar || (intentosParaTirarDados == 0)){
+			return; // no puede volver a tirar dados
 		}
+		try {
+			valorTirada=tirador.tirar();
+			jugador.avanzar(valorTirada);
+			listoParaTerminar=true;
+			
+		}
+		catch(NumeroDobleEnDadosException exception) {
+			intentosParaTirarDados--;
+		}
+		
+	}
+	public boolean estaListoParaTerminar() {
+		return listoParaTerminar;
 	}
 }
