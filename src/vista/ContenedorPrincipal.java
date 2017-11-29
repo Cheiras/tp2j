@@ -24,6 +24,7 @@ import movimiento.Dado;
 import movimiento.Tirador;
 import partida.Partida;
 import vista.eventos.BotonComprarCasilleroActualEventHandler;
+import vista.eventos.BotonConstruirHandler;
 import vista.eventos.BotonEntrarEventHandler;
 import vista.eventos.BotonTirarDadosEventHandler;
 

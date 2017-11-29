@@ -4,6 +4,7 @@ import casilleros.Caible;
 import estadoDuenio.ConDuenio;
 import estadoDuenio.EstadoDuenio;
 import estadoDuenio.SinDuenio;
+import excepciones.AccionInvalida;
 import partida.jugador.Jugador;
 import partida.jugador.NoJugador;
 
@@ -41,8 +42,17 @@ public abstract class Propiedad extends Caible {
 		return nombre;
 	}
 	public void comprar(Jugador jugadorQueCompra) {
+		if(this.tieneDuenio()) {
+			throw new AccionInvalida("Esta propiedad ya tiene duenio");
+			
+		}
+		
 		jugadorQueCompra.reducirEfectivo(this.getPrecioDeCompra());
 		this.setDuenio(jugadorQueCompra);	
+	}
+
+	private boolean tieneDuenio() {
+		return this.estadoDuenio.tieneDuenio();
 	}
 
 	public Jugador obtenerDuenio() {

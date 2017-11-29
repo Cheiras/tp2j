@@ -8,4 +8,8 @@ public abstract class EstadoDuenio {
 	public void jugadorCayo(Jugador jugadorQueCayo, Propiedad propiedadEnLaQueCayo) {
 
 	}
+
+	
+	public abstract boolean tieneDuenio();
+	
 }

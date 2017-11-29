@@ -16,6 +16,7 @@ import movimiento.Tirador;
 import partida.jugador.Jugador;
 import partida.tablero.Tablero;
 import partida.turno.Turno;
+import caible.propiedades.Propiedad;
 
 public class Partida {
 
@@ -74,9 +75,8 @@ public class Partida {
 		if (turno.estaListoParaTerminar()) {
 			Caible caibleActual = this.getCaibleActual();
 			try {
-				((Barrio) caibleActual).comprar(turno.getJugador());
+				((Propiedad) caibleActual).comprar(turno.getJugador());
 			} catch (RuntimeException e) {
-				throw new CaibleNoComprableException("No podes comprar este Caible");
 			}
 		}
 	}
