@@ -8,23 +8,22 @@ import vista.ContenedorPrincipal;
 
 public class BotonTirarDadosEventHandler implements EventHandler<ActionEvent> {
 
-    Stage stage;//no se usa?
-    Partida partida;
+	Stage stage;// no se usa?
+	Partida partida;
 	private ContenedorPrincipal contenedor;
-    
-    public BotonTirarDadosEventHandler(Stage stage, Partida partida, ContenedorPrincipal contenedorPrincipal) { 
-        this.stage = stage;
-        this.partida = partida;
-        this.contenedor = contenedorPrincipal;
-               
-    }
 
-    @Override
-    public void handle(ActionEvent actionEvent) {
+	public BotonTirarDadosEventHandler(Stage stage, Partida partida, ContenedorPrincipal contenedorPrincipal) {
+		this.stage = stage;
+		this.partida = partida;
+		this.contenedor = contenedorPrincipal;
 
-        	partida.tirarDados();
-        	contenedor.setPanelDerecha();
-        	contenedor.update();
+	}
 
-    }
+	@Override
+	public void handle(ActionEvent actionEvent) {
+
+		partida.tirarDados();
+		contenedor.setPanelDerecha();
+
+	}
 }

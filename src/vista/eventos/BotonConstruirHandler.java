@@ -2,6 +2,7 @@ package vista.eventos;
 
 import caible.propiedades.barrios.Barrio;
 import casilleros.Caible;
+import excepciones.CaibleNoConstruibleException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -24,8 +25,14 @@ public class BotonConstruirHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
+    	
     	Caible barrioActual = partida.getCaibleActual();
-    	partida.construirEn((Barrio) barrioActual);
+    	try {
+    		partida.construirEn((Barrio) barrioActual);
+    	}
+    	catch(RuntimeException e) {
+    		//throw new CaibleNoConstruibleException("No podes construir en este Caible");
+    	}
     	contenedor.setPanelDerecha();
 
     }

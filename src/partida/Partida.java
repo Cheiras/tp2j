@@ -47,7 +47,7 @@ public class Partida {
 		Collections.shuffle(jugadores);
 
 		this.jugadorActual = this.jugadorActual();
-		
+
 		tablero = new Tablero();
 		indexJugadorActual = 0;
 		cantidadJugadoresActuales = jugadores.size();
@@ -60,7 +60,7 @@ public class Partida {
 	public void terminarTurno() {
 		if (turno.estaListoParaTerminar()) {
 			indexJugadorActual++;
-			if (indexJugadorActual > cantidadJugadoresActuales)
+			if (indexJugadorActual == cantidadJugadoresActuales)
 				indexJugadorActual = 0;
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
 			turnos++;
@@ -84,15 +84,12 @@ public class Partida {
 
 	public void construirEn(Barrio unBarrio) {
 		if (!turno.estaListoParaTerminar()) {
-			try {
-				if ((unBarrio.obtenerDuenio()) == this.jugadorActual()) {
-					unBarrio.construir();
-				}
-			} catch (RuntimeException e) {
 
-				throw new CaibleNoConstruibleException("No podes construir en este Caible");
+			if ((unBarrio.obtenerDuenio()) == this.jugadorActual()) {
+				unBarrio.construir();
 			}
 		}
+
 	}
 
 	public void tirarDados() {
@@ -112,8 +109,9 @@ public class Partida {
 	public ArrayList<Jugador> getJugadores() {
 		return this.jugadores;
 	}
+
 	public int getNumeroJugadorActual() {
-		return indexJugadorActual+1;
+		return indexJugadorActual + 1;
 	}
 
 }
