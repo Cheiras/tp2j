@@ -55,7 +55,7 @@ public class Jugador {
 	public void avanzarCasillero() {
 	
 		this.indice += 1;
-		if(this.indice == 19) {
+		if(this.indice == 20) {
 			this.indice = 0;
 		}
 	}
