@@ -24,6 +24,7 @@ public class BotonTirarDadosEventHandler implements EventHandler<ActionEvent> {
 
         	partida.tirarDados();
         	contenedor.setPanelDerecha();
+        	contenedor.update();
 
     }
 }

@@ -17,12 +17,12 @@ public class VistaJugador {
 	public void dibujar(Canvas canvas) {
 		this.clean(canvas);
 		canvas.getGraphicsContext2D().setFill(Color.BLUE);
-		canvas.getGraphicsContext2D().fillOval(jugador.getPosicion().getX() + 700, jugador.getPosicion().getY() + 660, VistaJugador.RADIO, VistaJugador.RADIO);
+		canvas.getGraphicsContext2D().fillOval(jugador.getPosicion().getX() + 600, jugador.getPosicion().getY() + 480, VistaJugador.RADIO, VistaJugador.RADIO);
 	}
 
 	public void clean(Canvas canvas) {
 		canvas.getGraphicsContext2D().setFill(Color.TRANSPARENT);
-		canvas.getGraphicsContext2D().fillRect(0, 0, 460, 220);
+		canvas.getGraphicsContext2D().fillRect(0, 0, 770, 700);
     }
 	
 }

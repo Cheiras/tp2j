@@ -39,7 +39,7 @@ public class Jugador {
 	}
 
 	public void retrocederCasillero() {
-		this.indice -= 1;
+		this.indice -= 1;//esto hay que arreglarlo porque no es linal la tabla
 
 	}
 

@@ -108,12 +108,12 @@ public class ContenedorPrincipal extends BorderPane {
 
 	private void setCentro() {
 
-		canvasCentral = new Canvas(1000,1000);
+		canvasCentral = new Canvas(770,700);
 		this.vistaJugadores = new VistaJugadores(this.partida, this.canvasCentral);
 		contenedorCentral = new VBox(canvasCentral);
 		contenedorCentral.setAlignment(Pos.CENTER);
 		contenedorCentral.setSpacing(20);
-		contenedorCentral.setPadding(new Insets(95));
+		contenedorCentral.setPadding(new Insets(10));
 		contenedorCentral.setMaxWidth(800);
 		contenedorCentral.setMinHeight(450);
 		Image imagen = new Image("file:src/vista/imagenes/tablero.jpg");
