@@ -34,6 +34,7 @@ public class Carcel extends Caible {
 			MeMuevo movNormal = new MovimientoNormal();
 			unJugador.nuevoMovimiento(movNormal);
 			unJugador.reducirEfectivo(this.precioFianza);
+			unJugador.deshabilitar();
 			return;
 			
 		}

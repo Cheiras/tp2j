@@ -24,7 +24,7 @@ public class BotonTerminarTurnoEventHandler implements EventHandler<ActionEvent>
     public void handle(ActionEvent actionEvent) {
 
         	partida.terminarTurno();
-        	contenedor.setPanelDerecha();
+        	contenedor.update();
 
     }
 }

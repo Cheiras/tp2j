@@ -61,7 +61,9 @@ public class ContenedorPrincipal extends BorderPane {
 
 		Text ubicacion = new Text("Estas parado en: " + (partida.getCaibleActual().getNombre()));
 		panelDerecha.getChildren().add(ubicacion);
-
+		
+		
+		
 		panelDerecha.setAlignment(Pos.TOP_RIGHT);
 		panelDerecha.setPadding(new Insets(95));
 		this.setRight(panelDerecha);
@@ -69,12 +71,12 @@ public class ContenedorPrincipal extends BorderPane {
 	}
 
 	public void update() {
-	    	this.vistaJugadores.update();
-	    	 this.setMenu(this.stage);
-	         this.setCentro();
-	         this.setConsola();
-	         this.setBotonera(this.stage);
-	         this.setPanelDerecha();
+		this.vistaJugadores.update();
+    	this.setMenu(this.stage);
+		this.setCentro();
+		this.setConsola();
+		this.setBotonera(this.stage);
+		this.setPanelDerecha();
 	}
 	
 	private void setBotonera(Stage stage) {
