@@ -32,6 +32,7 @@ public class ContenedorPrincipal extends BorderPane {
     private Partida partida;
     private VBox panelDerecha;
 	private VistaJugadores vistaJugadores;
+	private Stage stage;
 
     public ContenedorPrincipal(Stage stage) {
     	
@@ -41,6 +42,7 @@ public class ContenedorPrincipal extends BorderPane {
         this.setConsola();
         this.setBotonera(stage);
         this.setPanelDerecha();
+        this.stage = stage;
     }
 
 
@@ -68,7 +70,12 @@ public class ContenedorPrincipal extends BorderPane {
 
 	public void update() {
 	    	this.vistaJugadores.update();
-	    }
+	    	 this.setMenu(this.stage);
+	         this.setCentro();
+	         this.setConsola();
+	         this.setBotonera(this.stage);
+	         this.setPanelDerecha();
+	}
 	
 	private void setBotonera(Stage stage) {
 
