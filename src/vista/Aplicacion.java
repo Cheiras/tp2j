@@ -14,7 +14,7 @@ public class Aplicacion extends Application {
     @Override
     public void start(final Stage stage) throws Exception {
 
-        stage.setTitle("Ejemplo MVC con JavaFX");
+        stage.setTitle("Algopoly");
 
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
         Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
