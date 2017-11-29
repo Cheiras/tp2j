@@ -19,6 +19,6 @@ public class MovimientoNormalAumentaEnUnoLaPosicionTest {
 		Pedro.avanzar(1);
 		
 
-		Assert.assertTrue(Pedro.getPosicion() == 2);
+		Assert.assertTrue(Pedro.getIndice() == 2);
 	}
 }

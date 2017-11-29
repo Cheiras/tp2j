@@ -20,7 +20,7 @@ public class Carcel extends Caible {
 	public void accionar(Jugador unJugador) {
 		MeMuevo movCarcel = new MovimientoCarcelDiaUno();
 		unJugador.nuevoMovimiento(movCarcel);
-		unJugador.setPosicion(this.posicion);
+		unJugador.setIndice(this.posicion);
 	}
 	
 	public void pagarFianza(Jugador unJugador) throws RuntimeException {

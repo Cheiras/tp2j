@@ -83,7 +83,7 @@ public class ContenedorPrincipal extends BorderPane {
     private void setCentro() {
 
         canvasCentral = new Canvas(460, 220);
-
+        VistaJugadores vistaJugadores = new VistaJugadores(this.partida, this.canvasCentral);
         contenedorCentral = new VBox(canvasCentral);
         contenedorCentral.setAlignment(Pos.CENTER);
         contenedorCentral.setSpacing(20);

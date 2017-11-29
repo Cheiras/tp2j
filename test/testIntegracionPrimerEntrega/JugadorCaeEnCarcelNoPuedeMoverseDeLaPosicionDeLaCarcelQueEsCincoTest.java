@@ -21,7 +21,7 @@ public class JugadorCaeEnCarcelNoPuedeMoverseDeLaPosicionDeLaCarcelQueEsCincoTes
 		Pedro.avanzar(1);
 		Pedro.avanzar(1);
 		
-		Assert.assertTrue(Pedro.getPosicion() == 5);
+		Assert.assertTrue(Pedro.getIndice() == 5);
 		
 	}
 }

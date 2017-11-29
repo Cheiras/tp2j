@@ -19,7 +19,7 @@ public class MovimientoCarcelNoModificaLaPosicionTest {
 		Pepe.avanzar(1);
 		
 
-		Assert.assertTrue(Pepe.getPosicion() == 0);
+		Assert.assertTrue(Pepe.getIndice() == 0);
 	}
 
 }

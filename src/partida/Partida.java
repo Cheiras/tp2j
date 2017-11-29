@@ -105,7 +105,11 @@ public class Partida {
 	}
 
 	public Caible getCaibleActual() {
-		return this.tablero.getCaible(turno.getJugador().getPosicion());
+		return this.tablero.getCaible(turno.getJugador().getIndice());
+	}
+
+	public ArrayList<Jugador> getJugadores() {
+		return this.jugadores;
 	}
 
 }

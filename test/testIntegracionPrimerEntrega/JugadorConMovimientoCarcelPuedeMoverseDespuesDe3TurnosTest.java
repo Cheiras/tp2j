@@ -20,7 +20,7 @@ public class JugadorConMovimientoCarcelPuedeMoverseDespuesDe3TurnosTest {
 			Pepe.avanzar(1);
 		}
 	
-		Assert.assertTrue(Pepe.getPosicion() == 1 );
+		Assert.assertTrue(Pepe.getIndice() == 1 );
 		
 	}
 

@@ -22,7 +22,7 @@ public class JugadorPuedePagarFianzaLuegoDelPrimerTurnoPresoTest {
 		carcel.pagarFianza(pepe);
 		pepe.avanzar(1);
 
-		Assert.assertEquals(pepe.getPosicion(), 6);
+		Assert.assertEquals(pepe.getIndice(), 6);
 
 	}
 

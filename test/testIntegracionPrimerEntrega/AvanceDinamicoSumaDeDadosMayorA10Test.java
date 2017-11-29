@@ -21,9 +21,9 @@ public class AvanceDinamicoSumaDeDadosMayorA10Test {
 	public void NumeroMayorA10() {
 		int numeroSacadoEnDados = 11;
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getPosicion();
+		int posicionInicial= jugador.getIndice();
 		avanceDinamico.accionar(jugador);
-		int posicionFinal= jugador.getPosicion();
+		int posicionFinal= jugador.getIndice();
 		Assert.assertEquals(posicionFinal, 
 				posicionInicial+numeroSacadoEnDados - jugador.cantidadDePropiedadesASuNombre());
 	}
@@ -43,9 +43,9 @@ public class AvanceDinamicoSumaDeDadosMayorA10Test {
 		OtroBarrio.setDuenio(jugador);
 		OtroBarrio.accionar(jugador);
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getPosicion();
+		int posicionInicial= jugador.getIndice();
 		avanceDinamico.accionar(jugador);
-		int posicionFinal= jugador.getPosicion();
+		int posicionFinal= jugador.getIndice();
 		
 		
 		Assert.assertEquals(posicionFinal, 
