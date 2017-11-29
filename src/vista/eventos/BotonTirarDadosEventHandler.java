@@ -2,36 +2,24 @@ package vista.eventos;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import movimiento.Tirador;
-import partida.jugador.Jugador;
+import partida.Partida;
 
 public class BotonTirarDadosEventHandler implements EventHandler<ActionEvent> {
 
-    Stage stage;
-    Jugador jugadorActual;
-    Tirador tirador;
-
-    public BotonTirarDadosEventHandler(Stage stage, Tirador tirador,Jugador unJugador) {
+    Stage stage;//no se usa?
+    Partida partida;
+    
+    public BotonTirarDadosEventHandler(Stage stage, Partida partida) { 
         this.stage = stage;
-        this.tirador = tirador;
-        this.jugadorActual = unJugador;
-        
+        this.partida = partida;
+               
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
 
-        try {
-        	int numeroObtenido = this.tirador.tirar();
-            jugadorActual.avanzar(numeroObtenido);
-        }catch(RuntimeException e) {
-        	this.handle(actionEvent);
-        }
+        	partida.tirarDados();
 
-        
-        ///stage.setScene(proximaEscena);
-        
     }
 }
