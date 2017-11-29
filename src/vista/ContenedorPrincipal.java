@@ -88,7 +88,7 @@ public class ContenedorPrincipal extends BorderPane {
 		botonComprar.setText("Comprar casillero actual");
 		BotonComprarCasilleroActualEventHandler comprarButtonHandler = new BotonComprarCasilleroActualEventHandler(
 				stage, partida, this);
-		botonConstruir.setOnAction(comprarButtonHandler);
+		botonComprar.setOnAction(comprarButtonHandler);
 
 		Button botonTerminarTurno = new Button();
 		botonTerminarTurno.setText("Terminar turno");
