@@ -15,10 +15,12 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import movimiento.Dado;
 import movimiento.Tirador;
@@ -26,6 +28,7 @@ import partida.Partida;
 import vista.eventos.BotonComprarCasilleroActualEventHandler;
 import vista.eventos.BotonConstruirHandler;
 import vista.eventos.BotonEntrarEventHandler;
+import vista.eventos.BotonTerminarTurnoEventHandler;
 import vista.eventos.BotonTirarDadosEventHandler;
 
 public class ContenedorPrincipal extends BorderPane {
@@ -35,6 +38,7 @@ public class ContenedorPrincipal extends BorderPane {
     VBox contenedorCentral;
     Tirador tirador;
     Partida partida;
+    VBox panelDerecha;
 
     public ContenedorPrincipal(Stage stage) {
     	
@@ -48,9 +52,21 @@ public class ContenedorPrincipal extends BorderPane {
         this.setCentro();
         this.setConsola();
         this.setBotonera(stage);
+        this.setPanelDerecha();
     }
 
-    private void setBotonera(Stage stage) {
+    public void setPanelDerecha() {
+		panelDerecha= new VBox();
+		Text text = new Text("Turno: "+ (partida.getTurno()));
+		panelDerecha.getChildren().add(text);
+		panelDerecha.setAlignment(Pos.TOP_RIGHT);
+		panelDerecha.setPadding(new Insets(95));
+		this.setRight(panelDerecha);
+		
+		
+	}
+
+	private void setBotonera(Stage stage) {
 
         Button botonTirar = new Button();
         botonTirar.setText("Tirar Dados");
@@ -67,7 +83,12 @@ public class ContenedorPrincipal extends BorderPane {
         BotonComprarCasilleroActualEventHandler comprarButtonHandler = new BotonComprarCasilleroActualEventHandler(stage, partida);
         botonConstruir.setOnAction(comprarButtonHandler);
         
-        VBox contenedorVertical = new VBox(botonTirar, botonConstruir, botonComprar);
+        Button botonTerminarTurno = new Button();
+        botonTerminarTurno.setText("Terminar turno");
+        BotonTerminarTurnoEventHandler terminarButtonHandler = new BotonTerminarTurnoEventHandler(stage, partida,this);
+        botonTerminarTurno.setOnAction(terminarButtonHandler);
+        
+        VBox contenedorVertical = new VBox(botonTirar, botonConstruir, botonComprar,botonTerminarTurno);
         contenedorVertical.setSpacing(20);
         contenedorVertical.setPadding(new Insets(15));
 

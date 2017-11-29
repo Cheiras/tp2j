@@ -58,12 +58,14 @@ public class Partida {
 	// Deberiamos meter un metodo por cada boton que hagamos
 
 	public void terminarTurno() {
-		if (turno.estaListoParaTerminar()) {
+		/*if (turno.estaListoParaTerminar()) {
 			indexJugadorActual++;
 			if (indexJugadorActual > cantidadJugadoresActuales)
 				indexJugadorActual = 0;
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
-		}
+			turnos++;
+		}*/
+		turnos++;
 
 	}
 
