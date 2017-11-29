@@ -39,7 +39,7 @@ public class Jugador {
 	}
 
 	public void retrocederCasillero() {
-		this.indice -= 1;//esto hay que arreglarlo porque no es linal la tabla
+		this.indice -= 1;
 
 	}
 
@@ -53,7 +53,11 @@ public class Jugador {
 	}
 
 	public void avanzarCasillero() {
+	
 		this.indice += 1;
+		if(this.indice == 19) {
+			this.indice = 0;
+		}
 	}
 
 	// Solo para pruebas, lo contiene el turno.

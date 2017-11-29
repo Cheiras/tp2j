@@ -10,17 +10,17 @@ public class TablaConversion {
 		
 		this.conversiones = new HashMap<Integer, Posicion>();
 		this.conversiones.put(0,new Posicion(100,100));
-		this.conversiones.put(1,new Posicion(110,100));
-		this.conversiones.put(2,new Posicion(120,100));
-		this.conversiones.put(3,new Posicion(130,100));
-		this.conversiones.put(4,new Posicion(140,100));
-		this.conversiones.put(5,new Posicion(150,100));
-		this.conversiones.put(6,new Posicion(160,100));
-		this.conversiones.put(7,new Posicion(170,100));
-		this.conversiones.put(8,new Posicion(180,100));
-		this.conversiones.put(9,new Posicion(190,100));
-		this.conversiones.put(10,new Posicion(200,100));
-		this.conversiones.put(11,new Posicion(210,100));
+		this.conversiones.put(1,new Posicion(100,0));
+		this.conversiones.put(2,new Posicion(100,-200));
+		this.conversiones.put(3,new Posicion(100,-300));
+		this.conversiones.put(4,new Posicion(100,-400));
+		this.conversiones.put(5,new Posicion(100,-420));
+		this.conversiones.put(6,new Posicion(-40,-420));
+		this.conversiones.put(7,new Posicion(-140,-420));
+		this.conversiones.put(8,new Posicion(-240,-420));
+		this.conversiones.put(9,new Posicion(-340,-420));
+		this.conversiones.put(10,new Posicion(-440,-420));
+		this.conversiones.put(11,new Posicion(100,-500));
 		this.conversiones.put(12,new Posicion(220,100));
 		this.conversiones.put(13,new Posicion(230,100));
 		this.conversiones.put(14,new Posicion(240,100));
