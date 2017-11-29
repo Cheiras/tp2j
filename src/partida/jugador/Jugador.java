@@ -180,4 +180,8 @@ public class Jugador {
 	public Posicion getPosicion() {
 		return this.tablaConversion.getPosicion(this.indice);
 	}
+	
+	public ArrayList<Propiedad> getPropiedades(){
+		return this.listaDePropiedades;
+	}
 }
