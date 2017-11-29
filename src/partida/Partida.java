@@ -5,6 +5,7 @@ import java.util.Collections;
 
 import caible.propiedades.barrios.Barrio;
 import casilleros.Caible;
+import excepciones.CaibleNoConstruibleException;
 import excepciones.JugadorEnBancarrotaException;
 import javafx.application.Application;
 import movimiento.Dado;
@@ -42,54 +43,62 @@ public class Partida {
 		jugadores.add(jugador2);
 		jugadores.add(jugador3);
 		Collections.shuffle(jugadores);
-		
+
 		this.jugadorActual = this.jugadorActual();
 
 		tablero = new Tablero();
 		indexJugadorActual = 0;
 		cantidadJugadoresActuales = jugadores.size();
 		turno = new Turno(jugadorActual, tirador, tablero);
-		
+
 	}
-	
-	//Deberiamos meter un metodo por cada boton que hagamos
-	
+
+	// Deberiamos meter un metodo por cada boton que hagamos
+
 	public void terminarTurno() {
-		if (turno.estaListoParaTerminar()){
+		if (turno.estaListoParaTerminar()) {
 			indexJugadorActual++;
 			if (indexJugadorActual > cantidadJugadoresActuales)
 				indexJugadorActual = 0;
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
 		}
-		
+
 	}
+
 	public Jugador jugadorActual() {
 		return jugadores.get(indexJugadorActual);
 	}
-	
-	
+
 	public void comprarCasilleroActual() {
-		if (turno.estaListoParaTerminar()){
+		if (turno.estaListoParaTerminar()) {
 			Caible caibleActual = this.getCaibleActual();
 			caibleActual.comprar(turno.getJugador());
 		}
 	}
-	
+
 	public void construirEn(Barrio unBarrio) {
-		unBarrio.construir();
+		if (!turno.estaListoParaTerminar()) {
+			try {
+				if ((unBarrio.obtenerDuenio()) == this.jugadorActual()) {
+					unBarrio.construir();
+				}
+			} catch (RuntimeException e) {
+
+				throw new CaibleNoConstruibleException("No podes construir en este Caible");
+			}
+		}
 	}
-	
+
 	public void tirarDados() {
-		if (!turno.estaListoParaTerminar()){
+		if (!turno.estaListoParaTerminar()) {
 			turno.tirarDados();
 		}
 	}
-	
-	
+
 	public int getTurno() {
 		return this.turnos;
 	}
-	
+
 	public Caible getCaibleActual() {
 		return this.tablero.getCaible(turno.getJugador().getPosicion());
 	}

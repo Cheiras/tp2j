@@ -22,16 +22,8 @@ public class BotonConstruirHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-    		
     	Caible barrioActual = partida.getCaibleActual();
-    	//CHEQUEAR QUE NO ESTE CONSTRUYENDO ALGUIEN QUE NO ES DUEÑO
-       	try {
-    		((Barrio) barrioActual).construir();
-    		
-    	} catch(RuntimeException e){
-    		
-    		throw new CaibleNoConstruibleException("El Caible Actual no es contruible");    		
-    	}
+    	partida.construirEn((Barrio) barrioActual);;
 
     }
 }
