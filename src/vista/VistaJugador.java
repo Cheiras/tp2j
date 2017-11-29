@@ -6,7 +6,7 @@ import partida.jugador.Jugador;
 
 public class VistaJugador {
 
-	private static final double RADIO = 100;
+	private static final double RADIO = 50;
 	Jugador jugador;
 	
 	public VistaJugador(Jugador jugador) {
@@ -16,12 +16,12 @@ public class VistaJugador {
 	
 	public void dibujar(Canvas canvas) {
 		this.clean(canvas);
-		canvas.getGraphicsContext2D().setFill(Color.DARKBLUE);
-		canvas.getGraphicsContext2D().fillOval(jugador.getPosicion().getX() + 230, jugador.getPosicion().getY() + 110, VistaJugador.RADIO, VistaJugador.RADIO);
+		canvas.getGraphicsContext2D().setFill(Color.BLUE);
+		canvas.getGraphicsContext2D().fillOval(jugador.getPosicion().getX() + 700, jugador.getPosicion().getY() + 660, VistaJugador.RADIO, VistaJugador.RADIO);
 	}
 
 	public void clean(Canvas canvas) {
-		canvas.getGraphicsContext2D().setFill(Color.LIGHTBLUE);
+		canvas.getGraphicsContext2D().setFill(Color.TRANSPARENT);
 		canvas.getGraphicsContext2D().fillRect(0, 0, 460, 220);
     }
 	
