@@ -10,8 +10,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
-public class VistaPropiedadesJugador {
 
+public class VistaPropiedadesJugador {
+	Stage ventana=new Stage();
 	ArrayList<Button> botonesPropiedad=new ArrayList<Button>();
 	ArrayList<Propiedad> propiedadesDelJugador;
 	
@@ -27,7 +28,7 @@ public class VistaPropiedadesJugador {
 	}
 	
 	public void display() {
-		Stage ventana=new Stage();
+
 		ventana.initModality(Modality.NONE);
 		ventana.setTitle("Propiedades del jugador");
 		ventana.setMinWidth(300);

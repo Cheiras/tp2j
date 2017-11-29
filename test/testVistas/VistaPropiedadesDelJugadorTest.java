@@ -1,5 +1,6 @@
 package testVistas;
 import partida.jugador.Jugador;
+import vista.VistaPropiedadesAVenderJugador;
 import caible.propiedades.Propiedad;
 import java.util.ArrayList;
 import javafx.geometry.Pos;
@@ -30,10 +31,11 @@ public class VistaPropiedadesDelJugadorTest extends Application {
         
         bairesSur.comprar(kevin);
         bairesNorte.comprar(kevin);
-        
+        System.out.print(kevin.getEfectivo());
 
-    	VistaPropiedadesJugador ventana=new VistaPropiedadesJugador(kevin);
+    	VistaPropiedadesAVenderJugador ventana=new VistaPropiedadesAVenderJugador(kevin);
     	ventana.display();
+    	System.out.print(kevin.getEfectivo());
     }
     
 	
