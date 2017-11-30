@@ -12,6 +12,7 @@ import excepciones.CaibleNoComprableException;
 import excepciones.CaibleNoConstruibleException;
 import excepciones.JugadorEnBancarrotaException;
 import excepciones.TerminarTurnoAntesDeTirarDadosException;
+import excepciones.YaHayGanador;
 import javafx.application.Application;
 import javafx.scene.paint.Color;
 import movimiento.Dado;
@@ -67,6 +68,9 @@ public class Partida {
 	}
 
 	public void terminarTurno() {
+		if (jugadores.size() == 1) {
+			throw new YaHayGanador("El juego terminó, gano el jugador " + jugadorActual.getNombre());
+		}
 		Jugador jugadorQueTermina = this.jugadorActual();
 		if (turno.estaListoParaTerminar()) {
 			indexJugadorActual++;
