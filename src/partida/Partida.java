@@ -12,6 +12,7 @@ import excepciones.CaibleNoComprableException;
 import excepciones.CaibleNoConstruibleException;
 import excepciones.JugadorEnBancarrotaException;
 import excepciones.TerminarTurnoAntesDeTirarDadosException;
+import excepciones.YaHayGanador;
 import javafx.application.Application;
 import javafx.scene.paint.Color;
 import movimiento.Dado;
@@ -67,6 +68,9 @@ public class Partida {
 	}
 
 	public void terminarTurno() {
+		if (jugadores.size() == 1) {
+			throw new YaHayGanador("El juego terminó, gano el jugador " + jugadorActual.getNombre());
+		}
 		Jugador jugadorQueTermina = this.jugadorActual();
 		if (turno.estaListoParaTerminar()) {
 			indexJugadorActual++;
@@ -75,8 +79,16 @@ public class Partida {
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
 			turnos++;
 			if (jugadorQueTermina.getEfectivo() < 0) {
-				jugadores.remove(jugadorQueTermina);
-				throw new JugadorEnBancarrotaException("El jugador " + jugadorQueTermina.getNombre() + " ha perdido.");
+				VentanaDeAlerta alerta = new VentanaDeAlerta("Alerta",
+						"Te quedaste sin efectivo, se venderan todas tus propiedades para intentar afrontar tu gasto");
+				alerta.display();
+				for (Propiedad propiedad : jugadorQueTermina.getPropiedades()) {
+					propiedad.vendete();
+				}
+				if (jugadorQueTermina.getEfectivo() < 0) {
+					jugadores.remove(jugadorQueTermina);
+					throw new JugadorEnBancarrotaException("No pudiste afrontar tu gasto, quedaste eliminado");
+				}
 			}
 
 		} else {
