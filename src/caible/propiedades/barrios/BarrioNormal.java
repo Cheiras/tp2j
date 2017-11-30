@@ -106,8 +106,11 @@ public class BarrioNormal extends Barrio {
 		int numeroConstruccionesActuales=this.getNumeroConstrucciones();
 		BarrioNormal barrioPar=this.duenio.obtenerPropiedadString(this.duplaBarrioNormal);
 		int numeroConstruccionesBarrioPar=barrioPar.getNumeroConstrucciones();
-		if(numeroConstruccionesActuales>0 || numeroConstruccionesBarrioPar>0) {
-			throw new RequisitosInsuficientesException("No se puede vender la propiedad en tanto haya construcciones en algun miembro de la dupla");
+		for (int i = 0; i < numeroConstruccionesActuales; i++) {
+			this.venderConstruccion();
+		}
+		for (int i = 0; i < numeroConstruccionesBarrioPar; i++) {
+			barrioPar.venderConstruccion();
 		}
 		int dineroACobrarPorVenta=(this.getPrecio()*85)/100;
 		this.duenio.aumentarEfectivo(dineroACobrarPorVenta);

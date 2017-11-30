@@ -75,8 +75,16 @@ public class Partida {
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
 			turnos++;
 			if (jugadorQueTermina.getEfectivo() < 0) {
-				jugadores.remove(jugadorQueTermina);
-				throw new JugadorEnBancarrotaException("El jugador " + jugadorQueTermina.getNombre() + " ha perdido.");
+				VentanaDeAlerta alerta = new VentanaDeAlerta("Alerta",
+						"Te quedaste sin efectivo, se venderan todas tus propiedades para intentar afrontar tu gasto");
+				alerta.display();
+				for (Propiedad propiedad : jugadorQueTermina.getPropiedades()) {
+					propiedad.vendete();
+				}
+				if (jugadorQueTermina.getEfectivo() < 0) {
+					jugadores.remove(jugadorQueTermina);
+					throw new JugadorEnBancarrotaException("No pudiste afrontar tu gasto, quedaste eliminado");
+				}
 			}
 
 		} else {
