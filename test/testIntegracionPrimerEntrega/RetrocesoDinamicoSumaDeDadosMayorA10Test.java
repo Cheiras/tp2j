@@ -19,11 +19,10 @@ public class RetrocesoDinamicoSumaDeDadosMayorA10Test {
 	public void NumeroMayorA10() {
 		int numeroSacadoEnDados = 11;
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getIndice();
+
 		retrocesoDinamico.accionar(jugador);
 		int posicionFinal= jugador.getIndice();
-		Assert.assertEquals(posicionFinal, 
-				posicionInicial-(jugador.getNumeroTotalSacadoEnDados() - 2));
+		Assert.assertEquals(posicionFinal, 11);//Cuando el indice es 0 y retrocede 1 salta al 19
 	}
 
 }

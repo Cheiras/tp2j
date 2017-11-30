@@ -16,11 +16,12 @@ public class JugadorConMovimientoCarcelPuedeMoverseDespuesDe3TurnosTest {
 		MeMuevo movCarcel = new MovimientoCarcelDiaUno();
 		Jugador Pepe = new Jugador("", 1000, movCarcel);
 		
-		for(int i = 0; i <= 3; i++) {
-			Pepe.avanzar(1);
+		for(int i = 0; i < 3; i++) {
+			Pepe.siguienteMovimiento();
 		}
+		Pepe.avanzar(1);
 	
-		Assert.assertTrue(Pepe.getIndice() == 1 );
+		Assert.assertEquals(Pepe.getIndice(), 1 );
 		
 	}
 
