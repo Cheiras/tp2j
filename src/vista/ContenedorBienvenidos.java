@@ -31,13 +31,14 @@ public class ContenedorBienvenidos extends VBox {
       
         
         this.setSpacing(20);
-        this.setPadding(new Insets(100));
+        this.setPadding(new Insets(40));
         Image imagen = new Image("file:src/vista/imagenes/imagen-intro.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 
         Button botonEntrar = new Button();
         botonEntrar.setText("Entrar");
+        botonEntrar.setPrefSize(100, 50);
 
         Label etiqueta = new Label();
         etiqueta.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
@@ -47,7 +48,7 @@ public class ContenedorBienvenidos extends VBox {
         BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena);
         botonEntrar.setOnAction(botonEntrarHandler);
 
-        this.getChildren().addAll(etiqueta, botonEntrar);
+        this.getChildren().addAll(botonEntrar, etiqueta);
     }
 
 }
