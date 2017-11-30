@@ -56,7 +56,7 @@ public class ContenedorPrincipal extends BorderPane {
 		Text turno = new Text("Turno: " + (partida.getTurno()));
 		panelDerecha.getChildren().add(turno);
 		
-		Text jugador = new Text("Jugador: " + (partida.getNumeroJugadorActual()));
+		Text jugador = new Text("Jugador: " + (partida.jugadorActual().getNombre()));
 		panelDerecha.getChildren().add(jugador);
 
 		Text efectivo = new Text("Efectivo: " + (partida.jugadorActual().getEfectivo()));

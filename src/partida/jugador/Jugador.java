@@ -65,7 +65,7 @@ public class Jugador {
 	}
 
 	public int getNumeroTotalSacadoEnDados() {
-		return numeroTotalSacadoEnDados;
+		return this.numeroTotalSacadoEnDados;
 	}
 
 	public int cantidadDePropiedadesASuNombre() {
@@ -185,5 +185,12 @@ public class Jugador {
 	
 	public ArrayList<Propiedad> getPropiedades(){
 		return this.listaDePropiedades;
+	}
+
+	public void siguienteMovimiento() {
+		this.movimiento.siguienteMovimiento(this);
+	}
+	public String getNombre() {
+		return this.nombre;
 	}
 }

@@ -22,19 +22,17 @@ public class RetrocesoDinamicoSumaDeDadosMenorA7Test {
 	public void NumeroMenorASeis() {
 		int numeroSacadoEnDados = 3;
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getIndice();
 		retrocesoDinamico.accionar(jugador);
 		int posicionFinal= jugador.getIndice();
-		Assert.assertEquals(posicionFinal, posicionInicial-(numeroSacadoEnDados - jugador.cantidadDePropiedadesASuNombre()));
+		Assert.assertEquals(posicionFinal, 17);
 	}
 	@Test
 	public void NumeroIgualASeis() {
 		int numeroSacadoEnDados = 6;
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getIndice();
 		retrocesoDinamico.accionar(jugador);
 		int posicionFinal= jugador.getIndice();
-		Assert.assertEquals(posicionFinal, posicionInicial- (numeroSacadoEnDados - jugador.cantidadDePropiedadesASuNombre()));
+		Assert.assertEquals(14,posicionFinal );
 	}
 	@Test
 	public void DependeDeLaCantidadDePropiedades() {
@@ -52,12 +50,11 @@ public class RetrocesoDinamicoSumaDeDadosMenorA7Test {
 		OtroBarrio.setDuenio(jugador);
 		OtroBarrio.accionar(jugador);
 		jugador.setNumeroTotalSacadoEnDados(numeroSacadoEnDados);
-		int posicionInicial= jugador.getIndice();
 		retrocesoDinamico.accionar(jugador);
 		int posicionFinal= jugador.getIndice();
 		
 		
 		Assert.assertEquals(2, jugador.cantidadDePropiedadesASuNombre()); //hacer un test aparte
-		Assert.assertEquals(posicionFinal, posicionInicial- (numeroSacadoEnDados - jugador.cantidadDePropiedadesASuNombre()));
+		Assert.assertEquals(posicionFinal, 16);
 	}
 }

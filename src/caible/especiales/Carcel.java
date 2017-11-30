@@ -19,8 +19,7 @@ public class Carcel extends Caible {
 	}
 
 	public void accionar(Jugador unJugador) {
-		MeMuevo movCarcel = new MovimientoCarcelDiaUno();
-		unJugador.nuevoMovimiento(movCarcel);
+		unJugador.siguienteMovimiento();
 		unJugador.setIndice(this.posicion);
 	}
 	

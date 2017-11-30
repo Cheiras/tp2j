@@ -12,5 +12,11 @@ public class MovimientoNormal implements MeMuevo {
 			jugador.avanzarCasillero();	
 				
 		}
+	}	
+	public void siguienteMovimiento(Jugador unJugador) {
+		
+		MeMuevo movimientoCarcel = new MovimientoCarcelDiaUno();
+		unJugador.nuevoMovimiento(movimientoCarcel);
 	}
+	
 }

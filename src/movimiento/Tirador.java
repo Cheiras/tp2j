@@ -17,8 +17,8 @@ public class Tirador {
 	public int tirar(){
 		valorTiradaDado1 = dado1.tirar();
 		valorTiradaDado2 = dado2.tirar();
-		System.out.println(valorTiradaDado1);
-		System.out.println(valorTiradaDado2);
+		//System.out.println(valorTiradaDado1);
+		//System.out.println(valorTiradaDado2);
 		if (!this.dadosMismoValor()) {
 	
 			return valorTiradaDado1 + valorTiradaDado2;

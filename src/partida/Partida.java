@@ -2,6 +2,8 @@ package partida;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import caible.propiedades.barrios.Barrio;
 import casilleros.Caible;
@@ -9,6 +11,7 @@ import excepciones.CaibleNoComprableException;
 import excepciones.CaibleNoConstruibleException;
 import excepciones.JugadorEnBancarrotaException;
 import javafx.application.Application;
+import javafx.scene.paint.Color;
 import movimiento.Dado;
 import movimiento.MeMuevo;
 import movimiento.MovimientoNormal;
@@ -27,6 +30,7 @@ public class Partida {
 	private Tablero tablero;
 	private Tirador tirador;
 	private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+	private HashMap<String, Color> colores = new HashMap<String, Color>();
 	private int turnos = 1;
 	private int indexJugadorActual;
 	private int cantidadJugadoresActuales;
@@ -39,8 +43,11 @@ public class Partida {
 		tirador = new Tirador(dado1, dado2);
 		MeMuevo movNormal = new MovimientoNormal();
 		jugador1 = new Jugador("J1", 100000, movNormal);
-		jugador2 = new Jugador("J1", 100000, movNormal);
-		jugador3 = new Jugador("J1", 100000, movNormal);
+		jugador2 = new Jugador("J2", 100000, movNormal);
+		jugador3 = new Jugador("J3", 100000, movNormal);
+		colores.put(jugador1.getNombre(), Color.BLUE);
+		colores.put(jugador2.getNombre(), Color.GREEN);
+		colores.put(jugador3.getNombre(), Color.RED);
 		jugadores.add(jugador1);
 		jugadores.add(jugador2);
 		jugadores.add(jugador3);
@@ -54,8 +61,6 @@ public class Partida {
 		turno = new Turno(jugadorActual, tirador, tablero);
 
 	}
-
-	// Deberiamos meter un metodo por cada boton que hagamos
 
 	public void terminarTurno() {
 		if (turno.estaListoParaTerminar()) {
@@ -112,6 +117,10 @@ public class Partida {
 
 	public int getNumeroJugadorActual() {
 		return indexJugadorActual + 1;
+	}
+
+	public Color getColor(String nombre) {
+		return colores.get(nombre);
 	}
 
 }
