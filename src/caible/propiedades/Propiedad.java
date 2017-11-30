@@ -43,6 +43,9 @@ public abstract class Propiedad extends Caible {
 			throw new AccionInvalida("Esta propiedad ya tiene duenio");
 			
 		}
+		if (this.getPrecioDeCompra()>jugadorQueCompra.getEfectivo()) {
+			throw new AccionInvalida("No posees el efectivo suficiente");
+		}
 		jugadorQueCompra.reducirEfectivo(this.getPrecioDeCompra());
 		this.setDuenio(jugadorQueCompra);	
 	}

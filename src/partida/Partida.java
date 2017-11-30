@@ -22,6 +22,7 @@ import partida.jugador.Jugador;
 import partida.tablero.Tablero;
 import partida.turno.Turno;
 import vista.VentanaDeAlerta;
+import vista.VistaPropiedadesAVenderJugador;
 import caible.propiedades.Propiedad;
 
 public class Partida {
@@ -45,9 +46,9 @@ public class Partida {
 		Dado dado2 = new Dado(6);
 		tirador = new Tirador(dado1, dado2);
 		MeMuevo movNormal = new MovimientoNormal();
-		jugador1 = new Jugador("Azul", 1000, movNormal);
-		jugador2 = new Jugador("Verde", 1000, movNormal);
-		jugador3 = new Jugador("Rojo", 1000, movNormal);
+		jugador1 = new Jugador("Azul", 100000, movNormal);
+		jugador2 = new Jugador("Verde", 100000, movNormal);
+		jugador3 = new Jugador("Rojo", 100000, movNormal);
 		colores.put(jugador1.getNombre(), Color.BLUE);
 		colores.put(jugador2.getNombre(), Color.GREEN);
 		colores.put(jugador3.getNombre(), Color.RED);
@@ -66,14 +67,19 @@ public class Partida {
 	}
 
 	public void terminarTurno() {
+		Jugador jugadorQueTermina = this.jugadorActual();
 		if (turno.estaListoParaTerminar()) {
 			indexJugadorActual++;
 			if (indexJugadorActual == cantidadJugadoresActuales)
 				indexJugadorActual = 0;
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
 			turnos++;
-		}
-		else {
+			if (jugadorQueTermina.getEfectivo() < 0) {
+				jugadores.remove(jugadorQueTermina);
+				throw new JugadorEnBancarrotaException("El jugador " + jugadorQueTermina.getNombre() + " ha perdido.");
+			}
+
+		} else {
 			throw new TerminarTurnoAntesDeTirarDadosException("Primero tenes que tirar los dados");
 		}
 
@@ -90,8 +96,7 @@ public class Partida {
 				((Propiedad) caibleActual).comprar(turno.getJugador());
 			} catch (RuntimeException e) {
 			}
-		}
-		else 
+		} else
 			throw new CaibleNoComprableException("No podes comprar antes de tirar dados");
 	}
 
