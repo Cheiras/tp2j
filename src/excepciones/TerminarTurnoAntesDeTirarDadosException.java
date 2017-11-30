@@ -2,15 +2,17 @@ package excepciones;
 
 import vista.VentanaDeAlerta;
 
-public class FianzaInhabilitadaException extends RuntimeException {
-	
+public class TerminarTurnoAntesDeTirarDadosException extends RuntimeException {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public FianzaInhabilitadaException(String mensaje) {
+	public TerminarTurnoAntesDeTirarDadosException(String mensaje) {
+		
 		VentanaDeAlerta alerta=new VentanaDeAlerta("Error",mensaje);
 		alerta.display();
+		
 	}
 }

@@ -8,6 +8,7 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import partida.Partida;
 import vista.ContenedorPrincipal;
+import vista.VentanaDeAlerta;
 import vista.VistaConstruccionesParaHacerJugador;
 
 public class BotonConstruirHandler implements EventHandler<ActionEvent> {
@@ -29,6 +30,10 @@ public class BotonConstruirHandler implements EventHandler<ActionEvent> {
     	if (!partida.yaSeTiraronDados()) {
     		VistaConstruccionesParaHacerJugador ventanaPropiedades=new VistaConstruccionesParaHacerJugador(partida.jugadorActual(),this.contenedor);
         	ventanaPropiedades.display();
+    	}
+    	else {
+    		VentanaDeAlerta alerta=new VentanaDeAlerta("Error","No podes construir despues de haber tirado dados");
+    		alerta.display();
     	}
     }
 }

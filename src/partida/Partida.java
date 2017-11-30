@@ -7,9 +7,11 @@ import java.util.Map;
 
 import caible.propiedades.barrios.Barrio;
 import casilleros.Caible;
+import excepciones.AccionInvalida;
 import excepciones.CaibleNoComprableException;
 import excepciones.CaibleNoConstruibleException;
 import excepciones.JugadorEnBancarrotaException;
+import excepciones.TerminarTurnoAntesDeTirarDadosException;
 import javafx.application.Application;
 import javafx.scene.paint.Color;
 import movimiento.Dado;
@@ -19,6 +21,7 @@ import movimiento.Tirador;
 import partida.jugador.Jugador;
 import partida.tablero.Tablero;
 import partida.turno.Turno;
+import vista.VentanaDeAlerta;
 import caible.propiedades.Propiedad;
 
 public class Partida {
@@ -42,9 +45,9 @@ public class Partida {
 		Dado dado2 = new Dado(6);
 		tirador = new Tirador(dado1, dado2);
 		MeMuevo movNormal = new MovimientoNormal();
-		jugador1 = new Jugador("J1", 100000, movNormal);
-		jugador2 = new Jugador("J2", 100000, movNormal);
-		jugador3 = new Jugador("J3", 100000, movNormal);
+		jugador1 = new Jugador("Azul", 1000, movNormal);
+		jugador2 = new Jugador("Verde", 1000, movNormal);
+		jugador3 = new Jugador("Rojo", 1000, movNormal);
 		colores.put(jugador1.getNombre(), Color.BLUE);
 		colores.put(jugador2.getNombre(), Color.GREEN);
 		colores.put(jugador3.getNombre(), Color.RED);
@@ -70,6 +73,9 @@ public class Partida {
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
 			turnos++;
 		}
+		else {
+			throw new TerminarTurnoAntesDeTirarDadosException("Primero tenes que tirar los dados");
+		}
 
 	}
 
@@ -85,6 +91,8 @@ public class Partida {
 			} catch (RuntimeException e) {
 			}
 		}
+		else 
+			throw new CaibleNoComprableException("No podes comprar antes de tirar dados");
 	}
 
 	public void construirEn(Barrio unBarrio) {

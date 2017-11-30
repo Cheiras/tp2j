@@ -1,5 +1,7 @@
 package excepciones;
 
+import vista.VentanaDeAlerta;
+
 public class CaibleNoComprableException extends RuntimeException {
 
 	/**
@@ -9,7 +11,8 @@ public class CaibleNoComprableException extends RuntimeException {
 
 	public CaibleNoComprableException(String mensaje) {
 		
-		System.out.println(mensaje);
+		VentanaDeAlerta alerta=new VentanaDeAlerta("Error",mensaje);
+		alerta.display();
 		
 	}
 }

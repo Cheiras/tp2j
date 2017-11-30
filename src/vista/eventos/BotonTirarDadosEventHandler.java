@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import partida.Partida;
 import vista.ContenedorPrincipal;
+import vista.VentanaDeAlerta;
 
 public class BotonTirarDadosEventHandler implements EventHandler<ActionEvent> {
 
@@ -21,9 +22,14 @@ public class BotonTirarDadosEventHandler implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent actionEvent) {
-
-		partida.tirarDados();
-		contenedor.update();
+		if (partida.yaSeTiraronDados()){
+			VentanaDeAlerta alerta=new VentanaDeAlerta("Error","Ya tiraste dados");
+			alerta.display();
+		}
+		else {
+			partida.tirarDados();
+			contenedor.update();
+		}
 
 	}
 }

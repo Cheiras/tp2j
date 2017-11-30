@@ -1,5 +1,7 @@
 package excepciones;
 
+import vista.VentanaDeAlerta;
+
 public class CaibleNoConstruibleException extends RuntimeException {
 
 	/**
@@ -9,7 +11,8 @@ public class CaibleNoConstruibleException extends RuntimeException {
 
 	public CaibleNoConstruibleException(String mensaje) {
 		
-		System.out.println(mensaje);
+		VentanaDeAlerta alerta=new VentanaDeAlerta("Error",mensaje);
+		alerta.display();
 		
 	}
 }

@@ -1,6 +1,7 @@
 package movimiento;
 
 import excepciones.NumeroDobleEnDadosException;
+import vista.VentanaDeAlerta;
 
 public class Tirador {
 	
@@ -17,8 +18,8 @@ public class Tirador {
 	public int tirar(){
 		valorTiradaDado1 = dado1.tirar();
 		valorTiradaDado2 = dado2.tirar();
-		//System.out.println(valorTiradaDado1);
-		//System.out.println(valorTiradaDado2);
+		VentanaDeAlerta alerta=new VentanaDeAlerta("Resultado","Sacaste un "+ valorTiradaDado1 + " y un " + valorTiradaDado2);
+		alerta.display();
 		if (!this.dadosMismoValor()) {
 	
 			return valorTiradaDado1 + valorTiradaDado2;
