@@ -24,6 +24,7 @@ import vista.eventos.BotonConstruirHandler;
 import vista.eventos.BotonTerminarTurnoEventHandler;
 import vista.eventos.BotonTirarDadosEventHandler;
 import vista.eventos.BotonOpcionVenderPropiedadEventHandler;
+import vista.eventos.BotonPagarFianzaEventHandler;
 import vista.eventos.BotonVenderEventHandler;
 
 public class ContenedorPrincipal extends BorderPane {
@@ -83,7 +84,13 @@ public class ContenedorPrincipal extends BorderPane {
 	}
 	
 	private void setBotonera(Stage stage) {
-
+		
+		Button botonPagarFianza = new Button();
+		botonPagarFianza.setText("Pagar Fianza");
+		BotonPagarFianzaEventHandler fianzaButtonHandler = new BotonPagarFianzaEventHandler(this.partida,stage,this);
+		if(this.partida.jugadorActual().estadoDeHabilitacion()) {
+			botonPagarFianza.setOnAction(fianzaButtonHandler);
+		}
 		Button botonTirar = new Button();
 		botonTirar.setText("Tirar Dados");
 		BotonTirarDadosEventHandler throwButtonHandler = new BotonTirarDadosEventHandler(stage, partida, this);
@@ -113,7 +120,8 @@ public class ContenedorPrincipal extends BorderPane {
 
 		
 		
-		VBox contenedorVertical = new VBox(botonTirar, botonConstruir, botonComprar, botonTerminarTurno, botonVender);
+		VBox contenedorVertical = new VBox(botonTirar, botonConstruir, botonComprar, botonTerminarTurno, botonVender, botonPagarFianza);
+
 		contenedorVertical.setSpacing(20);
 		contenedorVertical.setPadding(new Insets(15));
 
