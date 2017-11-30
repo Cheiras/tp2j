@@ -6,4 +6,7 @@ public interface MeMuevo {
 	public default void mover(Jugador jugador, int cantidad) {
 		
 	}
+	public default void siguienteMovimiento(Jugador jugador) {
+		
+	}
 }

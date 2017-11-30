@@ -53,18 +53,10 @@ public class ContenedorPrincipal extends BorderPane {
 		panelDerecha = new VBox();
 		
 		Text turno = new Text("Turno: " + (partida.getTurno()));
-		panelDerecha.getChildren().add(turno);
-		
 		Text jugador = new Text("Jugador: " + (partida.getNumeroJugadorActual()));
-		panelDerecha.getChildren().add(jugador);
-
 		Text efectivo = new Text("Efectivo: " + (partida.jugadorActual().getEfectivo()));
-		panelDerecha.getChildren().add(efectivo);
-
 		Text ubicacion = new Text("Estas parado en: " + (partida.getCaibleActual().getNombre()));
-		panelDerecha.getChildren().add(ubicacion);
-		
-		
+		panelDerecha.getChildren().addAll(turno,jugador,efectivo,ubicacion);
 		
 		panelDerecha.setAlignment(Pos.TOP_RIGHT);
 		panelDerecha.setPadding(new Insets(95));

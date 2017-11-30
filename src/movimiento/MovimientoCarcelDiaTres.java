@@ -4,13 +4,13 @@ import partida.jugador.Jugador;
 
 public class MovimientoCarcelDiaTres implements MeMuevo {
 
-	public void mover(Jugador Prisionero, int cantidad) {
+	public void mover(Jugador prisionero, int cantidad) {
 
-		MeMuevo movimiento = new MovimientoNormal();
-
-		Prisionero.nuevoMovimiento(movimiento);
-		
-		Prisionero.deshabilitar();
+		prisionero.deshabilitar();
 	}
-
+	
+	public void siguienteMovimiento(Jugador unJugador) {
+		MeMuevo movimiento = new MovimientoNormal();
+		unJugador.nuevoMovimiento(movimiento);
+	}
 }

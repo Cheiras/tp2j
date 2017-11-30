@@ -5,8 +5,11 @@ import partida.jugador.Jugador;
 public class MovimientoCarcelDiaUno implements MeMuevo {
 
 	public void mover(Jugador prisionero, int cantidad) {
-		MeMuevo movimientoDiasExtra = new MovimientoCarcelDiaDos();
-		prisionero.nuevoMovimiento(movimientoDiasExtra);
 		prisionero.habilitar();
+	}
+	
+	public void siguienteMovimiento(Jugador unJugador) {
+		MeMuevo movimientoDiasExtra = new MovimientoCarcelDiaDos();
+		unJugador.nuevoMovimiento(movimientoDiasExtra);
 	}
 }
