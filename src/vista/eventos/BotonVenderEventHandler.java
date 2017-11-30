@@ -20,7 +20,7 @@ public class BotonVenderEventHandler implements EventHandler <ActionEvent> {
 	
 	@Override
 	public void handle(ActionEvent actionEvent) {
-		VistaPropiedadesAVenderJugador ventanaPropiedades=new VistaPropiedadesAVenderJugador(partida.jugadorActual());
+		VistaPropiedadesAVenderJugador ventanaPropiedades=new VistaPropiedadesAVenderJugador(partida.jugadorActual(),this.contenedor);
 		ventanaPropiedades.display();
 	}
 }

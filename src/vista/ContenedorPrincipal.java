@@ -34,6 +34,7 @@ public class ContenedorPrincipal extends BorderPane {
     private VBox panelDerecha;
 	private VistaJugadores vistaJugadores;
 	private Stage stage;
+	private VBox consola;
 
     public ContenedorPrincipal(Stage stage) {
     	
@@ -153,6 +154,7 @@ public class ContenedorPrincipal extends BorderPane {
 		contenedorConsola.setStyle("-fx-background-color: black;");
 
 		this.setBottom(contenedorConsola);
+		this.consola=contenedorConsola;
 	}
 
 	public BarraDeMenu getBarraDeMenu() {
