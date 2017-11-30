@@ -8,6 +8,7 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import partida.Partida;
 import vista.ContenedorPrincipal;
+import vista.VistaConstruccionesParaHacerJugador;
 
 public class BotonConstruirHandler implements EventHandler<ActionEvent> {
 	
@@ -26,14 +27,7 @@ public class BotonConstruirHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
     	
-    	Caible barrioActual = partida.getCaibleActual();
-    	try {
-    		partida.construirEn((Barrio) barrioActual);
-    	}
-    	catch(RuntimeException e) {
-    		//throw new CaibleNoConstruibleException("No podes construir en este Caible");
-    	}
-    	contenedor.setPanelDerecha();
-
+    	VistaConstruccionesParaHacerJugador ventanaPropiedades=new VistaConstruccionesParaHacerJugador(partida.jugadorActual(),this.contenedor);
+    	ventanaPropiedades.display();
     }
 }
