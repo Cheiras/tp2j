@@ -123,4 +123,8 @@ public class Partida {
 		return colores.get(nombre);
 	}
 
+	public boolean yaSeTiraronDados() {
+		return this.turno.estaListoParaTerminar();
+	}
+
 }

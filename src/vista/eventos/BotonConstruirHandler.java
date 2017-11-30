@@ -26,8 +26,9 @@ public class BotonConstruirHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-    	
-    	VistaConstruccionesParaHacerJugador ventanaPropiedades=new VistaConstruccionesParaHacerJugador(partida.jugadorActual(),this.contenedor);
-    	ventanaPropiedades.display();
+    	if (!partida.yaSeTiraronDados()) {
+    		VistaConstruccionesParaHacerJugador ventanaPropiedades=new VistaConstruccionesParaHacerJugador(partida.jugadorActual(),this.contenedor);
+        	ventanaPropiedades.display();
+    	}
     }
 }
