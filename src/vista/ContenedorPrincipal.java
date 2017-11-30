@@ -53,7 +53,15 @@ public class ContenedorPrincipal extends BorderPane {
 		panelDerecha = new VBox();
 		
 		Text turno = new Text("Turno: " + (partida.getTurno()));
+<<<<<<< Upstream, based on origin/master
 		Text jugador = new Text("Jugador: " + (partida.getNumeroJugadorActual()));
+=======
+		panelDerecha.getChildren().add(turno);
+		
+		Text jugador = new Text("Jugador: " + (partida.jugadorActual().getNombre()));
+		panelDerecha.getChildren().add(jugador);
+
+>>>>>>> a521449 Colores para cada jugador
 		Text efectivo = new Text("Efectivo: " + (partida.jugadorActual().getEfectivo()));
 		Text ubicacion = new Text("Estas parado en: " + (partida.getCaibleActual().getNombre()));
 		panelDerecha.getChildren().addAll(turno,jugador,efectivo,ubicacion);

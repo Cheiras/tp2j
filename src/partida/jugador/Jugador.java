@@ -186,8 +186,13 @@ public class Jugador {
 	public ArrayList<Propiedad> getPropiedades(){
 		return this.listaDePropiedades;
 	}
+<<<<<<< Upstream, based on origin/master
 
 	public void siguienteMovimiento() {
 		this.movimiento.siguienteMovimiento(this);
+=======
+	public String getNombre() {
+		return this.nombre;
+>>>>>>> a521449 Colores para cada jugador
 	}
 }
