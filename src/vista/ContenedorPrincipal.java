@@ -4,7 +4,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -13,9 +12,6 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import partida.Partida;
@@ -23,7 +19,6 @@ import vista.eventos.BotonComprarCasilleroActualEventHandler;
 import vista.eventos.BotonConstruirHandler;
 import vista.eventos.BotonTerminarTurnoEventHandler;
 import vista.eventos.BotonTirarDadosEventHandler;
-import vista.eventos.BotonOpcionVenderPropiedadEventHandler;
 import vista.eventos.BotonPagarFianzaEventHandler;
 import vista.eventos.BotonVenderEventHandler;
 
@@ -36,14 +31,12 @@ public class ContenedorPrincipal extends BorderPane {
     private VBox panelDerecha;
 	private VistaJugadores vistaJugadores;
 	private Stage stage;
-	private VBox consola;
 
     public ContenedorPrincipal(Stage stage) {
     	
     	this.partida = new Partida();   	
         this.setMenu(stage);
         this.setCentro();
-        this.setConsola();
         this.setBotonera(stage);
         this.setPanelDerecha();
         this.stage = stage;
@@ -78,7 +71,6 @@ public class ContenedorPrincipal extends BorderPane {
 		this.vistaJugadores.update();
     	this.setMenu(this.stage);
 		this.setCentro();
-		this.setConsola();
 		this.setBotonera(this.stage);
 		this.setPanelDerecha();
 	}
@@ -91,6 +83,7 @@ public class ContenedorPrincipal extends BorderPane {
 		if(this.partida.jugadorActual().estadoDeHabilitacion()) {
 			botonPagarFianza.setOnAction(fianzaButtonHandler);
 		}
+		
 		Button botonTirar = new Button();
 		botonTirar.setText("Tirar Dados");
 		BotonTirarDadosEventHandler throwButtonHandler = new BotonTirarDadosEventHandler(stage, partida, this);
@@ -152,21 +145,6 @@ public class ContenedorPrincipal extends BorderPane {
 		this.setCenter(contenedorCentral);
 	}
 
-	private void setConsola() {
-
-		Label etiqueta = new Label();
-		etiqueta.setText("consola...");
-		etiqueta.setFont(Font.font("courier new", FontWeight.SEMI_BOLD, 14));
-		etiqueta.setTextFill(Color.WHITE);
-
-		VBox contenedorConsola = new VBox(etiqueta);
-		contenedorConsola.setSpacing(10);
-		contenedorConsola.setPadding(new Insets(20));
-		contenedorConsola.setStyle("-fx-background-color: black;");
-
-		this.setBottom(contenedorConsola);
-		this.consola=contenedorConsola;
-	}
 
 	public BarraDeMenu getBarraDeMenu() {
 		return menuBar;

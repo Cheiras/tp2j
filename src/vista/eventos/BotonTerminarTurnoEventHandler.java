@@ -1,11 +1,12 @@
 package vista.eventos;
 
+import excepciones.PartidaFinalizadaException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import partida.Partida;
 import vista.ContenedorPrincipal;
+import vista.VentanaDeAlerta;
 
 public class BotonTerminarTurnoEventHandler implements EventHandler<ActionEvent> {
 
@@ -22,8 +23,12 @@ public class BotonTerminarTurnoEventHandler implements EventHandler<ActionEvent>
 
     @Override
     public void handle(ActionEvent actionEvent) {
-
+    	try {
         	partida.terminarTurno();
+    	}catch(PartidaFinalizadaException e) {
+    		VentanaDeAlerta ventana = new VentanaDeAlerta("El juego ha terminado","El juego terminó, gano el jugador " + this.partida.jugadorActual().getNombre());
+    		ventana.display();
+    	}
         	contenedor.update();
 
     }

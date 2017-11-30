@@ -10,11 +10,10 @@ import partida.jugador.Jugador;
 
 public class Carcel extends Caible {
 
-	private int precioFianza;
+	private int precioFianza = 10000;
 
 	public Carcel() {
 		super("Carcel");
-		this.precioFianza = 10000;
 		this.posicion = 5;
 	}
 

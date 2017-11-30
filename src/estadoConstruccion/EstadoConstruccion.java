@@ -40,6 +40,8 @@ public abstract class EstadoConstruccion {
 	
 	public void cobrarAlquiler(Jugador unJugador, Jugador duenio ) throws RuntimeException {
 		if (unJugador.montoMenorA(costoRenta)) {
+			System.out.println(costoRenta);
+			System.out.println(duenio.getEfectivo());
 			throw new JugadorEnBancarrotaException("Dinero insuficiente para pagar alquiler, entro en Bancarota");
 		}
 		duenio.aumentarEfectivo(this.costoRenta);

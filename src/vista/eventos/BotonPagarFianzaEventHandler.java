@@ -33,7 +33,7 @@ public class BotonPagarFianzaEventHandler implements EventHandler<ActionEvent> {
 			VentanaDeAlerta alerta=new VentanaDeAlerta("Error","Monto Insuficiente para pagar la fianza");
 			alerta.display();
 		}
-		ventana.close();
+		
 		contenedor.update();
 	}
 }

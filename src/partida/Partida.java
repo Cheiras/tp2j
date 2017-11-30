@@ -3,17 +3,12 @@ package partida;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
-
 import caible.propiedades.barrios.Barrio;
 import casilleros.Caible;
-import excepciones.AccionInvalida;
 import excepciones.CaibleNoComprableException;
-import excepciones.CaibleNoConstruibleException;
 import excepciones.JugadorEnBancarrotaException;
+import excepciones.PartidaFinalizadaException;
 import excepciones.TerminarTurnoAntesDeTirarDadosException;
-import excepciones.YaHayGanador;
-import javafx.application.Application;
 import javafx.scene.paint.Color;
 import movimiento.Dado;
 import movimiento.MeMuevo;
@@ -23,7 +18,6 @@ import partida.jugador.Jugador;
 import partida.tablero.Tablero;
 import partida.turno.Turno;
 import vista.VentanaDeAlerta;
-import vista.VistaPropiedadesAVenderJugador;
 import caible.propiedades.Propiedad;
 
 public class Partida {
@@ -68,9 +62,7 @@ public class Partida {
 	}
 
 	public void terminarTurno() {
-		if (jugadores.size() == 1) {
-			throw new YaHayGanador("El juego terminó, gano el jugador " + jugadorActual.getNombre());
-		}
+
 		Jugador jugadorQueTermina = this.jugadorActual();
 		if (turno.estaListoParaTerminar()) {
 			indexJugadorActual++;
@@ -90,12 +82,18 @@ public class Partida {
 					throw new JugadorEnBancarrotaException("No pudiste afrontar tu gasto, quedaste eliminado");
 				}
 			}
+		if (jugadores.size() == 1) {
+			throw new PartidaFinalizadaException();
+		}	
+			
 
 		} else {
 			throw new TerminarTurnoAntesDeTirarDadosException("Primero tenes que tirar los dados");
 		}
 
 	}
+
+
 
 	public Jugador jugadorActual() {
 		return jugadores.get(indexJugadorActual);
