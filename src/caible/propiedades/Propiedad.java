@@ -79,4 +79,7 @@ public abstract class Propiedad extends Caible {
 	public void vendete() {
 		
 	}
+	public void venderConstruccion() {
+		
+	}
 }

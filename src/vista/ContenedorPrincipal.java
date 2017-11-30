@@ -23,6 +23,7 @@ import vista.eventos.BotonComprarCasilleroActualEventHandler;
 import vista.eventos.BotonConstruirHandler;
 import vista.eventos.BotonTerminarTurnoEventHandler;
 import vista.eventos.BotonTirarDadosEventHandler;
+import vista.eventos.BotonOpcionVenderPropiedadEventHandler;
 import vista.eventos.BotonVenderEventHandler;
 
 public class ContenedorPrincipal extends BorderPane {
@@ -110,6 +111,8 @@ public class ContenedorPrincipal extends BorderPane {
 		BotonTerminarTurnoEventHandler terminarButtonHandler = new BotonTerminarTurnoEventHandler(stage, partida, this);
 		botonTerminarTurno.setOnAction(terminarButtonHandler);
 
+		
+		
 		VBox contenedorVertical = new VBox(botonTirar, botonConstruir, botonComprar, botonTerminarTurno, botonVender);
 		contenedorVertical.setSpacing(20);
 		contenedorVertical.setPadding(new Insets(15));
