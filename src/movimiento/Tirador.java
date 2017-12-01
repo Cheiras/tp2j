@@ -18,8 +18,7 @@ public class Tirador {
 	public int tirar(){
 		valorTiradaDado1 = dado1.tirar();
 		valorTiradaDado2 = dado2.tirar();
-		VentanaDeAlerta alerta=new VentanaDeAlerta("Resultado","Sacaste un "+ valorTiradaDado1 + " y un " + valorTiradaDado2);
-		alerta.display();
+
 		if (!this.dadosMismoValor()) {
 	
 			return valorTiradaDado1 + valorTiradaDado2;

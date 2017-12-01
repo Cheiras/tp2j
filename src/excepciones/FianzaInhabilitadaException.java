@@ -10,7 +10,6 @@ public class FianzaInhabilitadaException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 
 	public FianzaInhabilitadaException(String mensaje) {
-		VentanaDeAlerta alerta=new VentanaDeAlerta("Error",mensaje);
-		alerta.display();
+
 	}
 }

@@ -11,8 +11,7 @@ public class CaibleNoComprableException extends RuntimeException {
 
 	public CaibleNoComprableException(String mensaje) {
 		
-		VentanaDeAlerta alerta=new VentanaDeAlerta("Error",mensaje);
-		alerta.display();
+
 		
 	}
 }

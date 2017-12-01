@@ -5,6 +5,7 @@ import estadoDuenio.ConDuenio;
 import estadoDuenio.EstadoDuenio;
 import estadoDuenio.SinDuenio;
 import excepciones.AccionInvalida;
+import excepciones.MontoInsuficienteException;
 import partida.jugador.Jugador;
 import partida.jugador.NoJugador;
 
@@ -44,7 +45,7 @@ public abstract class Propiedad extends Caible {
 			
 		}
 		if (this.getPrecioDeCompra()>jugadorQueCompra.getEfectivo()) {
-			throw new AccionInvalida("No posees el efectivo suficiente");
+			throw new MontoInsuficienteException("No posees el efectivo suficiente");
 		}
 		jugadorQueCompra.reducirEfectivo(this.getPrecioDeCompra());
 		this.setDuenio(jugadorQueCompra);	

@@ -43,22 +43,22 @@ public class ContenedorPrincipal extends BorderPane {
     }
 
 
-
 	public void setPanelDerecha() {
 		panelDerecha = new VBox();
 		
 		Text turno = new Text("Turno: " + (partida.getTurno()));
-		panelDerecha.getChildren().add(turno);
 		
 		Text jugador = new Text("Jugador: " + (partida.jugadorActual().getNombre()));
-		panelDerecha.getChildren().add(jugador);
 
 		Text efectivo = new Text("Efectivo: " + (partida.jugadorActual().getEfectivo()));
-		panelDerecha.getChildren().add(efectivo);
 
 		Text ubicacion = new Text("Estas parado en: " + (partida.getCaibleActual().getNombre()));
-		panelDerecha.getChildren().add(ubicacion);
 		
+		Text valorDado1 = new Text("Numero obtenido en el primer Dado: " + (partida.getTirador().getValorDado1()));
+		
+		Text valorDado2 = new Text("Numero obtenido en el segundo Dado: " + (partida.getTirador().getValorDado2()));
+		
+		panelDerecha.getChildren().addAll(turno,jugador,efectivo,ubicacion,valorDado1,valorDado2);
 		
 		
 		panelDerecha.setAlignment(Pos.TOP_RIGHT);
@@ -148,6 +148,12 @@ public class ContenedorPrincipal extends BorderPane {
 
 	public BarraDeMenu getBarraDeMenu() {
 		return menuBar;
+	}
+
+
+	public void eliminarJugadorActual() {
+		this.vistaJugadores.eliminarJugadorActual();
+		
 	}
 
 

@@ -11,8 +11,11 @@ public class VistaJugadores {
 
 	private ArrayList<VistaJugador> jugadores= new ArrayList<VistaJugador>();
 	private Canvas canvas;
+	private int indiceVistaActual;
+	private Partida partida;
 	
 	public VistaJugadores(Partida partida, Canvas canvas) {
+		
 		this.canvas = canvas;
 		this.jugadores = new ArrayList<VistaJugador>();
 		for(Jugador jugador : partida.getJugadores()) {
@@ -20,6 +23,9 @@ public class VistaJugadores {
 			jugadores.add(nuevaVistaJugador);
 			nuevaVistaJugador.dibujar(canvas);
 		}
+		this.partida = partida;
+
+		
 		
 	}
 	public void clean() {
@@ -28,13 +34,17 @@ public class VistaJugadores {
 	}
 	
 	public void update() {
+		
 		this.clean();
 		for(VistaJugador jugador : this.jugadores) {
 			jugador.dibujar(this.canvas);
 			
 		}
-
-		
 	}
+	public void eliminarJugadorActual()	{
+		this.jugadores.remove(this.partida.getIndice());
+	}
+		
+
 	
 }

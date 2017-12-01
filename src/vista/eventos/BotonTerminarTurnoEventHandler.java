@@ -1,5 +1,7 @@
 package vista.eventos;
 
+import excepciones.JugadorEliminadoException;
+import excepciones.JugadorEnBancarrotaException;
 import excepciones.PartidaFinalizadaException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -28,8 +30,15 @@ public class BotonTerminarTurnoEventHandler implements EventHandler<ActionEvent>
     	}catch(PartidaFinalizadaException e) {
     		VentanaDeAlerta ventana = new VentanaDeAlerta("El juego ha terminado","El juego terminó, gano el jugador " + this.partida.jugadorActual().getNombre());
     		ventana.display();
+    	}catch(JugadorEnBancarrotaException er) {
+    		VentanaDeAlerta ventana2 = new VentanaDeAlerta("Bancarrota","Tus propiedades han sido vendidas");
+    		ventana2.display();
+    	}catch(JugadorEliminadoException err) {
+    		VentanaDeAlerta ventana3 = new VentanaDeAlerta("Bancarrota","Has sido eliminado");
+    		contenedor.eliminarJugadorActual();
+    		ventana3.display();
     	}
-        	contenedor.update();
+        contenedor.update();
 
     }
 }

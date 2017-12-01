@@ -36,10 +36,6 @@ public abstract class EstadoConstruccionEnProvinciasUnicas{
 	
 	public void cobrarRenta(Jugador unJugador, Jugador duenio) throws MontoInsuficienteException {
 
-		if (unJugador.montoMenorA(this.costoRenta)) {
-			throw new JugadorEnBancarrotaException("Entraste en Bancarrota.");
-		}
-
 		unJugador.reducirEfectivo(this.costoRenta);
 		duenio.aumentarEfectivo(this.costoRenta);
 		

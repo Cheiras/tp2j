@@ -11,8 +11,7 @@ public class TerminarTurnoAntesDeTirarDadosException extends RuntimeException {
 
 	public TerminarTurnoAntesDeTirarDadosException(String mensaje) {
 		
-		VentanaDeAlerta alerta=new VentanaDeAlerta("Error",mensaje);
-		alerta.display();
+
 		
 	}
 }

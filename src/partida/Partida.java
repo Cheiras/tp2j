@@ -6,6 +6,7 @@ import java.util.HashMap;
 import caible.propiedades.barrios.Barrio;
 import casilleros.Caible;
 import excepciones.CaibleNoComprableException;
+import excepciones.JugadorEliminadoException;
 import excepciones.JugadorEnBancarrotaException;
 import excepciones.PartidaFinalizadaException;
 import excepciones.TerminarTurnoAntesDeTirarDadosException;
@@ -32,7 +33,6 @@ public class Partida {
 	private HashMap<String, Color> colores = new HashMap<String, Color>();
 	private int turnos = 1;
 	private int indexJugadorActual;
-	private int cantidadJugadoresActuales;
 	private Turno turno;
 
 	public Partida() {
@@ -41,7 +41,7 @@ public class Partida {
 		Dado dado2 = new Dado(6);
 		tirador = new Tirador(dado1, dado2);
 		MeMuevo movNormal = new MovimientoNormal();
-		jugador1 = new Jugador("Azul", 100000, movNormal);
+		jugador1 = new Jugador("Azul", 1000, movNormal);
 		jugador2 = new Jugador("Verde", 100000, movNormal);
 		jugador3 = new Jugador("Rojo", 100000, movNormal);
 		colores.put(jugador1.getNombre(), Color.BLUE);
@@ -56,44 +56,44 @@ public class Partida {
 
 		tablero = new Tablero();
 		indexJugadorActual = 0;
-		cantidadJugadoresActuales = jugadores.size();
 		turno = new Turno(jugadorActual, tirador, tablero);
 
 	}
 
+	public Tirador getTirador() {
+		return this.tirador;
+	}
+
 	public void terminarTurno() {
+
+		if (jugadores.size() == 1) {
+			throw new PartidaFinalizadaException();
+		}
 
 		Jugador jugadorQueTermina = this.jugadorActual();
 		if (turno.estaListoParaTerminar()) {
 			indexJugadorActual++;
-			if (indexJugadorActual == cantidadJugadoresActuales)
+			if (indexJugadorActual == jugadores.size())
 				indexJugadorActual = 0;
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
 			turnos++;
 			if (jugadorQueTermina.getEfectivo() < 0) {
-				VentanaDeAlerta alerta = new VentanaDeAlerta("Alerta",
-						"Te quedaste sin efectivo, se venderan todas tus propiedades para intentar afrontar tu gasto");
-				alerta.display();
 				for (Propiedad propiedad : jugadorQueTermina.getPropiedades()) {
 					propiedad.vendete();
 				}
-				if (jugadorQueTermina.getEfectivo() < 0) {
-					jugadores.remove(jugadorQueTermina);
-					throw new JugadorEnBancarrotaException("No pudiste afrontar tu gasto, quedaste eliminado");
+					if (jugadorQueTermina.getEfectivo() < 0) {
+						jugadores.remove(jugadorQueTermina);
+						throw new JugadorEliminadoException();
+					}
+					throw new JugadorEnBancarrotaException("Tus propiedades han sido vendidas");
 				}
-			}
-		if (jugadores.size() == 1) {
-			throw new PartidaFinalizadaException();
-		}	
-			
 
-		} else {
+			} 
+		else{
 			throw new TerminarTurnoAntesDeTirarDadosException("Primero tenes que tirar los dados");
 		}
 
 	}
-
-
 
 	public Jugador jugadorActual() {
 		return jugadores.get(indexJugadorActual);
@@ -148,6 +148,10 @@ public class Partida {
 
 	public boolean yaSeTiraronDados() {
 		return this.turno.estaListoParaTerminar();
+	}
+
+	public Object getIndice() {
+		return this.indexJugadorActual;
 	}
 
 }
