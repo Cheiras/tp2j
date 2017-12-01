@@ -3,13 +3,17 @@ package partida;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+
+import caible.propiedades.Propiedad;
 import caible.propiedades.barrios.Barrio;
 import casilleros.Caible;
 import excepciones.CaibleNoComprableException;
+import excepciones.ComprarAntesDeTirarDadosException;
 import excepciones.JugadorEliminadoException;
 import excepciones.JugadorEnBancarrotaException;
 import excepciones.PartidaFinalizadaException;
 import excepciones.TerminarTurnoAntesDeTirarDadosException;
+import excepciones.TirarDadosYaHabiendoTiradoAntesException;
 import javafx.scene.paint.Color;
 import movimiento.Dado;
 import movimiento.MeMuevo;
@@ -18,8 +22,6 @@ import movimiento.Tirador;
 import partida.jugador.Jugador;
 import partida.tablero.Tablero;
 import partida.turno.Turno;
-import vista.VentanaDeAlerta;
-import caible.propiedades.Propiedad;
 
 public class Partida {
 
@@ -104,9 +106,10 @@ public class Partida {
 			try {
 				((Propiedad) caibleActual).comprar(turno.getJugador());
 			} catch (RuntimeException e) {
+				throw new CaibleNoComprableException("");
 			}
 		} else
-			throw new CaibleNoComprableException("No podes comprar antes de tirar dados");
+			throw new ComprarAntesDeTirarDadosException("No podes comprar antes de tirar dados");
 	}
 
 	public void construirEn(Barrio unBarrio) {
@@ -123,6 +126,7 @@ public class Partida {
 		if (!turno.estaListoParaTerminar()) {
 			turno.tirarDados(this);
 		}
+		else throw new TirarDadosYaHabiendoTiradoAntesException("");
 	}
 
 	public int getTurno() {

@@ -1,11 +1,11 @@
 package vista.eventos;
 
+import caible.propiedades.Propiedad;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import caible.propiedades.Propiedad;
 import javafx.stage.Stage;
-import vista.VentanaDeAlerta;
 import vista.ContenedorPrincipal;
+import vista.VentanaDeAlerta;
 
 public class BotonVenderPropiedadEventHandler implements EventHandler<ActionEvent> {
 	Propiedad unaPropiedad;

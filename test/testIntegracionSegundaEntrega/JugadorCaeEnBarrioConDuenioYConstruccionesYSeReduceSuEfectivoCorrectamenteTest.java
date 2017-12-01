@@ -3,7 +3,15 @@ package testIntegracionSegundaEntrega;
 import org.junit.Assert;
 import org.junit.Test;
 
-import caible.propiedades.barrios.*;
+import caible.propiedades.barrios.BuenosAiresNorte;
+import caible.propiedades.barrios.BuenosAiresSur;
+import caible.propiedades.barrios.CordobaNorte;
+import caible.propiedades.barrios.CordobaSur;
+import caible.propiedades.barrios.Neuquen;
+import caible.propiedades.barrios.SaltaNorte;
+import caible.propiedades.barrios.SaltaSur;
+import caible.propiedades.barrios.SantaFe;
+import caible.propiedades.barrios.Tucuman;
 import partida.jugador.Jugador;
 
 public class JugadorCaeEnBarrioConDuenioYConstruccionesYSeReduceSuEfectivoCorrectamenteTest {

@@ -1,6 +1,7 @@
 package testPropiedades;
 import org.junit.Assert;
 import org.junit.Test;
+
 import caible.propiedades.compania.Aysa;
 import partida.jugador.Jugador;
 public class VenderUnaCompaniaAumentaElEfectivoEn85PorCientoDelPrecioDeCompraTest {

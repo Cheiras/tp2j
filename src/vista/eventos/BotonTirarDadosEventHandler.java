@@ -1,5 +1,6 @@
 package vista.eventos;
 
+import excepciones.TirarDadosYaHabiendoTiradoAntesException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -22,14 +23,12 @@ public class BotonTirarDadosEventHandler implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent actionEvent) {
-		if (partida.yaSeTiraronDados()){
-			VentanaDeAlerta alerta=new VentanaDeAlerta("Error","Ya tiraste dados");
-			alerta.display();
-		}
-		else {
+		try {
 			partida.tirarDados();
 			contenedor.update();
+		} catch (TirarDadosYaHabiendoTiradoAntesException e) {
+			VentanaDeAlerta alerta = new VentanaDeAlerta("Error", "Ya tiraste dados");
+			alerta.display();
 		}
-
 	}
 }

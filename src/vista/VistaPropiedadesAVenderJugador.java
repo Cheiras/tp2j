@@ -1,8 +1,6 @@
 package vista;
 import partida.jugador.Jugador;
 import vista.eventos.BotonVenderPropiedadEventHandler;
-import javafx.stage.Stage;
-import vista.ContenedorPrincipal;
 public class VistaPropiedadesAVenderJugador extends VistaPropiedadesJugador {
 
 	public VistaPropiedadesAVenderJugador(Jugador unJugador,ContenedorPrincipal contenedor) {

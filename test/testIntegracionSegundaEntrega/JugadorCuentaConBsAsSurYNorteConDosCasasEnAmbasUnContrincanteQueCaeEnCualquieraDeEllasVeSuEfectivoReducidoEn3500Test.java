@@ -1,5 +1,6 @@
 package testIntegracionSegundaEntrega;
 import org.junit.Test;
+
 import caible.propiedades.barrios.BarrioNormal;
 import caible.propiedades.barrios.BuenosAiresNorte;
 import caible.propiedades.barrios.BuenosAiresSur;

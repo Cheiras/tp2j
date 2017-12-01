@@ -1,10 +1,10 @@
 package testCompania;
-import caible.propiedades.compania.Aysa;
-import caible.propiedades.compania.Edesur;
-
-import partida.jugador.Jugador;
 import org.junit.Assert;
 import org.junit.Test;
+
+import caible.propiedades.compania.Aysa;
+import caible.propiedades.compania.Edesur;
+import partida.jugador.Jugador;
 public class JugadorCaeEnAysaDeOtroJugadorQueNoTieneEdesurReduceSuEfectivoEn300VecesElValorDeLosDados {
 	Jugador jugadorUno=new Jugador("Bob",100000,null);
 	Jugador jugadorDos=new Jugador("El constructor",100000,null);

@@ -1,7 +1,6 @@
 package movimiento;
 
 import excepciones.NumeroDobleEnDadosException;
-import vista.VentanaDeAlerta;
 
 public class Tirador {
 	

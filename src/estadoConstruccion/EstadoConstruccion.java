@@ -2,7 +2,6 @@ package estadoConstruccion;
 
 import caible.propiedades.barrios.BarrioNormal;
 import excepciones.ConstruccionException;
-import excepciones.JugadorEnBancarrotaException;
 import excepciones.MontoInsuficienteException;
 import excepciones.RequisitosInsuficientesException;
 import partida.jugador.Jugador;

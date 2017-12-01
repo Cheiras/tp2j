@@ -1,6 +1,5 @@
 package movimiento;
 
-import partida.*;
 import partida.jugador.Jugador;
 
 public class MovimientoNormal implements MeMuevo {

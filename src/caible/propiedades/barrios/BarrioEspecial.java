@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import construccionesBarriosEspeciales.EstadoConstruccionEnProvinciasUnicas;
 import construccionesBarriosEspeciales.EstadoConstruccionEnProvinciasUnicasUnaCasa;
 import construccionesBarriosEspeciales.EstadoSinConstruccionEnProvinciasUnicas;
-import partida.jugador.Jugador;
 import excepciones.RequisitosInsuficientesException;
+import partida.jugador.Jugador;
 
 public class BarrioEspecial extends Barrio {
 

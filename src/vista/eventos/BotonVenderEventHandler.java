@@ -1,15 +1,12 @@
 package vista.eventos;
 
-import caible.propiedades.Propiedad;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import partida.Partida;
 import vista.ContenedorPrincipal;
 import vista.VistaDosOpciones;
-import javafx.scene.control.Button;
-import vista.eventos.BotonOpcionVenderPropiedadEventHandler;
-import vista.eventos.BotonOpcionVenderConstruccionEventHandler;
 
 public class BotonVenderEventHandler  implements EventHandler <ActionEvent>{
 
