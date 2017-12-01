@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import vista.ContenedorPrincipal;
 import vista.VentanaDeAlerta;
+import javafx.scene.media.*;
 
 public class BotonVenderPropiedadEventHandler implements EventHandler<ActionEvent> {
 	Propiedad unaPropiedad;
@@ -22,6 +23,7 @@ public class BotonVenderPropiedadEventHandler implements EventHandler<ActionEven
 	public void handle(ActionEvent actionEvent) {
 		try {
 		unaPropiedad.vendete();
+		contenedor.reproducirSonido("ventaExitosa.wav");
 		}
 		catch(RuntimeException e) {
 			VentanaDeAlerta alerta=new VentanaDeAlerta("Error","No se puede vender la propiedad");

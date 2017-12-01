@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import partida.Partida;
 import vista.ContenedorPrincipal;
 import vista.VentanaDeAlerta;
+import javafx.scene.media.*;
 
 public class BotonTerminarTurnoEventHandler implements EventHandler<ActionEvent> {
 
@@ -33,6 +34,7 @@ public class BotonTerminarTurnoEventHandler implements EventHandler<ActionEvent>
     		VentanaDeAlerta ventana0 = new VentanaDeAlerta("Error","Tenes que tirar los dados antes de terminar turno");
     		ventana0.display();
     	}catch(PartidaFinalizadaException e) {
+    		contenedor.reproducirSonido("finDelJuego.mp3");
     		VentanaDeAlerta ventana = new VentanaDeAlerta("El juego ha terminado","El juego terminó, gano el jugador " + this.partida.jugadorActual().getNombre());
     		ventana.display();
     	}catch(JugadorEnBancarrotaException er) {
