@@ -16,5 +16,6 @@ public class Policia extends Caible{
 	
 	public void accionar(Jugador unJugador) {
 		unJugador.setIndice(casilleroADesplazar.getPosicion());
+		casilleroADesplazar.accionar(unJugador);
 	}
 }
