@@ -109,11 +109,7 @@ public class Partida {
 	public void comprarCasilleroActual() {
 		if (turno.estaListoParaTerminar()) {
 			Caible caibleActual = this.getCaibleActual();
-			try {
-				((Propiedad) caibleActual).comprar(turno.getJugador());
-			} catch (RuntimeException e) {
-				throw new CaibleNoComprableException("");
-			}
+			((Propiedad) caibleActual).comprar(turno.getJugador());
 		} else
 			throw new ComprarAntesDeTirarDadosException("No podes comprar antes de tirar dados");
 	}

@@ -2,6 +2,7 @@ package vista.eventos;
 
 import excepciones.CaibleNoComprableException;
 import excepciones.ComprarAntesDeTirarDadosException;
+import excepciones.MontoInsuficienteException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -28,12 +29,16 @@ public class BotonComprarCasilleroActualEventHandler implements EventHandler<Act
 		try {
 			partida.comprarCasilleroActual();
 			contenedor.setPanelDerecha();
-
-		} catch (CaibleNoComprableException e) {
-			VentanaDeAlerta alerta = new VentanaDeAlerta("Error", "No se puede comprar este casillero");
+		} catch (MontoInsuficienteException e) {
+			VentanaDeAlerta alerta = new VentanaDeAlerta("Error", "No dispones del efectivo suficiente");
 			alerta.display();
-		} catch (ComprarAntesDeTirarDadosException e) {
+		}
+		catch (ComprarAntesDeTirarDadosException e) {
 			VentanaDeAlerta alerta = new VentanaDeAlerta("Error", "No se puede comprar un casillero antes de tirar dados");
+			alerta.display();
+		}
+		catch (RuntimeException e) {
+			VentanaDeAlerta alerta = new VentanaDeAlerta("Error", "No se puede comprar este casillero");
 			alerta.display();
 		}
 	}
