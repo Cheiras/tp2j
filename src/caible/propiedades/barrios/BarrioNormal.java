@@ -59,7 +59,7 @@ public class BarrioNormal extends Barrio {
 
 	@Override
 	public void eliminarConstrucciones() {
-		indiceConstruccionActual=0;
+		indiceConstruccionActual = 0;
 	}
 
 	public EstadoConstruccion getConstrucciones() {
