@@ -1,10 +1,11 @@
 package testEstadoConstruccion;
-import estadoConstruccion.EstadoConstruccionUnaCasa;
-import estadoConstruccion.EstadoSinConstruccion;
-import caible.propiedades.barrios.BarrioNormal;
-import caible.propiedades.barrios.BuenosAiresSur;
 import org.junit.Assert;
 import org.junit.Test;
+
+import caible.propiedades.barrios.BarrioNormal;
+import caible.propiedades.barrios.BuenosAiresSur;
+import estadoConstruccion.EstadoConstruccionUnaCasa;
+import estadoConstruccion.EstadoSinConstruccion;
 
 public class EstadoConstruccionTest {
 	BarrioNormal BairesSur=new BuenosAiresSur();

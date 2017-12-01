@@ -1,7 +1,5 @@
 package excepciones;
 
-import vista.VentanaDeAlerta;
-
 public class CaibleNoComprableException extends RuntimeException {
 
 	/**

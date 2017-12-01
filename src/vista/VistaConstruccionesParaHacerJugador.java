@@ -1,7 +1,6 @@
 package vista;
 
 import partida.jugador.Jugador;
-import vista.ContenedorPrincipal;
 import vista.eventos.BotonConstruirEventHandler;
 public class VistaConstruccionesParaHacerJugador extends VistaPropiedadesJugador {
 

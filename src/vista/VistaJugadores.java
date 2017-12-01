@@ -11,7 +11,6 @@ public class VistaJugadores {
 
 	private ArrayList<VistaJugador> jugadores= new ArrayList<VistaJugador>();
 	private Canvas canvas;
-	private int indiceVistaActual;
 	private Partida partida;
 	
 	public VistaJugadores(Partida partida, Canvas canvas) {

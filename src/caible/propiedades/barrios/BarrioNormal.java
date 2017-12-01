@@ -1,7 +1,5 @@
 package caible.propiedades.barrios;
 
-import partida.jugador.Jugador;
-
 import java.util.ArrayList;
 
 import estadoConstruccion.EstadoConstruccion;
@@ -10,6 +8,7 @@ import estadoConstruccion.EstadoConstruccionSegundaCasa;
 import estadoConstruccion.EstadoConstruccionUnaCasa;
 import estadoConstruccion.EstadoSinConstruccion;
 import excepciones.RequisitosInsuficientesException;
+import partida.jugador.Jugador;
 
 public class BarrioNormal extends Barrio {
 

@@ -1,13 +1,10 @@
 package vista.eventos;
 
-import excepciones.MontoInsuficienteException;
-import caible.especiales.Carcel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import partida.Partida;
 import vista.ContenedorPrincipal;
-import vista.VentanaDeAlerta;
 
 public class BotonDescontarButtonHandler implements EventHandler<ActionEvent> {
 

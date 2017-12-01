@@ -1,11 +1,11 @@
 package testIntegracionSegundaEntrega;
-import partida.jugador.Jugador;
+import org.junit.Assert;
+import org.junit.Test;
+
 import caible.propiedades.Propiedad;
 import caible.propiedades.barrios.BuenosAiresNorte;
 import caible.propiedades.barrios.BuenosAiresSur;
-
-import org.junit.Assert;
-import org.junit.Test;
+import partida.jugador.Jugador;
 
 public class JugadorIntercambiaPropiedadPorOtraDeOtroJugadorUnTercerJugadorCaeEnLaPropiedadYElAlquilerSeAcreditaAlNuevoDuenioTest {
 

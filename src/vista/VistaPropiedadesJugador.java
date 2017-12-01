@@ -1,15 +1,14 @@
 package vista;
-import partida.jugador.Jugador;
-import caible.propiedades.Propiedad;
 import java.util.ArrayList;
+
+import caible.propiedades.Propiedad;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
-import vista.ContenedorPrincipal;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import partida.jugador.Jugador;
 
 public class VistaPropiedadesJugador {
 	Stage ventana=new Stage();

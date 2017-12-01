@@ -1,8 +1,9 @@
 package testPropiedades;
 import org.junit.Assert;
 import org.junit.Test;
-import partida.jugador.Jugador;
+
 import caible.propiedades.barrios.CordobaSur;
+import partida.jugador.Jugador;
 public class VenderUnBarrioNormalSinConstruccionesAumentaElEfectivoEnUn85PorCientoDelPrecioDeCompraTest {
 
 	CordobaSur cordobaSur=new CordobaSur();

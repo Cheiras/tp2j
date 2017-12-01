@@ -1,12 +1,12 @@
 package vista.eventos;
 
 import caible.propiedades.Propiedad;
+import caible.propiedades.barrios.Barrio;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import vista.ContenedorPrincipal;
 import vista.VentanaDeAlerta;
-import caible.propiedades.barrios.Barrio;
 
 public class BotonConstruirEventHandler  implements EventHandler<ActionEvent> {
 

@@ -1,10 +1,8 @@
 package vista.eventos;
-import caible.propiedades.Propiedad;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import partida.Partida;
-import partida.jugador.Jugador;
 import vista.ContenedorPrincipal;
 import vista.VistaPropiedadesAVenderJugador;
 public class BotonOpcionVenderPropiedadEventHandler implements EventHandler <ActionEvent> {

@@ -1,8 +1,9 @@
 package testPropiedades;
 import org.junit.Assert;
 import org.junit.Test;
-import partida.jugador.Jugador;
+
 import caible.propiedades.barrios.Neuquen;
+import partida.jugador.Jugador;
 public class VenderUnEdificioHistoricoSinConstruccionesAumentaElEfectivoEn85PorCientoDelPrecioDeCompraTest {
 
 	Neuquen neuquen=new Neuquen();

@@ -1,5 +1,6 @@
 package testPropiedades;
 import org.junit.Test;
+
 import caible.propiedades.barrios.Barrio;
 import caible.propiedades.barrios.BarrioNormal;
 import partida.jugador.Jugador;

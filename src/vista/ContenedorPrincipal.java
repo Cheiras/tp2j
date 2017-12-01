@@ -18,9 +18,9 @@ import partida.Partida;
 import vista.eventos.BotonComprarCasilleroActualEventHandler;
 import vista.eventos.BotonConstruirHandler;
 import vista.eventos.BotonDescontarButtonHandler;
+import vista.eventos.BotonPagarFianzaEventHandler;
 import vista.eventos.BotonTerminarTurnoEventHandler;
 import vista.eventos.BotonTirarDadosEventHandler;
-import vista.eventos.BotonPagarFianzaEventHandler;
 import vista.eventos.BotonVenderEventHandler;
 
 public class ContenedorPrincipal extends BorderPane {

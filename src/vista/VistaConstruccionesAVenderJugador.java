@@ -1,7 +1,5 @@
 package vista;
-import caible.propiedades.Propiedad;
 import partida.jugador.Jugador;
-import vista.eventos.BotonVenderPropiedadEventHandler;
 import vista.eventos.BotonVenderUnaConstruccionEventHandler;
 
 public class VistaConstruccionesAVenderJugador extends VistaPropiedadesJugador {

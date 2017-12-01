@@ -1,11 +1,12 @@
 package testIntegracionSegundaEntrega;
 
+import org.junit.Test;
+
 import caible.propiedades.barrios.BarrioNormal;
 import caible.propiedades.barrios.BuenosAiresNorte;
 import caible.propiedades.barrios.BuenosAiresSur;
 import junit.framework.Assert;
 import partida.jugador.Jugador;
-import org.junit.Test;
 public class JugadorTieneBsAsSurYNorteYConstruyeUnHotelSiUnJugadorContrarioCaeEnLaCasillaSuEfectivoSeReduceEn5000Test {
 
 	@Test
