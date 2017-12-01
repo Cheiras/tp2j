@@ -1,5 +1,7 @@
 package vista;
 
+import java.net.URL;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
@@ -12,6 +14,7 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import partida.Partida;
@@ -65,7 +68,13 @@ public class ContenedorPrincipal extends BorderPane {
 		this.setRight(panelDerecha);
 
 	}
+	public void reproducirSonido(String sonido) {
+		final URL resource = getClass().getResource(sonido);
+	    final AudioClip clip = new AudioClip(resource.toString());
 
+	        clip.play(1.0);
+	  }
+	
 	public void update() {
 		this.vistaJugadores.update();
 		this.setMenu(this.stage);

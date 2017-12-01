@@ -24,6 +24,7 @@ public class BotonConstruirEventHandler  implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent actionEvent) {
 		try {
 		((Barrio)unaPropiedad).construir();
+		contenedor.reproducirSonido("construccionExitosa.wav");
 		}
 		catch(RuntimeException e) {
 			VentanaDeAlerta alerta=new VentanaDeAlerta("Error","No se puede construir en la propiedad");

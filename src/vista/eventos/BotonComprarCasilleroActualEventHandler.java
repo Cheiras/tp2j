@@ -28,6 +28,7 @@ public class BotonComprarCasilleroActualEventHandler implements EventHandler<Act
 	public void handle(ActionEvent actionEvent) {
 		try {
 			partida.comprarCasilleroActual();
+			contenedor.reproducirSonido("comprarCasillero.wav");
 			contenedor.setPanelDerecha();
 		} catch (MontoInsuficienteException e) {
 			VentanaDeAlerta alerta = new VentanaDeAlerta("Error", "No dispones del efectivo suficiente");

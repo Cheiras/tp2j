@@ -25,6 +25,7 @@ public class BotonTirarDadosEventHandler implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent actionEvent) {
 		try {
 			partida.tirarDados();
+			contenedor.reproducirSonido("tirarDados.wav");
 			contenedor.update();
 		} catch (TirarDadosYaHabiendoTiradoAntesException e) {
 			VentanaDeAlerta alerta = new VentanaDeAlerta("Error", "Ya tiraste dados");

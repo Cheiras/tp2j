@@ -25,6 +25,7 @@ public class BotonConstruirHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
     	if (!partida.yaSeTiraronDados()) {
+    		contenedor.reproducirSonido("menuConstruccion.wav");
     		VistaConstruccionesParaHacerJugador ventanaPropiedades=new VistaConstruccionesParaHacerJugador(partida.jugadorActual(),this.contenedor);
         	ventanaPropiedades.display();
     	}

@@ -28,6 +28,7 @@ public class BotonTerminarTurnoEventHandler implements EventHandler<ActionEvent>
     public void handle(ActionEvent actionEvent) {
     	try {
         	partida.terminarTurno();
+        	contenedor.reproducirSonido("terminarTurno.wav");
     	}catch(TerminarTurnoAntesDeTirarDadosException e) {
     		VentanaDeAlerta ventana0 = new VentanaDeAlerta("Error","Tenes que tirar los dados antes de terminar turno");
     		ventana0.display();
@@ -38,6 +39,7 @@ public class BotonTerminarTurnoEventHandler implements EventHandler<ActionEvent>
     		VentanaDeAlerta ventana2 = new VentanaDeAlerta("Bancarrota","Tus propiedades han sido vendidas");
     		ventana2.display();
     	}catch(JugadorEliminadoException err) {
+    		contenedor.reproducirSonido("jugadorEliminado.wav");
     		VentanaDeAlerta ventana3 = new VentanaDeAlerta("Bancarrota","Has sido eliminado");
     		contenedor.eliminarJugadorActual();
     		ventana3.display();
