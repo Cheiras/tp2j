@@ -3,7 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry excluding="vista/sonidos/" kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="src" path="src/vista/sonidos"/>
 	<classpathentry kind="lib" path="libs/analysis/ant.jar"/>
 	<classpathentry kind="lib" path="libs/analysis/asm.jar"/>
 	<classpathentry kind="lib" path="libs/analysis/dom4j.jar"/>
