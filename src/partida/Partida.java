@@ -74,17 +74,23 @@ public class Partida {
 
 		Jugador jugadorQueTermina = this.jugadorActual();
 		if (turno.estaListoParaTerminar()) {
+
 			indexJugadorActual++;
 			if (indexJugadorActual == jugadores.size())
 				indexJugadorActual = 0;
+
 			turno = new Turno(this.jugadorActual(), tirador, tablero);
 			turnos++;
+
 			if (jugadorQueTermina.getEfectivo() < 0) {
 				for (Propiedad propiedad : jugadorQueTermina.getPropiedades()) {
 					propiedad.vendete();
 				}
 				if (jugadorQueTermina.getEfectivo() < 0) {
 					jugadores.remove(jugadorQueTermina);
+					indexJugadorActual--;
+					if (indexJugadorActual < 0)
+						indexJugadorActual = 0;
 					throw new JugadorEliminadoException();
 				}
 				throw new JugadorEnBancarrotaException("");
@@ -125,8 +131,8 @@ public class Partida {
 	public void tirarDados() {
 		if (!turno.estaListoParaTerminar()) {
 			turno.tirarDados(this);
-		}
-		else throw new TirarDadosYaHabiendoTiradoAntesException("");
+		} else
+			throw new TirarDadosYaHabiendoTiradoAntesException("");
 	}
 
 	public int getTurno() {
