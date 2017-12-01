@@ -3,6 +3,7 @@ package vista.eventos;
 import excepciones.JugadorEliminadoException;
 import excepciones.JugadorEnBancarrotaException;
 import excepciones.PartidaFinalizadaException;
+import excepciones.TerminarTurnoAntesDeTirarDadosException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -27,6 +28,9 @@ public class BotonTerminarTurnoEventHandler implements EventHandler<ActionEvent>
     public void handle(ActionEvent actionEvent) {
     	try {
         	partida.terminarTurno();
+    	}catch(TerminarTurnoAntesDeTirarDadosException e) {
+    		VentanaDeAlerta ventana0 = new VentanaDeAlerta("Error","Tenes que tirar los dados antes de terminar turno");
+    		ventana0.display();
     	}catch(PartidaFinalizadaException e) {
     		VentanaDeAlerta ventana = new VentanaDeAlerta("El juego ha terminado","El juego terminó, gano el jugador " + this.partida.jugadorActual().getNombre());
     		ventana.display();

@@ -81,16 +81,15 @@ public class Partida {
 				for (Propiedad propiedad : jugadorQueTermina.getPropiedades()) {
 					propiedad.vendete();
 				}
-					if (jugadorQueTermina.getEfectivo() < 0) {
-						jugadores.remove(jugadorQueTermina);
-						throw new JugadorEliminadoException();
-					}
-					throw new JugadorEnBancarrotaException("Tus propiedades han sido vendidas");
+				if (jugadorQueTermina.getEfectivo() < 0) {
+					jugadores.remove(jugadorQueTermina);
+					throw new JugadorEliminadoException();
 				}
+				throw new JugadorEnBancarrotaException("");
+			}
 
-			} 
-		else{
-			throw new TerminarTurnoAntesDeTirarDadosException("Primero tenes que tirar los dados");
+		} else {
+			throw new TerminarTurnoAntesDeTirarDadosException("");
 		}
 
 	}
