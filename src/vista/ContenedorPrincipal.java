@@ -20,7 +20,6 @@ import javafx.stage.Stage;
 import partida.Partida;
 import vista.eventos.BotonComprarCasilleroActualEventHandler;
 import vista.eventos.BotonConstruirHandler;
-import vista.eventos.BotonDescontarButtonHandler;
 import vista.eventos.BotonPagarFianzaEventHandler;
 import vista.eventos.BotonTerminarTurnoEventHandler;
 import vista.eventos.BotonTirarDadosEventHandler;
@@ -68,13 +67,14 @@ public class ContenedorPrincipal extends BorderPane {
 		this.setRight(panelDerecha);
 
 	}
+
 	public void reproducirSonido(String sonido) {
 		final URL resource = getClass().getResource(sonido);
-	    final AudioClip clip = new AudioClip(resource.toString());
+		final AudioClip clip = new AudioClip(resource.toString());
 
-	        clip.play(1.0);
-	  }
-	
+		clip.play(1.0);
+	}
+
 	public void update() {
 		this.vistaJugadores.update();
 		this.setMenu(this.stage);
@@ -88,9 +88,7 @@ public class ContenedorPrincipal extends BorderPane {
 		Button botonPagarFianza = new Button();
 		botonPagarFianza.setText("Pagar Fianza");
 		BotonPagarFianzaEventHandler fianzaButtonHandler = new BotonPagarFianzaEventHandler(this.partida, stage, this);
-		//if (this.partida.jugadorActual().estadoDeHabilitacion()) {
-			botonPagarFianza.setOnAction(fianzaButtonHandler);
-		//}
+		botonPagarFianza.setOnAction(fianzaButtonHandler);
 
 		Button botonTirar = new Button();
 		botonTirar.setText("Tirar Dados");
@@ -117,14 +115,9 @@ public class ContenedorPrincipal extends BorderPane {
 		botonTerminarTurno.setText("Terminar turno");
 		BotonTerminarTurnoEventHandler terminarButtonHandler = new BotonTerminarTurnoEventHandler(stage, partida, this);
 		botonTerminarTurno.setOnAction(terminarButtonHandler);
-
-		Button botonDescontarEfectivo = new Button();
-		botonDescontarEfectivo.setText("Descontar efectivo");
-		BotonDescontarButtonHandler descontarButtonHandler = new BotonDescontarButtonHandler(partida, stage, this);
-		botonDescontarEfectivo.setOnAction(descontarButtonHandler);
-
+		
 		VBox contenedorVertical = new VBox(botonTirar, botonConstruir, botonComprar, botonTerminarTurno, botonVender,
-				botonPagarFianza, botonDescontarEfectivo);
+				botonPagarFianza);
 
 		contenedorVertical.setSpacing(20);
 		contenedorVertical.setPadding(new Insets(15));
