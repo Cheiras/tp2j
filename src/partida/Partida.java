@@ -83,9 +83,12 @@ public class Partida {
 			turnos++;
 
 			if (jugadorQueTermina.getEfectivo() < 0) {
-				for (Propiedad propiedad : jugadorQueTermina.getPropiedades()) {
-					propiedad.vendete();
+				
+				ArrayList<Propiedad> propiedades = jugadorQueTermina.getPropiedades();
+				for (int i = 0; i < propiedades.size(); i++) {
+					propiedades.get(i).vendete();
 				}
+				
 				if (jugadorQueTermina.getEfectivo() < 0) {
 					jugadores.remove(jugadorQueTermina);
 					indexJugadorActual--;
