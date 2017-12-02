@@ -43,7 +43,7 @@ public class Partida {
 		Dado dado2 = new Dado(6);
 		tirador = new Tirador(dado1, dado2);
 		MeMuevo movNormal = new MovimientoNormal();
-		jugador1 = new Jugador("Azul", 1000, movNormal);
+		jugador1 = new Jugador("Azul", 100000, movNormal);
 		jugador2 = new Jugador("Verde", 100000, movNormal);
 		jugador3 = new Jugador("Rojo", 100000, movNormal);
 		colores.put(jugador1.getNombre(), Color.BLUE);
